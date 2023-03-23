@@ -1,0 +1,1838 @@
+85496     
+Delivered-To: princesharma76214@gmail.com
+Received: by 2002:a4a:9486:0:0:0:0:0 with SMTP id k6csp6536566ooi; Mon, 2 May
+ 2022 05:52:19 -0700 (PDT)
+X-Google-Smtp-Source: ABdhPJy6s/dZEz/PtO76kTR0fUN/1j8UGgIjFiF2OuNAxMXm2MciI7GmAbti9wsrDk5eqZpHO5M0
+X-Received: by 2002:a17:902:eccd:b0:15e:a0a6:79cd with SMTP id
+ a13-20020a170902eccd00b0015ea0a679cdmr5913445plh.19.1651495939392; Mon, 02
+ May 2022 05:52:19 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1651495939; cv=none; d=google.com;
+ s=arc-20160816;
+ b=Qm9bmvz2R+xtnvVC+uslMXbMaDB2SlmO3x6f6+M7L+zaWgYvEVzY3uBAYC4CpiifgA
+ IO6Mhdzm2tlKO95ffg4C4S7rvdXpywuJp6clpPMKlywAZx40wTYg/TWkq2tHNO5V9Ul1
+ ufjdxnLGsLFxoWs9XO1o6TwmbGt58aVR4pj8XY/uVEdTaPe7Nyk3D9uH/a3rrGlcJtdI
+ 2iR03HVE89GuPYHI31BhaPkvmOGDghHwpneCKTGw4y12sE9bZQp1f/wTYjwoOl/0+5ZD
+ A6RYpW9sLluUtBcJBkzu/ptG0STTEGL4GbYbc5n7Zgkhncm1fvrofQDVSZuWRBkJ6U6O 6wvw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com;
+ s=arc-20160816;
+ h=feedback-id:mime-version:message-id:user-agent:reply-to:subject:to
+ :from:date:dkim-signature:dkim-signature;
+ bh=wZDWLlFZPXE4zLQdf99k4iB/5gsFb2Z8YXnwHz/++aE=;
+ b=jlwX/Dq3xCVARVZoERW6Y8Wc7+4F9F4bSxiwH7vUzrvdmnh/rCYd+e5+YaXRe3eENQ
+ ux/7r7a80l+JXfcchOce/6XBANhsemGCLX7O0VEC4iX1Sg5X7RMX3PFLGyN1H3IoqSun
+ 6DHkyso09iReclhotme6GbXlRvXjiQSfebG+eX/JYefdgYrrxiH6FxkPMJuFsz/PXgze
+ RIirpH3JBiL8AJE3oL3Jin1TukrBloLudYIBbcGfnZr7FBylw+VfVQURnT/tTUWrcM5+
+ O1A2BPJekUnEkFEJhiBq0t+v3PEFNG1zF7b1UB39IXfC4O1WqpdmDTEffb73vEVpcbi0 ADiw==
+ARC-Authentication-Results: i=1; mx.google.com; dkim=pass
+ header.i=@internshala.com header.s=lcyhy3nzcu3gcga2jcy4okpn3qq5bjlv
+ header.b="ImEEJ/5j"; dkim=pass header.i=@amazonses.com
+ header.s=dvogjbaa3ou3tduyzvyu4rj5tkuzdi4h header.b="K8fKa/17"; spf=pass
+ (google.com: domain of
+ 0109018084d42710-df24e3fd-f82d-4260-bd01-d41e647268b7-000000@ap-south-1.amazonses.com
+ designates 76.223.181.120 as permitted sender)
+ smtp.mailfrom=0109018084d42710-df24e3fd-f82d-4260-bd01-d41e647268b7-000000@ap-south-1.amazonses.com;
+ dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=internshala.com
+Return-Path: <0109018084d42710-df24e3fd-f82d-4260-bd01-d41e647268b7-000000@ap-south-1.amazonses.com>
+Received: from c181-120.smtp-out.ap-south-1.amazonses.com
+ (c181-120.smtp-out.ap-south-1.amazonses.com. [76.223.181.120]) by
+ mx.google.com with ESMTPS id
+ p24-20020a634f58000000b003aab55c7aafsi15039400pgl.766.2022.05.02.05.52.18 for
+ <princesharma76214@gmail.com> (version=TLS1_2
+ cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128); Mon, 02 May 2022 05:52:19
+ -0700 (PDT)
+Received-SPF: pass (google.com: domain of
+ 0109018084d42710-df24e3fd-f82d-4260-bd01-d41e647268b7-000000@ap-south-1.amazonses.com
+ designates 76.223.181.120 as permitted sender) client-ip=76.223.181.120;
+Authentication-Results: mx.google.com; dkim=pass header.i=@internshala.com
+ header.s=lcyhy3nzcu3gcga2jcy4okpn3qq5bjlv header.b="ImEEJ/5j"; dkim=pass
+ header.i=@amazonses.com header.s=dvogjbaa3ou3tduyzvyu4rj5tkuzdi4h
+ header.b="K8fKa/17"; spf=pass (google.com: domain of
+ 0109018084d42710-df24e3fd-f82d-4260-bd01-d41e647268b7-000000@ap-south-1.amazonses.com
+ designates 76.223.181.120 as permitted sender)
+ smtp.mailfrom=0109018084d42710-df24e3fd-f82d-4260-bd01-d41e647268b7-000000@ap-south-1.amazonses.com;
+ dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=internshala.com
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+ s=lcyhy3nzcu3gcga2jcy4okpn3qq5bjlv; d=internshala.com; t=1651495937;
+ h=Date:From:To:Subject:Reply-To:Message-ID:Mime-Version:Content-Type;
+ bh=Ic7NxelGlx6/ZS5vh5SaSShSVdX1zGBKYOVate0q5pw=;
+ b=ImEEJ/5j3C8H80PVwLO4sZui+HQELVE4UJtK2g65j/cUOMPpD73NI4ZPNJ+k/ZGl
+ Wb6LEUw/SHdTGsNm09GHxVGmA6xGFu3JF4RGny84dx8un+7/Ia91CoaFjGkmbS6qtIz
+ LWWjbt2BUY4mD6mDAtPpsZlufdNIYLW0H3HmHZkY=
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+ s=dvogjbaa3ou3tduyzvyu4rj5tkuzdi4h; d=amazonses.com; t=1651495937;
+ h=Date:From:To:Subject:Reply-To:Message-ID:Mime-Version:Content-Type:Feedback-ID;
+ bh=Ic7NxelGlx6/ZS5vh5SaSShSVdX1zGBKYOVate0q5pw=;
+ b=K8fKa/17Http6KNbzGXYCRHrhoQCUL41Y7diiqC8vCMPArii0yvcpJw9QSD1+rWh
+ eLSbT4WnCEXObHA3Bt4j3tAR+JQhZ9HNja4CkkZZt7M5UQefOXUyf1Pl8WBtYJ1/Fen
+ Eu7YXm0xLHxqkOMKPzTTRX5YJcnKCMA8SBhN51xw=
+Date: Mon, 2 May 2022 12:52:17 +0000
+From: "Internshala" <student@internshala.com>
+To: princesharma76214@gmail.com
+Subject: =?UTF-8?Q?Kamal,=20New=20Internships=20In=20NextEdge=20Labs,=20OyeLabs?=
+ =?UTF-8?Q?=20&=20More?=
+Reply-To: "Internshala" <student@internshala.com>
+User-Agent: internshala.com
+X-Sender: student@internshala.com
+X-Mailer: internshala.com
+X-Priority: 3 (Normal)
+Message-ID: <0109018084d42710-df24e3fd-f82d-4260-bd01-d41e647268b7-000000@ap-south-1.amazonses.com>
+Mime-Version: 1.0
+Content-Type: multipart/alternative; boundary="B_ALT_626fd401bff83"
+Feedback-ID: 1.ap-south-1.xot7BVmptk15rTqvOHujiljEnkooidFXCgYHpb0GqHE=:AmazonSES
+X-SES-Outgoing: 2022.05.02-76.223.181.120
+
+
+--B_ALT_626fd401bff83
+Content-Transfer-Encoding: 8BIT
+Content-Type: TEXT/PLAIN;
+	charset=UTF-8
+
+Hi Kamal,
+ Here are some of the latest opportunities matching your preferences. Apply
+now!
+
+
+
+
+
+
+
+ Mobile Application Development (Flutter)
+
+
+
+
+
+
+
+ NextEdge Labs
+
+
+
+
+ Work From Home
+
+
+ 6 months
+
+
+ ₹5000 /month
+
+
+ Apply by 15th May
+
+
+
+
+ Internship
+ Apply now
+
+
+
+
+
+
+
+
+
+ Node.js Development
+
+
+
+
+
+
+
+ OyeLabs
+
+
+
+
+ Work From Home
+
+
+ 6 months
+
+
+ ₹5000-10000 /month
+
+
+ Apply by 15th May
+
+
+
+
+ Internship with job offer
+ Apply now
+
+
+
+
+
+
+
+
+
+ Teaching (High Order Thinking Skills)
+
+
+
+
+
+
+
+ WizKlub Learning
+
+
+
+
+ Work From Home
+
+
+ 6 months
+
+
+ ₹10000-12000 /month
+
+
+ Apply by 15th May
+
+
+ Part time allowed
+
+
+
+
+ Internship with job offer
+ Apply now
+
+
+
+
+
+
+
+
+
+ Python Development
+
+
+
+
+
+
+ Helping Hand
+
+
+
+
+ Work From Home
+
+
+ 1 month
+
+
+ ₹1000 /month
+
+
+ Apply by 16th May
+
+
+ Part time allowed
+
+
+
+
+ Internship
+ Apply now
+
+
+
+
+
+
+
+
+
+ Machine Learning
+
+
+
+
+
+
+ Helping Hand
+
+
+
+
+ Work From Home
+
+
+ 1 month
+
+
+ ₹1000 /month
+
+
+ Apply by 16th May
+
+
+ Part time allowed
+
+
+
+
+ Internship
+ Apply now
+
+
+
+
+
+
+
+
+
+ Deep Learning Research
+
+
+
+
+
+
+
+ Pucho Digital Health Inc.
+
+
+
+
+ Work From Home
+
+
+ 4 months
+
+
+ ₹10000-15000 /month
+
+
+ Apply by 16th May
+
+
+
+
+ Internship
+ Apply now
+
+
+
+
+
+
+
+
+
+ Software Development
+
+
+
+
+
+
+
+ Liveasy
+
+
+
+
+ Work From Home
+
+
+ 4 months
+
+
+ ₹1000 /month
+
+
+ Apply by 15th May
+
+
+ Part time allowed
+
+
+
+
+ Internship
+ Apply now
+
+
+
+
+
+
+
+
+
+ Springboot Development
+
+
+
+
+
+
+
+ Go2Words
+
+
+
+
+ Work From Home
+
+
+ 1 month
+
+
+ ₹1000 /month
+
+
+ Apply by 16th May
+
+
+ Part time allowed
+
+
+
+
+ Internship
+ Apply now
+
+
+
+
+
+
+
+
+
+ C & C++ Development
+
+
+
+
+
+
+ Helping Hand
+
+
+
+
+ Work From Home
+
+
+ 1 month
+
+
+ ₹1000 /month
+
+
+ Apply by 16th May
+
+
+ Part time allowed
+
+
+
+
+ Internship
+ Apply now
+
+
+
+
+
+
+
+
+
+ Data Structure Development
+
+
+
+
+
+
+ Helping Hand
+
+
+
+
+ Work From Home
+
+
+ 1 month
+
+
+ ₹1000 /month
+
+
+ Apply by 16th May
+
+
+ Part time allowed
+
+
+
+
+ Internship
+ Apply now
+
+
+
+
+
+
+
+
+
+ Frontend Development
+
+
+
+
+
+
+
+ Incentify
+
+
+
+
+ Work From Home
+
+
+ 2 months
+
+
+ ₹5000-10000 /month
+
+
+ Apply by 15th May
+
+
+
+
+ Internship
+ Apply now
+
+
+
+
+
+
+
+
+
+ Game Development
+
+
+
+
+
+
+
+ CITS Worldwide
+
+
+
+
+ Work From Home
+
+
+ 6 months
+
+
+ ₹6000 /month
+
+
+ Apply by 15th May
+
+
+
+
+ Internship with job offer
+ Apply now
+
+
+
+
+
+
+
+
+
+ Android App Development
+
+
+
+
+
+
+
+ GearToCare
+
+
+
+
+ Work From Home
+
+
+ 3 months
+
+
+ ₹2000 /month
+
+
+ Apply by 16th May
+
+
+ Part time allowed
+
+
+
+
+ Internship
+ Apply now
+
+
+
+
+
+
+
+
+
+ Android App Development
+
+
+
+
+
+
+ Helping Hand
+
+
+
+
+ Work From Home
+
+
+ 1 month
+
+
+ ₹1000 /month
+
+
+ Apply by 16th May
+
+
+ Part time allowed
+
+
+
+
+ Internship
+ Apply now
+
+
+
+
+
+
+
+
+
+ Android App Development
+
+
+
+
+
+
+
+ Liveasy
+
+
+
+
+ Work From Home
+
+
+ 3 months
+
+
+ ₹1000 /month
+
+
+ Apply by 15th May
+
+
+ Part time allowed
+
+
+
+
+ Internship
+ Apply now
+
+
+
+
+ These results are based on the preferences you have filled. You can change
+them here.
+
+
+ View more internships
+
+
+
+ Learn new skills to get job-ready
+ Top 3 recommended trainings for you that will help you set your resume
+apart
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Machine Learning
+ Learn Machine Learning from scratch and take the first step towards AI
+ Enroll now
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Web Development
+ Learn how to create a website from scratch
+ Enroll now
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Core Java
+ Develop system applications from scratch
+ Enroll now
+
+
+
+
+
+
+
+
+
+
+ Explore the e-learning arm of Internshala where you can learn new-age
+skills on your schedule!
+
+ View more trainings
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Internshala (Scholiverse Educare Pvt. Ltd.)B-610, Unitech Business Zone
+Golf Course Extension Road, Sector 50, Gurugram
+ Not keen on career commitments? Unsubscribe here to break up with us.
+
+
+--B_ALT_626fd401bff83
+Content-Transfer-Encoding: QUOTED-PRINTABLE
+Content-Type: TEXT/HTML;
+	charset=UTF-8
+
+<div style=3D"font-family:'Arial';font-size:15px">=0A    <div style=3D" max=
+-width:640px;margin:auto">=0A        <div style=3D"padding:12px 0 16px 0">=
+=0A            <img style=3D"max-height:44px;max-width:144px;display:block;=
+margin:0 auto" src=3D"https://internshala.com//static/images/mail/new/inter=
+nshala_logo.png">=0A        </div>=0A                <div style=3D"color:#4=
+84848;max-width:640px;margin:0 auto">=0A            <h5 style=3D"margin:16p=
+x 0 8px;line-height:24px;color:#333333;font-size:18px">Hi Kamal,</h5>=0A   =
+         <p style=3D"line-height:26px;font-size:16px;margin:0 0 16px">Here =
+are some of the latest opportunities matching your preferences. Apply now!<=
+/p>=0A            <div style=3D"border:1px solid #DDDDDD;box-sizing:border-=
+box;border-radius:8px;padding:0 16px">=0A                                  =
+                          <a style=3D"text-decoration:none !important" href=
+=3D"https://internshala.com/internship/detail/mobile-application-developmen=
+t-flutter-work-from-home-job-internship-at-nextedge-labs1651379037?utm_sour=
+ce=3Dstudent_digest_active&utm_medium=3Dstudent_digest_active&utm_campaign=
+=3D2022-05-02&referral=3Dstudent_digest_active">=0A                        =
+                <div style=3D"border-bottom:1px solid #DDDDDD;margin-top:20=
+px">=0A                        <table style=3D"width:100%" cellspacing=3D"0=
+" cellpadding=3D"0">=0A                            <tr>=0A                 =
+               <td style=3D"vertical-align:top;font-family:'Arial'">=0A    =
+                                <h5 style=3D"font-size:18px;line-height:24p=
+x;color:#008BDC;margin:0 0 2px;display:inline-block">=0A                   =
+                   Mobile Application Development (Flutter) =0A            =
+                        </h5>=0A                                </td>=0A   =
+                             <td rowspan=3D"2" style=3D"max-width:96px;vert=
+ical-align:top">=0A                                                        =
+                   <img src=3D"https://internshala.com//uploads/logo/60c376=
+3e414b21623422526.png" style=3D"max-width:96px;max-height:48px;float:right;=
+margin:0 0 0 16px"> =0A                                                    =
+                </td>=0A                            </tr>=0A               =
+             <tr>=0A                                <td><p style=3D"color:#=
+666666;margin:0 0 12px;line-height:22px;font-family:'Arial'">NextEdge Labs<=
+/p></td>=0A                            </tr>=0A                        </ta=
+ble>=0A                                                <div style=3D"font-s=
+ize:0;color:#484848;line-height:22px">=0A                            <div s=
+tyle=3D"display:inline-block;font-size:15px;margin:0 0 12px">=0A           =
+                     <img src=3D"https://internshala.com//static/images/stu=
+dent_digest/location.png" style=3D"width:16px;vertical-align:middle"><span =
+style=3D"vertical-align:middle;margin:0 40px 0 4px">Work From Home</span>=
+=0A                            </div>=0A                                   =
+                         <div style=3D"display:inline-block;font-size:15px;=
+margin:0 0 12px">=0A                                    <img src=3D"https:/=
+/internshala.com//static/images/student_digest/calendar.png" style=3D"width=
+:16px;vertical-align:middle"><span style=3D"vertical-align:middle;margin:0 =
+40px 0 4px">6 months</span>=0A                                </div>=0A    =
+                                                            <div style=3D"d=
+isplay:inline-block;font-size:15px;margin:0 0 12px">=0A                    =
+                <img src=3D"https://internshala.com//static/images/student_=
+digest/money.png" style=3D"width:16px;vertical-align:middle"><span style=3D=
+"vertical-align:middle;margin:0 40px 0 4px">=E2=82=B95000 /month</span>=0A =
+                               </div>=0A                                   =
+                     <div style=3D"display:inline-block;font-size:15px;marg=
+in:0 0 12px">=0A                                <img src=3D"https://interns=
+hala.com//static/images/student_digest/hourglass.png" style=3D"width:16px;v=
+ertical-align:middle"><span style=3D"vertical-align:middle;margin:0 0 0 4px=
+">Apply by 15th May</span></span>=0A                            </div>=0A  =
+                                                                           =
+   </div>=0A                        <div>=0A                            <di=
+v style=3D"display:inline-block;margin:0 0 20px;background:#EEEEEE;padding:=
+4px 8px;border-radius:4px;font-size:13px;line-height:18px;color:#484848">=
+=0A                                Internship                            </=
+div>=0A                            <div style=3D"color:#008BDC;line-height:=
+18px;float:right;margin:4px 0 24px">Apply now</div>=0A                     =
+   </div>=0A                    </div>=0A                        </a>=0A   =
+                                                             <a style=3D"te=
+xt-decoration:none !important" href=3D"https://internshala.com/internship/d=
+etail/nodejs-development-work-from-home-job-internship-at-oyelabs1651383734=
+?utm_source=3Dstudent_digest_active&utm_medium=3Dstudent_digest_active&utm_=
+campaign=3D2022-05-02&referral=3Dstudent_digest_active">=0A                =
+                        <div style=3D"border-bottom:1px solid #DDDDDD;margi=
+n-top:20px">=0A                        <table style=3D"width:100%" cellspac=
+ing=3D"0" cellpadding=3D"0">=0A                            <tr>=0A         =
+                       <td style=3D"vertical-align:top;font-family:'Arial'"=
+>=0A                                    <h5 style=3D"font-size:18px;line-he=
+ight:24px;color:#008BDC;margin:0 0 2px;display:inline-block">=0A           =
+                           Node.js Development =0A                         =
+           </h5>=0A                                </td>=0A                =
+                <td rowspan=3D"2" style=3D"max-width:96px;vertical-align:to=
+p">=0A                                                                     =
+      <img src=3D"https://internshala.com//uploads/logo/5de92afc48a16157556=
+1980.jpg" style=3D"max-width:96px;max-height:48px;float:right;margin:0 0 0 =
+16px"> =0A                                                                 =
+   </td>=0A                            </tr>=0A                            =
+<tr>=0A                                <td><p style=3D"color:#666666;margin=
+:0 0 12px;line-height:22px;font-family:'Arial'">OyeLabs</p></td>=0A        =
+                    </tr>=0A                        </table>=0A            =
+                                    <div style=3D"font-size:0;color:#484848=
+;line-height:22px">=0A                            <div style=3D"display:inl=
+ine-block;font-size:15px;margin:0 0 12px">=0A                              =
+  <img src=3D"https://internshala.com//static/images/student_digest/locatio=
+n.png" style=3D"width:16px;vertical-align:middle"><span style=3D"vertical-a=
+lign:middle;margin:0 40px 0 4px">Work From Home</span>=0A                  =
+          </div>=0A                                                        =
+    <div style=3D"display:inline-block;font-size:15px;margin:0 0 12px">=0A =
+                                   <img src=3D"https://internshala.com//sta=
+tic/images/student_digest/calendar.png" style=3D"width:16px;vertical-align:=
+middle"><span style=3D"vertical-align:middle;margin:0 40px 0 4px">6 months<=
+/span>=0A                                </div>=0A                         =
+                                       <div style=3D"display:inline-block;f=
+ont-size:15px;margin:0 0 12px">=0A                                    <img =
+src=3D"https://internshala.com//static/images/student_digest/money.png" sty=
+le=3D"width:16px;vertical-align:middle"><span style=3D"vertical-align:middl=
+e;margin:0 40px 0 4px">=E2=82=B95000-10000 /month</span>=0A                =
+                </div>=0A                                                  =
+      <div style=3D"display:inline-block;font-size:15px;margin:0 0 12px">=
+=0A                                <img src=3D"https://internshala.com//sta=
+tic/images/student_digest/hourglass.png" style=3D"width:16px;vertical-align=
+:middle"><span style=3D"vertical-align:middle;margin:0 0 0 4px">Apply by 15=
+th May</span></span>=0A                            </div>=0A               =
+                                                                 </div>=0A =
+                       <div>=0A                            <div style=3D"di=
+splay:inline-block;margin:0 0 20px;background:#EEEEEE;padding:4px 8px;borde=
+r-radius:4px;font-size:13px;line-height:18px;color:#484848">=0A            =
+                    Internship with job offer                            </=
+div>=0A                            <div style=3D"color:#008BDC;line-height:=
+18px;float:right;margin:4px 0 24px">Apply now</div>=0A                     =
+   </div>=0A                    </div>=0A                        </a>=0A   =
+                                                             <a style=3D"te=
+xt-decoration:none !important" href=3D"https://internshala.com/internship/d=
+etail/teaching-high-order-thinking-skills-work-from-home-job-internship-at-=
+wizklub-learning1651391643?utm_source=3Dstudent_digest_active&utm_medium=3D=
+student_digest_active&utm_campaign=3D2022-05-02&referral=3Dstudent_digest_a=
+ctive">=0A                                        <div style=3D"border-bott=
+om:1px solid #DDDDDD;margin-top:20px">=0A                        <table sty=
+le=3D"width:100%" cellspacing=3D"0" cellpadding=3D"0">=0A                  =
+          <tr>=0A                                <td style=3D"vertical-alig=
+n:top;font-family:'Arial'">=0A                                    <h5 style=
+=3D"font-size:18px;line-height:24px;color:#008BDC;margin:0 0 2px;display:in=
+line-block">=0A                                      Teaching (High Order T=
+hinking Skills) =0A                                    </h5>=0A            =
+                    </td>=0A                                <td rowspan=3D"=
+2" style=3D"max-width:96px;vertical-align:top">=0A                         =
+                                                  <img src=3D"https://inter=
+nshala.com//uploads/logo/5e4e1f21656d91582178081.png" style=3D"max-width:96=
+px;max-height:48px;float:right;margin:0 0 0 16px"> =0A                     =
+                                               </td>=0A                    =
+        </tr>=0A                            <tr>=0A                        =
+        <td><p style=3D"color:#666666;margin:0 0 12px;line-height:22px;font=
+-family:'Arial'">WizKlub Learning</p></td>=0A                            </=
+tr>=0A                        </table>=0A                                  =
+              <div style=3D"font-size:0;color:#484848;line-height:22px">=0A=
+                            <div style=3D"display:inline-block;font-size:15=
+px;margin:0 0 12px">=0A                                <img src=3D"https://=
+internshala.com//static/images/student_digest/location.png" style=3D"width:=
+16px;vertical-align:middle"><span style=3D"vertical-align:middle;margin:0 4=
+0px 0 4px">Work From Home</span>=0A                            </div>=0A   =
+                                                         <div style=3D"disp=
+lay:inline-block;font-size:15px;margin:0 0 12px">=0A                       =
+             <img src=3D"https://internshala.com//static/images/student_dig=
+est/calendar.png" style=3D"width:16px;vertical-align:middle"><span style=3D=
+"vertical-align:middle;margin:0 40px 0 4px">6 months</span>=0A             =
+                   </div>=0A                                               =
+                 <div style=3D"display:inline-block;font-size:15px;margin:0=
+ 0 12px">=0A                                    <img src=3D"https://interns=
+hala.com//static/images/student_digest/money.png" style=3D"width:16px;verti=
+cal-align:middle"><span style=3D"vertical-align:middle;margin:0 40px 0 4px"=
+>=E2=82=B910000-12000 /month</span>=0A                                </div=
+>=0A                                                        <div style=3D"d=
+isplay:inline-block;font-size:15px;margin:0 0 12px">=0A                    =
+            <img src=3D"https://internshala.com//static/images/student_dige=
+st/hourglass.png" style=3D"width:16px;vertical-align:middle"><span style=3D=
+"vertical-align:middle;margin:0 40px 0 4px">Apply by 15th May</span></span>=
+=0A                            </div>=0A                                   =
+                         <div style=3D"display:inline-block;font-size:15px;=
+margin:0 0 12px">=0A                                    <img src=3D"https:/=
+/internshala.com//static/images/student_digest/clock.png" style=3D"width:16=
+px;vertical-align:middle"><span style=3D"vertical-align:middle;margin:0 0 0=
+ 4px">Part time allowed</span></span>=0A                                </d=
+iv>=0A                                                                     =
+               </div>=0A                        <div>=0A                   =
+         <div style=3D"display:inline-block;margin:0 0 20px;background:#EEE=
+EEE;padding:4px 8px;border-radius:4px;font-size:13px;line-height:18px;color=
+:#484848">=0A                                Internship with job offer     =
+                       </div>=0A                            <div style=3D"c=
+olor:#008BDC;line-height:18px;float:right;margin:4px 0 24px">Apply now</div=
+>=0A                        </div>=0A                    </div>=0A         =
+               </a>=0A                                                     =
+           <a style=3D"text-decoration:none !important" href=3D"https://int=
+ernshala.com/internship/detail/python-development-work-from-home-job-intern=
+ship-at-helping-hand1651397451?utm_source=3Dstudent_digest_active&utm_mediu=
+m=3Dstudent_digest_active&utm_campaign=3D2022-05-02&referral=3Dstudent_dige=
+st_active">=0A                                        <div style=3D"border-=
+bottom:1px solid #DDDDDD;margin-top:20px">=0A                        <table=
+ style=3D"width:100%" cellspacing=3D"0" cellpadding=3D"0">=0A              =
+              <tr>=0A                                <td style=3D"vertical-=
+align:top;font-family:'Arial'">=0A                                    <h5 s=
+tyle=3D"font-size:18px;line-height:24px;color:#008BDC;margin:0 0 2px;displa=
+y:inline-block">=0A                                      Python Development=
+ =0A                                    </h5>=0A                           =
+     </td>=0A                                <td rowspan=3D"2" style=3D"max=
+-width:96px;vertical-align:top">=0A                                        =
+                            </td>=0A                            </tr>=0A   =
+                         <tr>=0A                                <td><p styl=
+e=3D"color:#666666;margin:0 0 12px;line-height:22px;font-family:'Arial'">He=
+lping Hand</p></td>=0A                            </tr>=0A                 =
+       </table>=0A                                                <div styl=
+e=3D"font-size:0;color:#484848;line-height:22px">=0A                       =
+     <div style=3D"display:inline-block;font-size:15px;margin:0 0 12px">=0A=
+                                <img src=3D"https://internshala.com//static=
+/images/student_digest/location.png" style=3D"width:16px;vertical-align:mid=
+dle"><span style=3D"vertical-align:middle;margin:0 40px 0 4px">Work From Ho=
+me</span>=0A                            </div>=0A                          =
+                                  <div style=3D"display:inline-block;font-s=
+ize:15px;margin:0 0 12px">=0A                                    <img src=
+=3D"https://internshala.com//static/images/student_digest/calendar.png" sty=
+le=3D"width:16px;vertical-align:middle"><span style=3D"vertical-align:middl=
+e;margin:0 40px 0 4px">1 month</span>=0A                                </d=
+iv>=0A                                                                <div =
+style=3D"display:inline-block;font-size:15px;margin:0 0 12px">=0A          =
+                          <img src=3D"https://internshala.com//static/image=
+s/student_digest/money.png" style=3D"width:16px;vertical-align:middle"><spa=
+n style=3D"vertical-align:middle;margin:0 40px 0 4px">=E2=82=B91000 /month<=
+/span>=0A                                </div>=0A                         =
+                               <div style=3D"display:inline-block;font-size=
+:15px;margin:0 0 12px">=0A                                <img src=3D"https=
+://internshala.com//static/images/student_digest/hourglass.png" style=3D"wi=
+dth:16px;vertical-align:middle"><span style=3D"vertical-align:middle;margin=
+:0 40px 0 4px">Apply by 16th May</span></span>=0A                          =
+  </div>=0A                                                            <div=
+ style=3D"display:inline-block;font-size:15px;margin:0 0 12px">=0A         =
+                           <img src=3D"https://internshala.com//static/imag=
+es/student_digest/clock.png" style=3D"width:16px;vertical-align:middle"><sp=
+an style=3D"vertical-align:middle;margin:0 0 0 4px">Part time allowed</span=
+></span>=0A                                </div>=0A                       =
+                                                             </div>=0A     =
+                   <div>=0A                            <div style=3D"displa=
+y:inline-block;margin:0 0 20px;background:#EEEEEE;padding:4px 8px;border-ra=
+dius:4px;font-size:13px;line-height:18px;color:#484848">=0A                =
+                Internship                            </div>=0A            =
+                <div style=3D"color:#008BDC;line-height:18px;float:right;ma=
+rgin:4px 0 24px">Apply now</div>=0A                        </div>=0A       =
+             </div>=0A                        </a>=0A                      =
+                                          <a style=3D"text-decoration:none =
+!important" href=3D"https://internshala.com/internship/detail/machine-learn=
+ing-work-from-home-job-internship-at-helping-hand1651397381?utm_source=3Dst=
+udent_digest_active&utm_medium=3Dstudent_digest_active&utm_campaign=3D2022-=
+05-02&referral=3Dstudent_digest_active">=0A                                =
+        <div style=3D"border-bottom:1px solid #DDDDDD;margin-top:20px">=0A =
+                       <table style=3D"width:100%" cellspacing=3D"0" cellpa=
+dding=3D"0">=0A                            <tr>=0A                         =
+       <td style=3D"vertical-align:top;font-family:'Arial'">=0A            =
+                        <h5 style=3D"font-size:18px;line-height:24px;color:=
+#008BDC;margin:0 0 2px;display:inline-block">=0A                           =
+           Machine Learning =0A                                    </h5>=0A=
+                                </td>=0A                                <td=
+ rowspan=3D"2" style=3D"max-width:96px;vertical-align:top">=0A             =
+                                                       </td>=0A            =
+                </tr>=0A                            <tr>=0A                =
+                <td><p style=3D"color:#666666;margin:0 0 12px;line-height:2=
+2px;font-family:'Arial'">Helping Hand</p></td>=0A                          =
+  </tr>=0A                        </table>=0A                              =
+                  <div style=3D"font-size:0;color:#484848;line-height:22px"=
+>=0A                            <div style=3D"display:inline-block;font-siz=
+e:15px;margin:0 0 12px">=0A                                <img src=3D"http=
+s://internshala.com//static/images/student_digest/location.png" style=3D"wi=
+dth:16px;vertical-align:middle"><span style=3D"vertical-align:middle;margin=
+:0 40px 0 4px">Work From Home</span>=0A                            </div>=
+=0A                                                            <div style=
+=3D"display:inline-block;font-size:15px;margin:0 0 12px">=0A               =
+                     <img src=3D"https://internshala.com//static/images/stu=
+dent_digest/calendar.png" style=3D"width:16px;vertical-align:middle"><span =
+style=3D"vertical-align:middle;margin:0 40px 0 4px">1 month</span>=0A      =
+                          </div>=0A                                        =
+                        <div style=3D"display:inline-block;font-size:15px;m=
+argin:0 0 12px">=0A                                    <img src=3D"https://=
+internshala.com//static/images/student_digest/money.png" style=3D"width:16p=
+x;vertical-align:middle"><span style=3D"vertical-align:middle;margin:0 40px=
+ 0 4px">=E2=82=B91000 /month</span>=0A                                </div=
+>=0A                                                        <div style=3D"d=
+isplay:inline-block;font-size:15px;margin:0 0 12px">=0A                    =
+            <img src=3D"https://internshala.com//static/images/student_dige=
+st/hourglass.png" style=3D"width:16px;vertical-align:middle"><span style=3D=
+"vertical-align:middle;margin:0 40px 0 4px">Apply by 16th May</span></span>=
+=0A                            </div>=0A                                   =
+                         <div style=3D"display:inline-block;font-size:15px;=
+margin:0 0 12px">=0A                                    <img src=3D"https:/=
+/internshala.com//static/images/student_digest/clock.png" style=3D"width:16=
+px;vertical-align:middle"><span style=3D"vertical-align:middle;margin:0 0 0=
+ 4px">Part time allowed</span></span>=0A                                </d=
+iv>=0A                                                                     =
+               </div>=0A                        <div>=0A                   =
+         <div style=3D"display:inline-block;margin:0 0 20px;background:#EEE=
+EEE;padding:4px 8px;border-radius:4px;font-size:13px;line-height:18px;color=
+:#484848">=0A                                Internship                    =
+        </div>=0A                            <div style=3D"color:#008BDC;li=
+ne-height:18px;float:right;margin:4px 0 24px">Apply now</div>=0A           =
+             </div>=0A                    </div>=0A                        =
+</a>=0A                                                                <a s=
+tyle=3D"text-decoration:none !important" href=3D"https://internshala.com/in=
+ternship/detail/deep-learning-research-work-from-home-job-internship-at-puc=
+ho-digital-health-inc1651387830?utm_source=3Dstudent_digest_active&utm_medi=
+um=3Dstudent_digest_active&utm_campaign=3D2022-05-02&referral=3Dstudent_dig=
+est_active">=0A                                        <div style=3D"border=
+-bottom:1px solid #DDDDDD;margin-top:20px">=0A                        <tabl=
+e style=3D"width:100%" cellspacing=3D"0" cellpadding=3D"0">=0A             =
+               <tr>=0A                                <td style=3D"vertical=
+-align:top;font-family:'Arial'">=0A                                    <h5 =
+style=3D"font-size:18px;line-height:24px;color:#008BDC;margin:0 0 2px;displ=
+ay:inline-block">=0A                                      Deep Learning Res=
+earch =0A                                    </h5>=0A                      =
+          </td>=0A                                <td rowspan=3D"2" style=
+=3D"max-width:96px;vertical-align:top">=0A                                 =
+                                          <img src=3D"https://internshala.c=
+om//uploads/logo/6194ef89c34b61637150601.png" style=3D"max-width:96px;max-h=
+eight:48px;float:right;margin:0 0 0 16px"> =0A                             =
+                                       </td>=0A                            =
+</tr>=0A                            <tr>=0A                                =
+<td><p style=3D"color:#666666;margin:0 0 12px;line-height:22px;font-family:=
+'Arial'">Pucho Digital Health Inc.</p></td>=0A                            <=
+/tr>=0A                        </table>=0A                                 =
+               <div style=3D"font-size:0;color:#484848;line-height:22px">=
+=0A                            <div style=3D"display:inline-block;font-size=
+:15px;margin:0 0 12px">=0A                                <img src=3D"https=
+://internshala.com//static/images/student_digest/location.png" style=3D"wid=
+th:16px;vertical-align:middle"><span style=3D"vertical-align:middle;margin:=
+0 40px 0 4px">Work From Home</span>=0A                            </div>=0A=
+                                                            <div style=3D"d=
+isplay:inline-block;font-size:15px;margin:0 0 12px">=0A                    =
+                <img src=3D"https://internshala.com//static/images/student_=
+digest/calendar.png" style=3D"width:16px;vertical-align:middle"><span style=
+=3D"vertical-align:middle;margin:0 40px 0 4px">4 months</span>=0A          =
+                      </div>=0A                                            =
+                    <div style=3D"display:inline-block;font-size:15px;margi=
+n:0 0 12px">=0A                                    <img src=3D"https://inte=
+rnshala.com//static/images/student_digest/money.png" style=3D"width:16px;ve=
+rtical-align:middle"><span style=3D"vertical-align:middle;margin:0 40px 0 4=
+px">=E2=82=B910000-15000 /month</span>=0A                                </=
+div>=0A                                                        <div style=
+=3D"display:inline-block;font-size:15px;margin:0 0 12px">=0A               =
+                 <img src=3D"https://internshala.com//static/images/student=
+_digest/hourglass.png" style=3D"width:16px;vertical-align:middle"><span sty=
+le=3D"vertical-align:middle;margin:0 0 0 4px">Apply by 16th May</span></spa=
+n>=0A                            </div>=0A                                 =
+                                               </div>=0A                   =
+     <div>=0A                            <div style=3D"display:inline-block=
+;margin:0 0 20px;background:#EEEEEE;padding:4px 8px;border-radius:4px;font-=
+size:13px;line-height:18px;color:#484848">=0A                              =
+  Internship                            </div>=0A                          =
+  <div style=3D"color:#008BDC;line-height:18px;float:right;margin:4px 0 24p=
+x">Apply now</div>=0A                        </div>=0A                    <=
+/div>=0A                        </a>=0A                                    =
+                            <a style=3D"text-decoration:none !important" hr=
+ef=3D"https://internshala.com/internship/detail/software-development-work-f=
+rom-home-job-internship-at-liveasy1651385477?utm_source=3Dstudent_digest_ac=
+tive&utm_medium=3Dstudent_digest_active&utm_campaign=3D2022-05-02&referral=
+=3Dstudent_digest_active">=0A                                        <div s=
+tyle=3D"border-bottom:1px solid #DDDDDD;margin-top:20px">=0A               =
+         <table style=3D"width:100%" cellspacing=3D"0" cellpadding=3D"0">=
+=0A                            <tr>=0A                                <td s=
+tyle=3D"vertical-align:top;font-family:'Arial'">=0A                        =
+            <h5 style=3D"font-size:18px;line-height:24px;color:#008BDC;marg=
+in:0 0 2px;display:inline-block">=0A                                      S=
+oftware Development =0A                                    </h5>=0A        =
+                        </td>=0A                                <td rowspan=
+=3D"2" style=3D"max-width:96px;vertical-align:top">=0A                     =
+                                                      <img src=3D"https://i=
+nternshala.com//uploads/logo/6179968fa6ee21635358351.jpg" style=3D"max-widt=
+h:96px;max-height:48px;float:right;margin:0 0 0 16px"> =0A                 =
+                                                   </td>=0A                =
+            </tr>=0A                            <tr>=0A                    =
+            <td><p style=3D"color:#666666;margin:0 0 12px;line-height:22px;=
+font-family:'Arial'">Liveasy</p></td>=0A                            </tr>=
+=0A                        </table>=0A                                     =
+           <div style=3D"font-size:0;color:#484848;line-height:22px">=0A   =
+                         <div style=3D"display:inline-block;font-size:15px;=
+margin:0 0 12px">=0A                                <img src=3D"https://int=
+ernshala.com//static/images/student_digest/location.png" style=3D"width:16p=
+x;vertical-align:middle"><span style=3D"vertical-align:middle;margin:0 40px=
+ 0 4px">Work From Home</span>=0A                            </div>=0A      =
+                                                      <div style=3D"display=
+:inline-block;font-size:15px;margin:0 0 12px">=0A                          =
+          <img src=3D"https://internshala.com//static/images/student_digest=
+/calendar.png" style=3D"width:16px;vertical-align:middle"><span style=3D"ve=
+rtical-align:middle;margin:0 40px 0 4px">4 months</span>=0A                =
+                </div>=0A                                                  =
+              <div style=3D"display:inline-block;font-size:15px;margin:0 0 =
+12px">=0A                                    <img src=3D"https://internshal=
+a.com//static/images/student_digest/money.png" style=3D"width:16px;vertical=
+-align:middle"><span style=3D"vertical-align:middle;margin:0 40px 0 4px">=
+=E2=82=B91000 /month</span>=0A                                </div>=0A    =
+                                                    <div style=3D"display:i=
+nline-block;font-size:15px;margin:0 0 12px">=0A                            =
+    <img src=3D"https://internshala.com//static/images/student_digest/hourg=
+lass.png" style=3D"width:16px;vertical-align:middle"><span style=3D"vertica=
+l-align:middle;margin:0 40px 0 4px">Apply by 15th May</span></span>=0A     =
+                       </div>=0A                                           =
+                 <div style=3D"display:inline-block;font-size:15px;margin:0=
+ 0 12px">=0A                                    <img src=3D"https://interns=
+hala.com//static/images/student_digest/clock.png" style=3D"width:16px;verti=
+cal-align:middle"><span style=3D"vertical-align:middle;margin:0 0 0 4px">Pa=
+rt time allowed</span></span>=0A                                </div>=0A  =
+                                                                           =
+       </div>=0A                        <div>=0A                           =
+ <div style=3D"display:inline-block;margin:0 0 20px;background:#EEEEEE;padd=
+ing:4px 8px;border-radius:4px;font-size:13px;line-height:18px;color:#484848=
+">=0A                                Internship                            =
+</div>=0A                            <div style=3D"color:#008BDC;line-heigh=
+t:18px;float:right;margin:4px 0 24px">Apply now</div>=0A                   =
+     </div>=0A                    </div>=0A                        </a>=0A =
+                                                               <a style=3D"=
+text-decoration:none !important" href=3D"https://internshala.com/internship=
+/detail/springboot-development-work-from-home-job-internship-at-go2words165=
+1397750?utm_source=3Dstudent_digest_active&utm_medium=3Dstudent_digest_acti=
+ve&utm_campaign=3D2022-05-02&referral=3Dstudent_digest_active">=0A         =
+                               <div style=3D"border-bottom:1px solid #DDDDD=
+D;margin-top:20px">=0A                        <table style=3D"width:100%" c=
+ellspacing=3D"0" cellpadding=3D"0">=0A                            <tr>=0A  =
+                              <td style=3D"vertical-align:top;font-family:'=
+Arial'">=0A                                    <h5 style=3D"font-size:18px;=
+line-height:24px;color:#008BDC;margin:0 0 2px;display:inline-block">=0A    =
+                                  Springboot Development =0A               =
+                     </h5>=0A                                </td>=0A      =
+                          <td rowspan=3D"2" style=3D"max-width:96px;vertica=
+l-align:top">=0A                                                           =
+                <img src=3D"https://internshala.com//uploads/logo/612b5831d=
+d0a61630230577.jpg" style=3D"max-width:96px;max-height:48px;float:right;mar=
+gin:0 0 0 16px"> =0A                                                       =
+             </td>=0A                            </tr>=0A                  =
+          <tr>=0A                                <td><p style=3D"color:#666=
+666;margin:0 0 12px;line-height:22px;font-family:'Arial'">Go2Words</p></td>=
+=0A                            </tr>=0A                        </table>=0A =
+                                               <div style=3D"font-size:0;co=
+lor:#484848;line-height:22px">=0A                            <div style=3D"=
+display:inline-block;font-size:15px;margin:0 0 12px">=0A                   =
+             <img src=3D"https://internshala.com//static/images/student_dig=
+est/location.png" style=3D"width:16px;vertical-align:middle"><span style=3D=
+"vertical-align:middle;margin:0 40px 0 4px">Work From Home</span>=0A       =
+                     </div>=0A                                             =
+               <div style=3D"display:inline-block;font-size:15px;margin:0 0=
+ 12px">=0A                                    <img src=3D"https://internsha=
+la.com//static/images/student_digest/calendar.png" style=3D"width:16px;vert=
+ical-align:middle"><span style=3D"vertical-align:middle;margin:0 40px 0 4px=
+">1 month</span>=0A                                </div>=0A               =
+                                                 <div style=3D"display:inli=
+ne-block;font-size:15px;margin:0 0 12px">=0A                               =
+     <img src=3D"https://internshala.com//static/images/student_digest/mone=
+y.png" style=3D"width:16px;vertical-align:middle"><span style=3D"vertical-a=
+lign:middle;margin:0 40px 0 4px">=E2=82=B91000 /month</span>=0A            =
+                    </div>=0A                                              =
+          <div style=3D"display:inline-block;font-size:15px;margin:0 0 12px=
+">=0A                                <img src=3D"https://internshala.com//s=
+tatic/images/student_digest/hourglass.png" style=3D"width:16px;vertical-ali=
+gn:middle"><span style=3D"vertical-align:middle;margin:0 40px 0 4px">Apply =
+by 16th May</span></span>=0A                            </div>=0A          =
+                                                  <div style=3D"display:inl=
+ine-block;font-size:15px;margin:0 0 12px">=0A                              =
+      <img src=3D"https://internshala.com//static/images/student_digest/clo=
+ck.png" style=3D"width:16px;vertical-align:middle"><span style=3D"vertical-=
+align:middle;margin:0 0 0 4px">Part time allowed</span></span>=0A          =
+                      </div>=0A                                            =
+                                        </div>=0A                        <d=
+iv>=0A                            <div style=3D"display:inline-block;margin=
+:0 0 20px;background:#EEEEEE;padding:4px 8px;border-radius:4px;font-size:13=
+px;line-height:18px;color:#484848">=0A                                Inter=
+nship                            </div>=0A                            <div =
+style=3D"color:#008BDC;line-height:18px;float:right;margin:4px 0 24px">Appl=
+y now</div>=0A                        </div>=0A                    </div>=
+=0A                        </a>=0A                                         =
+                       <a style=3D"text-decoration:none !important" href=3D=
+"https://internshala.com/internship/detail/c-c-development-work-from-home-j=
+ob-internship-at-helping-hand1651397446?utm_source=3Dstudent_digest_active&=
+utm_medium=3Dstudent_digest_active&utm_campaign=3D2022-05-02&referral=3Dstu=
+dent_digest_active">=0A                                        <div style=
+=3D"border-bottom:1px solid #DDDDDD;margin-top:20px">=0A                   =
+     <table style=3D"width:100%" cellspacing=3D"0" cellpadding=3D"0">=0A   =
+                         <tr>=0A                                <td style=
+=3D"vertical-align:top;font-family:'Arial'">=0A                            =
+        <h5 style=3D"font-size:18px;line-height:24px;color:#008BDC;margin:0=
+ 0 2px;display:inline-block">=0A                                      C & C=
+++ Development =0A                                    </h5>=0A             =
+                   </td>=0A                                <td rowspan=3D"2=
+" style=3D"max-width:96px;vertical-align:top">=0A                          =
+                                          </td>=0A                         =
+   </tr>=0A                            <tr>=0A                             =
+   <td><p style=3D"color:#666666;margin:0 0 12px;line-height:22px;font-fami=
+ly:'Arial'">Helping Hand</p></td>=0A                            </tr>=0A   =
+                     </table>=0A                                           =
+     <div style=3D"font-size:0;color:#484848;line-height:22px">=0A         =
+                   <div style=3D"display:inline-block;font-size:15px;margin=
+:0 0 12px">=0A                                <img src=3D"https://internsha=
+la.com//static/images/student_digest/location.png" style=3D"width:16px;vert=
+ical-align:middle"><span style=3D"vertical-align:middle;margin:0 40px 0 4px=
+">Work From Home</span>=0A                            </div>=0A            =
+                                                <div style=3D"display:inlin=
+e-block;font-size:15px;margin:0 0 12px">=0A                                =
+    <img src=3D"https://internshala.com//static/images/student_digest/calen=
+dar.png" style=3D"width:16px;vertical-align:middle"><span style=3D"vertical=
+-align:middle;margin:0 40px 0 4px">1 month</span>=0A                       =
+         </div>=0A                                                         =
+       <div style=3D"display:inline-block;font-size:15px;margin:0 0 12px">=
+=0A                                    <img src=3D"https://internshala.com/=
+/static/images/student_digest/money.png" style=3D"width:16px;vertical-align=
+:middle"><span style=3D"vertical-align:middle;margin:0 40px 0 4px">=
+=E2=82=B91000 /month</span>=0A                                </div>=0A    =
+                                                    <div style=3D"display:i=
+nline-block;font-size:15px;margin:0 0 12px">=0A                            =
+    <img src=3D"https://internshala.com//static/images/student_digest/hourg=
+lass.png" style=3D"width:16px;vertical-align:middle"><span style=3D"vertica=
+l-align:middle;margin:0 40px 0 4px">Apply by 16th May</span></span>=0A     =
+                       </div>=0A                                           =
+                 <div style=3D"display:inline-block;font-size:15px;margin:0=
+ 0 12px">=0A                                    <img src=3D"https://interns=
+hala.com//static/images/student_digest/clock.png" style=3D"width:16px;verti=
+cal-align:middle"><span style=3D"vertical-align:middle;margin:0 0 0 4px">Pa=
+rt time allowed</span></span>=0A                                </div>=0A  =
+                                                                           =
+       </div>=0A                        <div>=0A                           =
+ <div style=3D"display:inline-block;margin:0 0 20px;background:#EEEEEE;padd=
+ing:4px 8px;border-radius:4px;font-size:13px;line-height:18px;color:#484848=
+">=0A                                Internship                            =
+</div>=0A                            <div style=3D"color:#008BDC;line-heigh=
+t:18px;float:right;margin:4px 0 24px">Apply now</div>=0A                   =
+     </div>=0A                    </div>=0A                        </a>=0A =
+                                                               <a style=3D"=
+text-decoration:none !important" href=3D"https://internshala.com/internship=
+/detail/data-structure-development-work-from-home-job-internship-at-helping=
+-hand1651397424?utm_source=3Dstudent_digest_active&utm_medium=3Dstudent_dig=
+est_active&utm_campaign=3D2022-05-02&referral=3Dstudent_digest_active">=0A =
+                                       <div style=3D"border-bottom:1px soli=
+d #DDDDDD;margin-top:20px">=0A                        <table style=3D"width=
+:100%" cellspacing=3D"0" cellpadding=3D"0">=0A                            <=
+tr>=0A                                <td style=3D"vertical-align:top;font-=
+family:'Arial'">=0A                                    <h5 style=3D"font-si=
+ze:18px;line-height:24px;color:#008BDC;margin:0 0 2px;display:inline-block"=
+>=0A                                      Data Structure Development =0A   =
+                                 </h5>=0A                                </=
+td>=0A                                <td rowspan=3D"2" style=3D"max-width:=
+96px;vertical-align:top">=0A                                               =
+                     </td>=0A                            </tr>=0A          =
+                  <tr>=0A                                <td><p style=3D"co=
+lor:#666666;margin:0 0 12px;line-height:22px;font-family:'Arial'">Helping H=
+and</p></td>=0A                            </tr>=0A                        =
+</table>=0A                                                <div style=3D"fo=
+nt-size:0;color:#484848;line-height:22px">=0A                            <d=
+iv style=3D"display:inline-block;font-size:15px;margin:0 0 12px">=0A       =
+                         <img src=3D"https://internshala.com//static/images=
+/student_digest/location.png" style=3D"width:16px;vertical-align:middle"><s=
+pan style=3D"vertical-align:middle;margin:0 40px 0 4px">Work From Home</spa=
+n>=0A                            </div>=0A                                 =
+                           <div style=3D"display:inline-block;font-size:15p=
+x;margin:0 0 12px">=0A                                    <img src=3D"https=
+://internshala.com//static/images/student_digest/calendar.png" style=3D"wid=
+th:16px;vertical-align:middle"><span style=3D"vertical-align:middle;margin:=
+0 40px 0 4px">1 month</span>=0A                                </div>=0A   =
+                                                             <div style=3D"=
+display:inline-block;font-size:15px;margin:0 0 12px">=0A                   =
+                 <img src=3D"https://internshala.com//static/images/student=
+_digest/money.png" style=3D"width:16px;vertical-align:middle"><span style=
+=3D"vertical-align:middle;margin:0 40px 0 4px">=E2=82=B91000 /month</span>=
+=0A                                </div>=0A                               =
+                         <div style=3D"display:inline-block;font-size:15px;=
+margin:0 0 12px">=0A                                <img src=3D"https://int=
+ernshala.com//static/images/student_digest/hourglass.png" style=3D"width:16=
+px;vertical-align:middle"><span style=3D"vertical-align:middle;margin:0 40p=
+x 0 4px">Apply by 16th May</span></span>=0A                            </di=
+v>=0A                                                            <div style=
+=3D"display:inline-block;font-size:15px;margin:0 0 12px">=0A               =
+                     <img src=3D"https://internshala.com//static/images/stu=
+dent_digest/clock.png" style=3D"width:16px;vertical-align:middle"><span sty=
+le=3D"vertical-align:middle;margin:0 0 0 4px">Part time allowed</span></spa=
+n>=0A                                </div>=0A                             =
+                                                       </div>=0A           =
+             <div>=0A                            <div style=3D"display:inli=
+ne-block;margin:0 0 20px;background:#EEEEEE;padding:4px 8px;border-radius:4=
+px;font-size:13px;line-height:18px;color:#484848">=0A                      =
+          Internship                            </div>=0A                  =
+          <div style=3D"color:#008BDC;line-height:18px;float:right;margin:4=
+px 0 24px">Apply now</div>=0A                        </div>=0A             =
+       </div>=0A                        </a>=0A                            =
+                                    <a style=3D"text-decoration:none !impor=
+tant" href=3D"https://internshala.com/internship/detail/frontend-developmen=
+t-work-from-home-job-internship-at-incentify1651377530?utm_source=3Dstudent=
+_digest_active&utm_medium=3Dstudent_digest_active&utm_campaign=3D2022-05-02=
+&referral=3Dstudent_digest_active">=0A                                     =
+   <div style=3D"border-bottom:1px solid #DDDDDD;margin-top:20px">=0A      =
+                  <table style=3D"width:100%" cellspacing=3D"0" cellpadding=
+=3D"0">=0A                            <tr>=0A                              =
+  <td style=3D"vertical-align:top;font-family:'Arial'">=0A                 =
+                   <h5 style=3D"font-size:18px;line-height:24px;color:#008B=
+DC;margin:0 0 2px;display:inline-block">=0A                                =
+      Frontend Development =0A                                    </h5>=0A =
+                               </td>=0A                                <td =
+rowspan=3D"2" style=3D"max-width:96px;vertical-align:top">=0A              =
+                                                             <img src=3D"ht=
+tps://internshala.com//uploads/logo/6067deb6bc6e71617419958.png" style=3D"m=
+ax-width:96px;max-height:48px;float:right;margin:0 0 0 16px"> =0A          =
+                                                          </td>=0A         =
+                   </tr>=0A                            <tr>=0A             =
+                   <td><p style=3D"color:#666666;margin:0 0 12px;line-heigh=
+t:22px;font-family:'Arial'">Incentify</p></td>=0A                          =
+  </tr>=0A                        </table>=0A                              =
+                  <div style=3D"font-size:0;color:#484848;line-height:22px"=
+>=0A                            <div style=3D"display:inline-block;font-siz=
+e:15px;margin:0 0 12px">=0A                                <img src=3D"http=
+s://internshala.com//static/images/student_digest/location.png" style=3D"wi=
+dth:16px;vertical-align:middle"><span style=3D"vertical-align:middle;margin=
+:0 40px 0 4px">Work From Home</span>=0A                            </div>=
+=0A                                                            <div style=
+=3D"display:inline-block;font-size:15px;margin:0 0 12px">=0A               =
+                     <img src=3D"https://internshala.com//static/images/stu=
+dent_digest/calendar.png" style=3D"width:16px;vertical-align:middle"><span =
+style=3D"vertical-align:middle;margin:0 40px 0 4px">2 months</span>=0A     =
+                           </div>=0A                                       =
+                         <div style=3D"display:inline-block;font-size:15px;=
+margin:0 0 12px">=0A                                    <img src=3D"https:/=
+/internshala.com//static/images/student_digest/money.png" style=3D"width:16=
+px;vertical-align:middle"><span style=3D"vertical-align:middle;margin:0 40p=
+x 0 4px">=E2=82=B95000-10000 /month</span>=0A                              =
+  </div>=0A                                                        <div sty=
+le=3D"display:inline-block;font-size:15px;margin:0 0 12px">=0A             =
+                   <img src=3D"https://internshala.com//static/images/stude=
+nt_digest/hourglass.png" style=3D"width:16px;vertical-align:middle"><span s=
+tyle=3D"vertical-align:middle;margin:0 0 0 4px">Apply by 15th May</span></s=
+pan>=0A                            </div>=0A                               =
+                                                 </div>=0A                 =
+       <div>=0A                            <div style=3D"display:inline-blo=
+ck;margin:0 0 20px;background:#EEEEEE;padding:4px 8px;border-radius:4px;fon=
+t-size:13px;line-height:18px;color:#484848">=0A                            =
+    Internship                            </div>=0A                        =
+    <div style=3D"color:#008BDC;line-height:18px;float:right;margin:4px 0 2=
+4px">Apply now</div>=0A                        </div>=0A                   =
+ </div>=0A                        </a>=0A                                  =
+                              <a style=3D"text-decoration:none !important" =
+href=3D"https://internshala.com/internship/detail/game-development-work-fro=
+m-home-job-internship-at-cits-worldwide1651131327?utm_source=3Dstudent_dige=
+st_active&utm_medium=3Dstudent_digest_active&utm_campaign=3D2022-05-02&refe=
+rral=3Dstudent_digest_active">=0A                                        <d=
+iv style=3D"border-bottom:1px solid #DDDDDD;margin-top:20px">=0A           =
+             <table style=3D"width:100%" cellspacing=3D"0" cellpadding=3D"0=
+">=0A                            <tr>=0A                                <td=
+ style=3D"vertical-align:top;font-family:'Arial'">=0A                      =
+              <h5 style=3D"font-size:18px;line-height:24px;color:#008BDC;ma=
+rgin:0 0 2px;display:inline-block">=0A                                     =
+ Game Development =0A                                    </h5>=0A          =
+                      </td>=0A                                <td rowspan=
+=3D"2" style=3D"max-width:96px;vertical-align:top">=0A                     =
+                                                      <img src=3D"https://i=
+nternshala.com//uploads/logo/5f78638ece1651601725326.png" style=3D"max-widt=
+h:96px;max-height:48px;float:right;margin:0 0 0 16px"> =0A                 =
+                                                   </td>=0A                =
+            </tr>=0A                            <tr>=0A                    =
+            <td><p style=3D"color:#666666;margin:0 0 12px;line-height:22px;=
+font-family:'Arial'">CITS Worldwide</p></td>=0A                            =
+</tr>=0A                        </table>=0A                                =
+                <div style=3D"font-size:0;color:#484848;line-height:22px">=
+=0A                            <div style=3D"display:inline-block;font-size=
+:15px;margin:0 0 12px">=0A                                <img src=3D"https=
+://internshala.com//static/images/student_digest/location.png" style=3D"wid=
+th:16px;vertical-align:middle"><span style=3D"vertical-align:middle;margin:=
+0 40px 0 4px">Work From Home</span>=0A                            </div>=0A=
+                                                            <div style=3D"d=
+isplay:inline-block;font-size:15px;margin:0 0 12px">=0A                    =
+                <img src=3D"https://internshala.com//static/images/student_=
+digest/calendar.png" style=3D"width:16px;vertical-align:middle"><span style=
+=3D"vertical-align:middle;margin:0 40px 0 4px">6 months</span>=0A          =
+                      </div>=0A                                            =
+                    <div style=3D"display:inline-block;font-size:15px;margi=
+n:0 0 12px">=0A                                    <img src=3D"https://inte=
+rnshala.com//static/images/student_digest/money.png" style=3D"width:16px;ve=
+rtical-align:middle"><span style=3D"vertical-align:middle;margin:0 40px 0 4=
+px">=E2=82=B96000 /month</span>=0A                                </div>=0A=
+                                                        <div style=3D"displ=
+ay:inline-block;font-size:15px;margin:0 0 12px">=0A                        =
+        <img src=3D"https://internshala.com//static/images/student_digest/h=
+ourglass.png" style=3D"width:16px;vertical-align:middle"><span style=3D"ver=
+tical-align:middle;margin:0 0 0 4px">Apply by 15th May</span></span>=0A    =
+                        </div>=0A                                          =
+                                      </div>=0A                        <div=
+>=0A                            <div style=3D"display:inline-block;margin:0=
+ 0 20px;background:#EEEEEE;padding:4px 8px;border-radius:4px;font-size:13px=
+;line-height:18px;color:#484848">=0A                                Interns=
+hip with job offer                            </div>=0A                    =
+        <div style=3D"color:#008BDC;line-height:18px;float:right;margin:4px=
+ 0 24px">Apply now</div>=0A                        </div>=0A               =
+     </div>=0A                        </a>=0A                              =
+                                  <a style=3D"text-decoration:none !importa=
+nt" href=3D"https://internshala.com/internship/detail/android-app-developme=
+nt-work-from-home-job-internship-at-geartocare1651400700?utm_source=3Dstude=
+nt_digest_active&utm_medium=3Dstudent_digest_active&utm_campaign=3D2022-05-=
+02&referral=3Dstudent_digest_active">=0A                                   =
+     <div style=3D"border-bottom:1px solid #DDDDDD;margin-top:20px">=0A    =
+                    <table style=3D"width:100%" cellspacing=3D"0" cellpaddi=
+ng=3D"0">=0A                            <tr>=0A                            =
+    <td style=3D"vertical-align:top;font-family:'Arial'">=0A               =
+                     <h5 style=3D"font-size:18px;line-height:24px;color:#00=
+8BDC;margin:0 0 2px;display:inline-block">=0A                              =
+        Android App Development =0A                                    </h5=
+>=0A                                </td>=0A                               =
+ <td rowspan=3D"2" style=3D"max-width:96px;vertical-align:top">=0A         =
+                                                                  <img src=
+=3D"https://internshala.com//uploads/logo/6203ad4f2ee801644408143.jpeg" sty=
+le=3D"max-width:96px;max-height:48px;float:right;margin:0 0 0 16px"> =0A   =
+                                                                 </td>=0A  =
+                          </tr>=0A                            <tr>=0A      =
+                          <td><p style=3D"color:#666666;margin:0 0 12px;lin=
+e-height:22px;font-family:'Arial'">GearToCare</p></td>=0A                  =
+          </tr>=0A                        </table>=0A                      =
+                          <div style=3D"font-size:0;color:#484848;line-heig=
+ht:22px">=0A                            <div style=3D"display:inline-block;=
+font-size:15px;margin:0 0 12px">=0A                                <img src=
+=3D"https://internshala.com//static/images/student_digest/location.png" sty=
+le=3D"width:16px;vertical-align:middle"><span style=3D"vertical-align:middl=
+e;margin:0 40px 0 4px">Work From Home</span>=0A                            =
+</div>=0A                                                            <div s=
+tyle=3D"display:inline-block;font-size:15px;margin:0 0 12px">=0A           =
+                         <img src=3D"https://internshala.com//static/images=
+/student_digest/calendar.png" style=3D"width:16px;vertical-align:middle"><s=
+pan style=3D"vertical-align:middle;margin:0 40px 0 4px">3 months</span>=0A =
+                               </div>=0A                                   =
+                             <div style=3D"display:inline-block;font-size:1=
+5px;margin:0 0 12px">=0A                                    <img src=3D"htt=
+ps://internshala.com//static/images/student_digest/money.png" style=3D"widt=
+h:16px;vertical-align:middle"><span style=3D"vertical-align:middle;margin:0=
+ 40px 0 4px">=E2=82=B92000 /month</span>=0A                                =
+</div>=0A                                                        <div style=
+=3D"display:inline-block;font-size:15px;margin:0 0 12px">=0A               =
+                 <img src=3D"https://internshala.com//static/images/student=
+_digest/hourglass.png" style=3D"width:16px;vertical-align:middle"><span sty=
+le=3D"vertical-align:middle;margin:0 40px 0 4px">Apply by 16th May</span></=
+span>=0A                            </div>=0A                              =
+                              <div style=3D"display:inline-block;font-size:=
+15px;margin:0 0 12px">=0A                                    <img src=3D"ht=
+tps://internshala.com//static/images/student_digest/clock.png" style=3D"wid=
+th:16px;vertical-align:middle"><span style=3D"vertical-align:middle;margin:=
+0 0 0 4px">Part time allowed</span></span>=0A                              =
+  </div>=0A                                                                =
+                    </div>=0A                        <div>=0A              =
+              <div style=3D"display:inline-block;margin:0 0 20px;background=
+:#EEEEEE;padding:4px 8px;border-radius:4px;font-size:13px;line-height:18px;=
+color:#484848">=0A                                Internship               =
+             </div>=0A                            <div style=3D"color:#008B=
+DC;line-height:18px;float:right;margin:4px 0 24px">Apply now</div>=0A      =
+                  </div>=0A                    </div>=0A                   =
+     </a>=0A                                                               =
+ <a style=3D"text-decoration:none !important" href=3D"https://internshala.c=
+om/internship/detail/android-app-development-work-from-home-job-internship-=
+at-helping-hand1651397414?utm_source=3Dstudent_digest_active&utm_medium=3Ds=
+tudent_digest_active&utm_campaign=3D2022-05-02&referral=3Dstudent_digest_ac=
+tive">=0A                                        <div style=3D"border-botto=
+m:1px solid #DDDDDD;margin-top:20px">=0A                        <table styl=
+e=3D"width:100%" cellspacing=3D"0" cellpadding=3D"0">=0A                   =
+         <tr>=0A                                <td style=3D"vertical-align=
+:top;font-family:'Arial'">=0A                                    <h5 style=
+=3D"font-size:18px;line-height:24px;color:#008BDC;margin:0 0 2px;display:in=
+line-block">=0A                                      Android App Developmen=
+t =0A                                    </h5>=0A                          =
+      </td>=0A                                <td rowspan=3D"2" style=3D"ma=
+x-width:96px;vertical-align:top">=0A                                       =
+                             </td>=0A                            </tr>=0A  =
+                          <tr>=0A                                <td><p sty=
+le=3D"color:#666666;margin:0 0 12px;line-height:22px;font-family:'Arial'">H=
+elping Hand</p></td>=0A                            </tr>=0A                =
+        </table>=0A                                                <div sty=
+le=3D"font-size:0;color:#484848;line-height:22px">=0A                      =
+      <div style=3D"display:inline-block;font-size:15px;margin:0 0 12px">=
+=0A                                <img src=3D"https://internshala.com//sta=
+tic/images/student_digest/location.png" style=3D"width:16px;vertical-align:=
+middle"><span style=3D"vertical-align:middle;margin:0 40px 0 4px">Work From=
+ Home</span>=0A                            </div>=0A                       =
+                                     <div style=3D"display:inline-block;fon=
+t-size:15px;margin:0 0 12px">=0A                                    <img sr=
+c=3D"https://internshala.com//static/images/student_digest/calendar.png" st=
+yle=3D"width:16px;vertical-align:middle"><span style=3D"vertical-align:midd=
+le;margin:0 40px 0 4px">1 month</span>=0A                                </=
+div>=0A                                                                <div=
+ style=3D"display:inline-block;font-size:15px;margin:0 0 12px">=0A         =
+                           <img src=3D"https://internshala.com//static/imag=
+es/student_digest/money.png" style=3D"width:16px;vertical-align:middle"><sp=
+an style=3D"vertical-align:middle;margin:0 40px 0 4px">=E2=82=B91000 /month=
+</span>=0A                                </div>=0A                        =
+                                <div style=3D"display:inline-block;font-siz=
+e:15px;margin:0 0 12px">=0A                                <img src=3D"http=
+s://internshala.com//static/images/student_digest/hourglass.png" style=3D"w=
+idth:16px;vertical-align:middle"><span style=3D"vertical-align:middle;margi=
+n:0 40px 0 4px">Apply by 16th May</span></span>=0A                         =
+   </div>=0A                                                            <di=
+v style=3D"display:inline-block;font-size:15px;margin:0 0 12px">=0A        =
+                            <img src=3D"https://internshala.com//static/ima=
+ges/student_digest/clock.png" style=3D"width:16px;vertical-align:middle"><s=
+pan style=3D"vertical-align:middle;margin:0 0 0 4px">Part time allowed</spa=
+n></span>=0A                                </div>=0A                      =
+                                                              </div>=0A    =
+                    <div>=0A                            <div style=3D"displ=
+ay:inline-block;margin:0 0 20px;background:#EEEEEE;padding:4px 8px;border-r=
+adius:4px;font-size:13px;line-height:18px;color:#484848">=0A               =
+                 Internship                            </div>=0A           =
+                 <div style=3D"color:#008BDC;line-height:18px;float:right;m=
+argin:4px 0 24px">Apply now</div>=0A                        </div>=0A      =
+              </div>=0A                        </a>=0A                     =
+                                           <a style=3D"text-decoration:none=
+ !important" href=3D"https://internshala.com/internship/detail/android-app-=
+development-work-from-home-job-internship-at-liveasy1651385534?utm_source=
+=3Dstudent_digest_active&utm_medium=3Dstudent_digest_active&utm_campaign=3D=
+2022-05-02&referral=3Dstudent_digest_active">=0A                           =
+             <div style=3D"border-bottom:1px solid #DDDDDD;margin-top:20px"=
+>=0A                        <table style=3D"width:100%" cellspacing=3D"0" c=
+ellpadding=3D"0">=0A                            <tr>=0A                    =
+            <td style=3D"vertical-align:top;font-family:'Arial'">=0A       =
+                             <h5 style=3D"font-size:18px;line-height:24px;c=
+olor:#008BDC;margin:0 0 2px;display:inline-block">=0A                      =
+                Android App Development =0A                                =
+    </h5>=0A                                </td>=0A                       =
+         <td rowspan=3D"2" style=3D"max-width:96px;vertical-align:top">=0A =
+                                                                          <=
+img src=3D"https://internshala.com//uploads/logo/6179968fa6ee21635358351.jp=
+g" style=3D"max-width:96px;max-height:48px;float:right;margin:0 0 0 16px"> =
+=0A                                                                    </td=
+>=0A                            </tr>=0A                            <tr>=0A=
+                                <td><p style=3D"color:#666666;margin:0 0 12=
+px;line-height:22px;font-family:'Arial'">Liveasy</p></td>=0A               =
+             </tr>=0A                        </table>=0A                   =
+                             <div style=3D"font-size:0;color:#484848;line-h=
+eight:22px">=0A                            <div style=3D"display:inline-blo=
+ck;font-size:15px;margin:0 0 12px">=0A                                <img =
+src=3D"https://internshala.com//static/images/student_digest/location.png" =
+style=3D"width:16px;vertical-align:middle"><span style=3D"vertical-align:mi=
+ddle;margin:0 40px 0 4px">Work From Home</span>=0A                         =
+   </div>=0A                                                            <di=
+v style=3D"display:inline-block;font-size:15px;margin:0 0 12px">=0A        =
+                            <img src=3D"https://internshala.com//static/ima=
+ges/student_digest/calendar.png" style=3D"width:16px;vertical-align:middle"=
+><span style=3D"vertical-align:middle;margin:0 40px 0 4px">3 months</span>=
+=0A                                </div>=0A                               =
+                                 <div style=3D"display:inline-block;font-si=
+ze:15px;margin:0 0 12px">=0A                                    <img src=3D=
+"https://internshala.com//static/images/student_digest/money.png" style=3D"=
+width:16px;vertical-align:middle"><span style=3D"vertical-align:middle;marg=
+in:0 40px 0 4px">=E2=82=B91000 /month</span>=0A                            =
+    </div>=0A                                                        <div s=
+tyle=3D"display:inline-block;font-size:15px;margin:0 0 12px">=0A           =
+                     <img src=3D"https://internshala.com//static/images/stu=
+dent_digest/hourglass.png" style=3D"width:16px;vertical-align:middle"><span=
+ style=3D"vertical-align:middle;margin:0 40px 0 4px">Apply by 15th May</spa=
+n></span>=0A                            </div>=0A                          =
+                                  <div style=3D"display:inline-block;font-s=
+ize:15px;margin:0 0 12px">=0A                                    <img src=
+=3D"https://internshala.com//static/images/student_digest/clock.png" style=
+=3D"width:16px;vertical-align:middle"><span style=3D"vertical-align:middle;=
+margin:0 0 0 4px">Part time allowed</span></span>=0A                       =
+         </div>=0A                                                         =
+                           </div>=0A                        <div>=0A       =
+                     <div style=3D"display:inline-block;margin:0 0 20px;bac=
+kground:#EEEEEE;padding:4px 8px;border-radius:4px;font-size:13px;line-heigh=
+t:18px;color:#484848">=0A                                Internship        =
+                    </div>=0A                            <div style=3D"colo=
+r:#008BDC;line-height:18px;float:right;margin:4px 0 24px">Apply now</div>=
+=0A                        </div>=0A                    </div>=0A          =
+              </a>=0A                                    <p style=3D"margin=
+:32px 0 24px;font-size:14px;line-height:22px;text-align:center;color:#48484=
+8">=0A                    These results are based on the preferences you ha=
+ve filled. You can change them <a href=3D"https://internshala.com//user_pre=
+ference/preferences/A8B10B1D-CC53-9628-C0E1-A528FAF1A984/10262191?utm_sourc=
+e=3Dstudent_digest" style=3D"color:#008BDC;text-decoration:none !important"=
+>here.</a>=0A                </p>=0A                <div style=3D"text-alig=
+n:center; margin-bottom: 24px;">=0A                                        =
+    <a href=3D"https://internshala.com//internships?utm_source=3Dstudent_di=
+gest" target=3D"_blank" style=3D'background:#00A5EC;color:#FFFFFF;padding:1=
+2px 16px;border-radius:4px;text-align:center;text-decoration:none;display:i=
+nline-block;font-weight:700;font-size:15px;line-height:18px;cursor:pointer;=
+'>View more internships</a>=0A                                        </div=
+>=0A                                                            </div>=0A  =
+                          <div style=3D"margin-top:40px;">=0A              =
+      <div style=3D"font-weight: bold;font-size: 20px;line-height: 30px;col=
+or: #333333;text-align: center;">Learn new skills to get job-ready</div>=0A=
+                    <div style=3D"font-weight: normal;font-size: 16px;line-=
+height: 26px;color: #666666;margin-top: 4px;margin-bottom:24px;text-align: =
+center;">Top 3 recommended trainings for you that will help you set your re=
+sume apart</div>=0A                    <div style=3D"border:1px solid #DDDD=
+DD;border-radius:8px;">=0A                        <table width=3D"100%" cel=
+lpadding=3D"0" cellspacing=3D"0" border=3D"0">=0A                          =
+  <tbody>=0A                                                               =
+ <tr>=0A                                    <td style=3D"padding: 20px 15px=
+; width:100%;">=0A                                        <a href=3D"https:=
+//trainings.internshala.com//machine-learning?utm_source=3Dis_web_student_d=
+igest">=0A                                            =0A                  =
+                          <div style=3D"float:left; width:212px;">=0A      =
+                                          <div style=3D"margin-bottom:12px;=
+margin-right: 12px;">=0A                                                   =
+ <img src=3D"https://trainings.internshala.com/cached_uploads/home/images/m=
+achine-learning.jpg" alt=3D"" style=3D"width: 200px;border-radius:4px;">=0A=
+                                                </div>=0A                  =
+                          </div>=0A                                        =
+    <div style=3D"float:left; width:296px;font-family:'Arial';">=0A        =
+                                        <div style=3D"">=0A                =
+                                    <div style=3D"font-weight:bold;font-siz=
+e: 16px;line-height: 24px;color: #333333;">Machine Learning</div>=0A       =
+                                             <p style=3D"font-weight: norma=
+l;font-size: 14px;line-height: 22px;color: #666666;margin: 6px 0 8px 0;">Le=
+arn Machine Learning from scratch and take the first step towards AI</p>=0A=
+                                                    <div href=3D"#" style=
+=3D"font-weight: 500;font-size: 15px;line-height: 18px;color: #008BDC;">Enr=
+oll now</div>=0A                                                </div>=0A  =
+                                          </div>=0A                        =
+                </a>=0A                                    </td>=0A        =
+                        </tr>=0A                                <tr><td sty=
+le=3D"padding:0 16px 0 16px;"><hr style=3D"border: 0;border-top: 1px solid =
+#DDDDDD;margin:0;"></td></tr>=0A                                           =
+                     <tr>=0A                                    <td style=
+=3D"padding: 20px 15px; width:100%;">=0A                                   =
+     <a href=3D"https://trainings.internshala.com//web-development?utm_sour=
+ce=3Dis_web_student_digest">=0A                                            =
+=0A                                            <div style=3D"float:left; wi=
+dth:212px;">=0A                                                <div style=
+=3D"margin-bottom:12px;margin-right: 12px;">=0A                            =
+                        <img src=3D"https://trainings.internshala.com/cache=
+d_uploads/home/images/web-development.jpg" alt=3D"" style=3D"width: 200px;b=
+order-radius:4px;">=0A                                                </div=
+>=0A                                            </div>=0A                  =
+                          <div style=3D"float:left; width:296px;font-family=
+:'Arial';">=0A                                                <div style=3D=
+"">=0A                                                    <div style=3D"fon=
+t-weight:bold;font-size: 16px;line-height: 24px;color: #333333;">Web Develo=
+pment</div>=0A                                                    <p style=
+=3D"font-weight: normal;font-size: 14px;line-height: 22px;color: #666666;ma=
+rgin: 6px 0 8px 0;">Learn how to create a website from scratch</p>=0A      =
+                                              <div href=3D"#" style=3D"font=
+-weight: 500;font-size: 15px;line-height: 18px;color: #008BDC;">Enroll now<=
+/div>=0A                                                </div>=0A          =
+                                  </div>=0A                                =
+        </a>=0A                                    </td>=0A                =
+                </tr>=0A                                <tr><td style=3D"pa=
+dding:0 16px 0 16px;"><hr style=3D"border: 0;border-top: 1px solid #DDDDDD;=
+margin:0;"></td></tr>=0A                                                   =
+             <tr>=0A                                    <td style=3D"paddin=
+g: 20px 15px; width:100%;">=0A                                        <a hr=
+ef=3D"https://trainings.internshala.com//java?utm_source=3Dis_web_student_d=
+igest">=0A                                            =0A                  =
+                          <div style=3D"float:left; width:212px;">=0A      =
+                                          <div style=3D"margin-bottom:12px;=
+margin-right: 12px;">=0A                                                   =
+ <img src=3D"https://trainings.internshala.com/cached_uploads/home/images/j=
+ava.jpg" alt=3D"" style=3D"width: 200px;border-radius:4px;">=0A            =
+                                    </div>=0A                              =
+              </div>=0A                                            <div sty=
+le=3D"float:left; width:296px;font-family:'Arial';">=0A                    =
+                            <div style=3D"">=0A                            =
+                        <div style=3D"font-weight:bold;font-size: 16px;line=
+-height: 24px;color: #333333;">Core Java</div>=0A                          =
+                          <p style=3D"font-weight: normal;font-size: 14px;l=
+ine-height: 22px;color: #666666;margin: 6px 0 8px 0;">Develop system applic=
+ations from scratch</p>=0A                                                 =
+   <div href=3D"#" style=3D"font-weight: 500;font-size: 15px;line-height: 1=
+8px;color: #008BDC;">Enroll now</div>=0A                                   =
+             </div>=0A                                            </div>=0A=
+                                        </a>=0A                            =
+        </td>=0A                                </tr>=0A                   =
+             <tr><td style=3D"padding:0 16px 0 16px;"><hr style=3D"border: =
+0;border-top: 1px solid #DDDDDD;margin:0;"></td></tr>=0A                   =
+                                         </tbody>=0A                       =
+ </table>=0A                        <div style=3D"text-align: center;paddin=
+g: 0 15px;">=0A                            <p style=3D"margin:32px 0 24px;f=
+ont-size:14px;line-height:22px;text-align:center;color:#484848">=0A        =
+                        Explore the e-learning arm of Internshala where you=
+ can learn new-age skills on your schedule!=0A                            <=
+/p>=0A                            <a href=3D"https://trainings.internshala.=
+com/?utm_source=3Dis_web_student_digest" target=3D"_blank" style=3D'backgro=
+und:#00A5EC;color:#FFFFFF;padding:12px 16px;border-radius:4px;text-align:ce=
+nter;text-decoration:none;display:inline-block;font-weight:600;font-size:14=
+px;line-height:16px;cursor:pointer;margin-bottom: 40px;'>View more training=
+s</a>=0A                        </div>=0A                    </div>=0A     =
+           </div>=0A                        =0A            <div style=3D"te=
+xt-align:center;color:#666666;font-size:13px;line-height:18px;margin: 0 0 4=
+8px">=0A                <table cellspacing=3D"0" style=3D"max-width:248px;m=
+argin:24px auto">=0A                    <tr>=0A                        <td =
+style=3D"padding:0 16px 0 0">=0A                            <a href=3D"http=
+s://play.google.com/store/apps/details?id=3Dcom.internshala.app">=0A       =
+                         <img style=3D"width:24px;display:block" src=3D"htt=
+ps://internshala.com//static/images/mail/new/social_icons/playstore.png">=
+=0A                            </a>=0A                        </td>=0A     =
+                   <td style=3D"padding:0 16px">=0A                        =
+    <a href=3D"https://instagram.com/internshala">=0A                      =
+          <img style=3D"width:24px;display:block" src=3D"https://internshal=
+a.com//static/images/mail/new/social_icons/instagram.png">=0A              =
+              </a>=0A                        </td>=0A                      =
+  <td style=3D"padding:0 16px">=0A                            <a href=3D"ht=
+tps://www.facebook.com/Internshala/">=0A                                <im=
+g style=3D"width:24px;display:block" src=3D"https://internshala.com//static=
+/images/mail/new/social_icons/facebook.png">=0A                            =
+</a>=0A                        </td>=0A                        <td style=3D=
+"padding:0 16px">=0A                            <a href=3D"https://twitter.=
+com/Internshala">=0A                                <img style=3D"width:24p=
+x;display:block" src=3D"https://internshala.com//static/images/mail/new/soc=
+ial_icons/twitter.png">=0A                            </a>=0A              =
+          </td>=0A                        <td style=3D"padding:0 0 0 16px">=
+=0A                            <a href=3D"https://www.linkedin.com/company/=
+internshala/">=0A                                <img style=3D"width:24px;d=
+isplay:block" src=3D"https://internshala.com//static/images/mail/new/social=
+_icons/linkedin.png">=0A                            </a>=0A                =
+        </td>=0A                    </tr>=0A                </table>=0A    =
+            <div style=3D"margin:0 0 16px 0">Internshala (Scholiverse Educa=
+re Pvt. Ltd.)<br>B-610, Unitech Business Zone Golf Course Extension Road, S=
+ector 50, Gurugram</div>=0A                <div>Not keen on career commitme=
+nts? Unsubscribe <a href=3D"https://internshala.com//subscribe/unsubscribe_=
+link/9980777/92EF0AE4-99B9-E626-AA02-127DC4918F1F/digest/?utm_source=3Dstud=
+ent_digest_active&utm_medium=3Dstudent_digest_active&utm_campaign=3D2022-05=
+-02" style=3D"color:#008BDC;text-decoration:none !important">here</a> to br=
+eak up with us.</div> =0A            </div>=0A        </div>=0A    </div>=
+=0A</div><img border=3D'0' src=3D'https://internshala.com/ets/o/10262191/98=
+C4A3E7-0446-2C57-D038-FF71A1B51A10/student_digest' width=3D'1' height=3D'1'=
+ alt=3D'' >
+
+--B_ALT_626fd401bff83--
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>conversation-id</key>
+	<integer>10009</integer>
+	<key>date-last-viewed</key>
+	<integer>0</integer>
+	<key>date-received</key>
+	<integer>1651495939</integer>
+	<key>flags</key>
+	<integer>25770064897</integer>
+	<key>gmail-label-ids</key>
+	<array>
+		<integer>2</integer>
+		<integer>3</integer>
+	</array>
+	<key>remote-id</key>
+	<string>10860</string>
+</dict>
+</plist>

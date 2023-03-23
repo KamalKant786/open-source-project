@@ -1,0 +1,3900 @@
+143099    
+Delivered-To: princesharma76214@gmail.com
+Received: by 2002:a4a:9486:0:0:0:0:0 with SMTP id k6csp6554304ooi; Mon, 2 May
+ 2022 06:22:25 -0700 (PDT)
+X-Google-Smtp-Source: ABdhPJzPbhMulllK7v6oCTWcMfXhxPol77tGTWfh752eiENJHUsbzTpsftWJq+1s/sb+a59WpRln
+X-Received: by 2002:a65:6ccd:0:b0:3aa:676b:6 with SMTP id
+ g13-20020a656ccd000000b003aa676b0006mr9956841pgw.143.1651497745337; Mon, 02
+ May 2022 06:22:25 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1651497745; cv=none; d=google.com;
+ s=arc-20160816;
+ b=xcR3+0ltOoBUbCujctsWB2ET6FSIt2/+pCstlBr8FxHG090dRvs234n/Utwrg1KaNY
+ GffpxIlerhZxQTsGDR75p3e6gY/C/RTxOH59XJymq5EQgY/YvNF0LagmQ5w1p71+fhl6
+ XEsInwhLDPAFD9itbVFtS1C2zkA3hqKUoVllUGJPBZkMwrfr5+COUPNNPoNTq8et5fO/
+ zK/By+aQnejRUgoFogJcZI47HaldDBG+rNpWXZVN9LgykJVEevzjjRo3JxasVni1ASir
+ j8FVNER8jap66OnJswpTgUctz8RiacGFSbH3mMZtMCEBjeHxsxEKAcrpMAQnYah6HZ9c XYWg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com;
+ s=arc-20160816;
+ h=feedback-id:mime-version:to:reply-to:from:subject:date:message-id
+ :dkim-signature:dkim-signature;
+ bh=dhJLDYNDP0rw4fwR2+kWntjsd2oyIMlD+OHrGsKft38=;
+ b=OdHCEAzRSDXK072ywbn8PFAjG2gEJPS3zCqZwmIBc8CvLMQhx2c4w+sWfsnY+cYEhE
+ Wu/UzEqtmpp/saKf5BRmJ93ROJ0gU0Sv7dfhAvghu/nMM/IX5rxrvB9ESfanZ/thnstq
+ nuN9qR7cLmTx6USlX4rPwrwecNx5NhydZJNRUF72i08Guoh0w9/Lva3YZWTowhU29A4n
+ pN3f16WbmOReuh6XYifzaESbiP/RmcTE193rBTd/LxYRaiNKRX2w3aPhne6AtDMeyBNL
+ c5YqWqmkZKa69AO5Gtj960ovkXQEd0+lJFR9Gsa92kUyaLBXOXWSz59v8+yXEv73EclC xS8w==
+ARC-Authentication-Results: i=1; mx.google.com; dkim=pass
+ header.i=@dare2compete.news header.s=pbk65orlzydtmc2e65xb6cbr3efdoadj
+ header.b=Kso+e1T5; dkim=pass header.i=@amazonses.com
+ header.s=dvogjbaa3ou3tduyzvyu4rj5tkuzdi4h header.b=n8VVGO4d; spf=pass
+ (google.com: domain of
+ 0109018084efb3c8-f58a41e4-58cb-4465-b947-c386bf7594d6-000000@emails.dare2compete.news
+ designates 76.223.190.150 as permitted sender)
+ smtp.mailfrom=0109018084efb3c8-f58a41e4-58cb-4465-b947-c386bf7594d6-000000@emails.dare2compete.news;
+ dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE)
+ header.from=dare2compete.news
+Return-Path: <0109018084efb3c8-f58a41e4-58cb-4465-b947-c386bf7594d6-000000@emails.dare2compete.news>
+Received: from c190-150.smtp-out.ap-south-1.amazonses.com
+ (c190-150.smtp-out.ap-south-1.amazonses.com. [76.223.190.150]) by
+ mx.google.com with ESMTPS id
+ c6-20020a63d506000000b003c1fe7dee96si1077006pgg.833.2022.05.02.06.22.24 for
+ <princesharma76214@gmail.com> (version=TLS1_2
+ cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128); Mon, 02 May 2022 06:22:25
+ -0700 (PDT)
+Received-SPF: pass (google.com: domain of
+ 0109018084efb3c8-f58a41e4-58cb-4465-b947-c386bf7594d6-000000@emails.dare2compete.news
+ designates 76.223.190.150 as permitted sender) client-ip=76.223.190.150;
+Authentication-Results: mx.google.com; dkim=pass header.i=@dare2compete.news
+ header.s=pbk65orlzydtmc2e65xb6cbr3efdoadj header.b=Kso+e1T5; dkim=pass
+ header.i=@amazonses.com header.s=dvogjbaa3ou3tduyzvyu4rj5tkuzdi4h
+ header.b=n8VVGO4d; spf=pass (google.com: domain of
+ 0109018084efb3c8-f58a41e4-58cb-4465-b947-c386bf7594d6-000000@emails.dare2compete.news
+ designates 76.223.190.150 as permitted sender)
+ smtp.mailfrom=0109018084efb3c8-f58a41e4-58cb-4465-b947-c386bf7594d6-000000@emails.dare2compete.news;
+ dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE)
+ header.from=dare2compete.news
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+ s=pbk65orlzydtmc2e65xb6cbr3efdoadj; d=dare2compete.news; t=1651497743;
+ h=Message-ID:Date:Subject:From:Reply-To:To:MIME-Version:Content-Type;
+ bh=JsTRgqPmkbOqxjBXVJCYeZuETYltCI1HM3MD1KoPaJY=;
+ b=Kso+e1T5JIpJEfugN7vpayvpRDNAsx4pJPJu21750Lv+nX+J2G4X6fiaRJSL37ZW
+ PWwEdXQJ5FLnEGaePLyz/gOO57Rb5/KBNtmnj2nUuDbTH/a/IoYTTuKw8MqB56KRVLO
+ VgIchlmeBoS44kbOBvLun59QA70NtPdBRaGQj6iE=
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+ s=dvogjbaa3ou3tduyzvyu4rj5tkuzdi4h; d=amazonses.com; t=1651497743;
+ h=Message-ID:Date:Subject:From:Reply-To:To:MIME-Version:Content-Type:Feedback-ID;
+ bh=JsTRgqPmkbOqxjBXVJCYeZuETYltCI1HM3MD1KoPaJY=;
+ b=n8VVGO4dnNFR+CH9UWwy8iDGLpwN3MMrhhhIiHGLxKWLvVFvZ2UjOjf1aBfkmQ0H
+ 4jFLXoeL8s2Ic7HkX5ZLLtIjIfSR7rzfmaVLH8B0mbm7/AdGbdYxSOnFeebHcbuyuN9
+ D9H3q2OaVCBcaRxKkudJuToLuhXvVYfszcOJVp7I=
+Message-ID: <0109018084efb3c8-f58a41e4-58cb-4465-b947-c386bf7594d6-000000@ap-south-1.amazonses.com>
+Date: Mon, 2 May 2022 13:22:23 +0000
+Subject: Xiaomi India is hiring Testing Interns | Apply Now!
+From: Unstop Pulse <noreply@dare2compete.news>
+Reply-To: Unstop Pulse <noreply@dare2compete.news>
+To: princesharma76214@gmail.com
+MIME-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="_=_swift_1651497743_41a2e96e1f25daec3e291a262acbf9bf_=_"
+Feedback-ID: 1.ap-south-1.vLaUspdbZtz+0zahNQSbWc0bbDg5bpfORXW9fnjVqUQ=:AmazonSES
+X-SES-Outgoing: 2022.05.02-76.223.190.150
+
+
+--_=_swift_1651497743_41a2e96e1f25daec3e291a262acbf9bf_=_
+Content-Transfer-Encoding: QUOTED-PRINTABLE
+Content-Type: TEXT/PLAIN;
+	charset=utf-8
+
+<!DOCTYPE html>
+<html lang=3D"en">
+    <head>
+        <meta http-equi=
+v=3D"Content-Type" content=3D"text/html; charset=3Dutf-8" />
+        <met=
+a http-equiv=3D"X-UA-Compatible" content=3D"IE=3Dedge">
+        <title>un=
+stop</title>
+        <meta name=3D"author" content=3D"" content=3D"">
+ =
+       <meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-sca=
+le=3D1.0" />
+        <style type=3D"text/css">
+            @import  url=
+('https://fonts.googleapis.com/css2?family=3DInter:wght@400;500;700;800&');=
+
+
+            body {
+                width: auto;
+                m=
+argin: 0;
+                padding: 0;
+                font-size: 14px;=
+
+                -webkit-text-size-adjust: 100% !important;
+           =
+     -ms-text-size-adjust: 100% !important;
+                -webkit-font-=
+smoothing: antialiased;
+                background-color: #FFFFFF;
+    =
+            font-family: 'Inter', sans-serif;
+            }
+
+        =
+    h1,
+            h2,
+            h3,
+            h4,
+           =
+ h5,
+            h6,
+            td,
+            a,
+            spa=
+n {
+                font-family: 'Inter', sans-serif !important;
+      =
+      }
+
+            h2,
+            p {
+                margin: 0;=
+
+                padding: 0;
+                display: block;
+        =
+        font-style: normal;
+                letter-spacing: normal;
+   =
+         }
+
+            h2 {
+                font-size: 16px;
+     =
+           font-weight: bold;
+                line-height: 125%;
+      =
+      }
+
+            p {
+                margin: 10px 0;
+          =
+      font-size: 14px;
+                line-height: 21px;
+            }=
+
+
+            img {
+                border: 0 !important;
+         =
+       outline: none !important;
+                display: block;
+      =
+          width: 100%;
+                height: auto;
+                ma=
+rgin: 0px;
+                padding: 0px;
+            }
+
+           =
+ a {
+                text-decoration: none;
+                color: rgba=
+(0, 0, 0, .75);
+            }
+
+            .ii a[href] {
+          =
+      color: rgba(0, 0, 0, .75) !important;
+            }
+
+          =
+  .read_more {
+                color: #ffffff;
+                font-wei=
+ght: 400;
+                background-color: #1077d6;
+                bo=
+rder-radius: 50px;
+                padding: 8px 15px;
+                d=
+isplay: inline-block;
+                font-size: 14px;
+                =
+line-height: normal;
+                text-decoration: none;
+           =
+ }
+
+            ul {
+                margin: 0;
+                pad=
+ding: 0;
+            }
+
+            li {
+                margin: 0;=
+
+                padding: 0;
+                line-height: 150%;
+     =
+           font-size: 15px;
+            }
+
+            table {
+    =
+            border-collapse: collapse;
+                mso-table-lspace: =
+0px;
+                mso-table-rspace: 0px;
+                float: none=
+ !important;
+            }
+
+            .bg-box {
+                b=
+order: 1px solid #e8e8e8;
+            }
+
+            .pdng_box {
+  =
+              padding: 15px;
+            }
+
+            .cptn h2,
+ =
+           .cptn h3,
+            .items h2,
+            .items h3,
+  =
+          .full_item h2,
+            .full_item h3,
+            .cptn p=
+,
+            .register_now,
+            .btn_hover,
+            .par=
+ticipate_now,
+            .h2_hover,
+            .p_hover,
+          =
+  .tags a {
+                transition: .3s;
+            }
+
+       =
+     .cptn h2:hover,
+            .cptn h3:hover,
+            .items h2:=
+hover,
+            .items h3:hover,
+            .full_item h2:hover,
+=
+            .full_item h3:hover,
+            .cptn p:hover,
+           =
+ .h2_hover:hover,
+            .p_hover:hover {
+                color: #=
+0073E6 !important;
+            }
+
+            .register_now:hover {=
+
+                background: #434343 !important;
+            }
+
+   =
+         .participate_now:hover,
+            .tags a:hover,
+           =
+ .btn_hover:hover {
+                background: #27497d !important;
+   =
+             color: #ffffff !important;
+            }
+
+            @m=
+edia  only screen and (max-width: 600px) {
+                .full_width {=
+
+                    padding-left: 0 !important;
+                    pa=
+dding-right: 0 !important;
+                    width: 100%;
+           =
+         display: block !important;
+                    clear: both;
+  =
+              }
+
+                .bites_pdng_top {
+                  =
+  padding-top: 10px !important;
+                }
+
+                .b=
+ites_pdng_top h2 {
+                    margin-bottom: 10px !important;
+=
+                }
+
+                .pdng_none {
+                    p=
+adding-left: 0 !important;
+                    padding-right: 0 !importan=
+t;
+                }
+
+                .full_img {
+                 =
+   min-height: auto !important;
+                }
+
+                .f=
+ull-width-sect h2 {
+                    font-size: 16px !important;
+   =
+             }
+
+                .small_img {
+                    max-=
+height: 100% !important;
+                }
+
+                .new_box =
+.cptn_box {
+                    width: calc(100% - 110px) !important;
+ =
+                   padding: 0 10px !important;
+                }
+      =
+          .new_box h2 {
+                    font-size: 13px !important;=
+
+                }
+                .new_box span {
+                  =
+  font-size: 12px !important;
+                    line-height: 16px !impo=
+rtant;
+                    margin-top: 3px !important;
+                =
+}
+                .new_box p {
+                    font-size: 12px !imp=
+ortant;
+                    margin: 5px 0 0 0 !important;
+             =
+       line-height: 14px;
+                }
+                .new_box .l=
+ast_box {
+                    width: 30px !important;
+                }=
+
+                .new_box .last_box a {
+                    width: 30px=
+;
+                    height: 30px;
+                    background: #27=
+497d !important;
+                    border-radius: 50px !important;
+  =
+                  padding: 0 !important;
+                    line-height:=
+ 26px !important;
+                }
+                .new_box .last_box =
+span {
+                    display: none !important;
+                }=
+
+                .new_box .last_box img {
+                    display: =
+inline-block !important;
+                    width: auto;
+             =
+       height: 14px;
+                    vertical-align: middle;
+      =
+          }
+
+                .m_mobile1 {
+                    text-al=
+ign: center !important;
+                    margin-top: 10px !important;=
+
+                }
+
+                .m_mobile2 {
+                  =
+  text-align: center !important;
+                    margin-bottom: 10px =
+!important;
+                }
+
+                .hdng {
+            =
+        padding-bottom: 15px !important;
+                }
+
+         =
+       .hdng a {
+                    font-size: 18px !important;
+      =
+              padding: 10px !important;
+                }
+
+          =
+      .pdng {
+                    padding: 0 15px !important;
+         =
+       }
+
+                .pdng_lr {
+                    padding-left=
+: 15px !important;
+                    padding-right: 15px !important;
+=
+                }
+
+                .item td {
+                    wid=
+th: 100% !important;
+                    display: block;
+              =
+      padding: 0 !important;
+                    text-align: left !import=
+ant;
+                }
+
+                .item .cptn {
+             =
+       padding-top: 12px !important;
+                }
+
+             =
+   .even_item .cptn {
+                    padding-top: 0 !important;
+  =
+                  padding-bottom: 12px !important;
+                }
+=
+
+                .art_item p {
+                    font-size: 14px !imp=
+ortant;
+                    line-height: 21px !important;
+             =
+       display: -webkit-box;
+                    -webkit-line-clamp: 3;=
+
+                    overflow: hidden;
+                    -webkit-box-=
+orient: vertical;
+                }
+
+                .art_img {
+   =
+                 width: 120px !important;
+                }
+
+        =
+        .user_name {
+                    font-size: 18px !important;
+  =
+              }
+
+                .user_dtls {
+                    fon=
+t-size: 15px !important;
+                    line-height: 20px !important=
+;
+                }
+
+                .bdr_top {
+                   =
+ padding-bottom: 15px !important;
+                    padding-top: 15px !=
+important;
+                }
+
+                .items > td {
+       =
+             width: 100% !important;
+                    padding: 0 0 30p=
+x !important;
+                    display: block !important;
+          =
+      }
+                .items > td:last-child {
+                    pa=
+dding: 0 !important;
+                }
+
+                .full_item > =
+td {
+                    width: 100% !important;
+                    pa=
+dding: 0 !important;
+                    display: block !important;
+   =
+             }
+
+                .full_item h2 {
+                    m=
+argin-top: 15px !important;
+                }
+
+                .parti=
+cipate_now {
+                    margin-top: 15px !important;
+         =
+           font-size: 13px !important;
+                }
+
+           =
+     .h40 {
+                    height: 30px !important;
+              =
+  }
+                .h10 {
+                    height: 5px !important;=
+
+                }
+
+                .hdng_icon {
+                  =
+  padding-left: 15px !important;
+                }
+
+                .=
+footer {
+                    padding: 20px 0 !important;
+              =
+  }
+                .tags {
+                    padding-bottom: 10px !i=
+mportant;
+                }
+                .tags a {
+               =
+     font-size: 10px !important;
+                    padding: 7px 10px !i=
+mportant;
+                    margin: 3px 1px !important;
+             =
+       border-radius: 5px !important;
+                }
+               =
+ .updated {
+                    padding-bottom: 0 !important;
+         =
+       }
+                .updated tr {
+                    display: blo=
+ck;
+                }
+                .updated td {
+                 =
+   display: block;
+                    width: 100% !important;
+        =
+            text-align: center !important;
+                    padding-bo=
+ttom: 10px;
+                }
+                .updated td span {
+    =
+                padding-bottom: 6px !important;
+                    width=
+: 100% !important;
+                }
+                .bg_box {
+      =
+              border: 1px solid #e7e7e7;
+                    border-radiu=
+s: 8px;
+                }
+                .bg_box > table{
+          =
+          border: 0 !important;
+                }
+                .full=
+_banner {
+                    padding-left: 5px !important;
+           =
+         padding-right: 5px !important;
+                }
+
+          =
+      .hdr_option2 {
+                    padding: 15px !important;
+    =
+            }
+
+                .hdr_option2 td {
+                    =
+width: 100% !important;
+                    text-align: center !important=
+;
+                    display: block;
+                }
+
+          =
+      .hdr_option2 .logo {
+                    margin-bottom: 15px;
+   =
+                 padding-top: 0 !important;
+                }
+
+      =
+          .hdr_option2 .logo img {
+                    margin: auto;
+  =
+              }
+                .mb_none a {
+                    margin=
+: 3px 1px !important;
+                    padding: 6px 10px !important;=
+
+                    font-size: 10px !important;
+                }
+=
+
+
+                .full_width_item td {
+                    width: 10=
+0% !important;
+                    display: block;
+                    =
+padding: 0 !important;
+                    text-align: left !important;=
+
+                }
+
+                .full_width_item .cptn {
+      =
+              padding-top: 15px !important;
+                }
+
+      =
+          .full_width_item h2 {
+                    font-size: 15px !impo=
+rtant;
+                }
+
+                .d2c_icon {
+             =
+       padding: 12px !important;
+                }
+
+            }
+ =
+       </style>
+    </head>
+
+    <body>
+        <div class=3D"bg_bo=
+x" style=3D"width: 100%; background-color: #FFFFFF;">
+            <table =
+style=3D"border-collapse: collapse; border: 0; width: 100%; max-width: 700p=
+x; margin: 0 auto; border: 1px solid #e7e7e7;" cellspacing=3D"0" cellpaddin=
+g=3D"0">
+                <tbody>
+                    <tr>
+           =
+             <td style=3D"background-color: #ffffff; border: 0; padding: 0;=
+ border-radius: 8px;" valign=3D"top">
+                            <table =
+style=3D"min-width: 100%; border-collapse: collapse;" border=3D"0" width=3D=
+"100%" cellspacing=3D"0" cellpadding=3D"0">
+                             =
+   <tbody>
+                                    <tr>
+                   =
+                     <td valign=3D"top">
+                                =
+            <!-- HEADER Option 1 -->
+                                    =
+                                                        <table style=3D"max=
+-width: 100%; min-width: 100%; border-collapse: collapse;" border=3D"0" wid=
+th=3D"100%" cellspacing=3D"0" cellpadding=3D"0" align=3D"left">
+         =
+                                           <tbody>
+                      =
+                                  <tr>
+                                  =
+                          <td class=3D"d2c_icon" style=3D"text-align: cente=
+r; padding: 15px;">
+                                                     =
+           <a style=3D"display: block;" href=3D"https://unstop.com/">
+   =
+                                                             <img=20
+      =
+                                                              style=3D"widt=
+h: 90px; display: inline-block; vertical-align: middle;"
+                =
+                                                    src=3D"https://d8it4hux=
+umps7.cloudfront.net/uploads/images/unstop/unstop-logo-500.png"
+         =
+                                                           alt=3D"Checkout =
+this job that we think might be relevant for you"=20
+                      =
+                                          />
+                            =
+                                    <span style=3D"display: inline-block; b=
+order-left: 1px solid rgba(39,73,125,.5); padding-left: 10px; margin-left: =
+8px; color: #27497d; font-size: 12px; text-align: left; vertical-align: mid=
+dle;">
+                                                                  =
+  Formerly
+                                                              =
+      <strong style=3D"display: block; font-size: 13px; font-weight: 500; l=
+ine-height: normal;">
+                                                   =
+                 Dare2Compete
+                                           =
+                         </strong>
+                                      =
+                          </span>
+                                       =
+                         </a>
+                                           =
+                 </td>
+                                                  =
+      </tr>
+                                                    </tbody>=
+
+                                                </table>
+             =
+                              =20
+                                         =
+   <!-- HEADER Option 2 -->
+                                            =
+
+                                           =20
+                         =
+                                                                           =
+                               =20
+                                        =
+    <!-- HEADING OPTION  -->
+                                            =
+                                                   =20
+                    =
+                                   =20
+                                    =
+                                                                           =
+                                                                           =
+      <!-- HEADING OPTION  END -->
+
+                                   =
+        =20
+                                            <table align=3D"lef=
+t" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"max-width:100%=
+;min-width:100%;border-collapse:collapse" width=3D"100%">
+               =
+                                 <tbody>
+                                =
+                                                                       =20
+=
+
+                                                   =20
+
+              =
+                                     =20
+
+                               =
+                    =20
+
+                                                =
+   =20
+
+                                                   =20
+          =
+                                         =20
+                              =
+                     =20
+                                                  =
+                                                          <tr>
+          =
+                                                  <td class=3D"full_banner"=
+ style=3D"padding: 0 10px;">
+                                            =
+                                                                           =
+             <a href=3D"https://unstop.com/internships" target=3D"_blank" s=
+tyle=3D"display: block;">
+   =20
+
+           =20
+                      =
+  <img=20
+                src=3D"https://d8it4huxumps7.cloudfront.net/uploa=
+ds/images/newsletter-image/626fc8992cd6c_dream_comp_nl_banner.jpg?d=3D700x4=
+00"=20
+                alt=3D""=20
+                style=3D"width: 100%; di=
+splay: block; margin: 0; border-radius: 8px;"
+            >
+           =
+ </a>
+                                                                   =
+                                                         </td>
+          =
+                                              </tr>
+                     =
+                              =20
+
+                                      =
+                                                                 =20
+
+   =
+                                                                           =
+                         =20
+
+                                           =
+                                                            =20
+
+        =
+                                                                           =
+                    =20
+
+                                                =
+                                                       =20
+
+             =
+                                                                           =
+               =20
+
+                                                     =
+                                                  =20
+                     =
+                                                                           =
+       =20
+                                                   =20
+         =
+                                          =20
+                             =
+                      =20
+                                                 =
+                                                   </tbody>
+             =
+                               </table>
+
+                              =
+              <table style=3D"max-width: 100%; min-width: 100%; border-coll=
+apse: collapse;" border=3D"0" width=3D"100%" cellspacing=3D"0" cellpadding=
+=3D"0" align=3D"left">
+                                                <t=
+body>
+                                                    <tr>
+        =
+                                                <td>
+                    =
+                                        <div class=3D"h50" style=3D"width: =
+100%; display: block; height: 30px;">
+                                   =
+                             &nbsp;
+                                     =
+                       </div>
+                                           =
+             </td>
+                                                    </=
+tr>
+                                                </tbody>
+          =
+                                  </table>
+                              =
+                                                                           =
+                          =20
+                                            <=
+!-- HEADING OPTION  -->
+                                                 =
+                                              =20
+                         =
+                              =20
+                                         =
+                                                                           =
+<table align=3D"left" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" styl=
+e=3D"max-width:100%;min-width:100%;border-collapse:collapse" width=3D"100%"=
+>
+                                                                <tbody>=
+
+                                                                    <tr>=
+
+                                                                        =
+<td class=3D"pdng_lr" style=3D"padding-left: 30px; padding-right: 30px; pad=
+ding-bottom: 20px;">
+                                                    =
+                        <a
+                                              =
+                                  style=3D"text-decoration: none; display: =
+block; color: #455368; font-size: 20px; font-weight: 600; line-height: 100%=
+;"
+                                                                      =
+          href=3D"https://dare2compete.com/internships"
+                 =
+                                                           >
+            =
+                                                                    Interns=
+hips For You
+                                                            =
+                </a>
+                                                    =
+                    </td>
+                                               =
+                     </tr>
+                                              =
+                  </tbody>
+                                              =
+              </table>
+                                                  =
+                                                                           =
+                                                                   <!-- HEA=
+DING OPTION  END -->
+
+                                           =20
+  =
+                                          <table align=3D"left" border=3D"0=
+" cellpadding=3D"0" cellspacing=3D"0" style=3D"max-width:100%;min-width:100=
+%;border-collapse:collapse" width=3D"100%">
+                             =
+                   <tbody>
+                                              =
+                                                         =20
+
+           =
+                                        =20
+
+                            =
+                       =20
+
+                                             =
+      =20
+
+                                                   =20
+
+    =
+                                               =20
+                        =
+                           =20
+                                            =
+       =20
+
+                                                   =20
+
+   =
+                                                =20
+
+                    =
+                               =20
+
+                                     =
+              =20
+
+                                                    =
+
+                                                   =20
+                 =
+                                  =20
+
+                                  =
+                 =20
+
+                                                   =
+=20
+
+                                                   =20
+
+          =
+                                         =20
+
+                           =
+                        =20
+                                               =
+    =20
+                                                   =20
+
+         =
+                                          =20
+
+                          =
+                         =20
+
+                                           =
+        =20
+
+                                                   =20
+
+  =
+                                                 =20
+                      =
+                             =20
+                                          =
+         =20
+
+                                                   =20
+
+ =
+                                                  =20
+
+                  =
+                                 =20
+
+                                   =
+                =20
+
+                                                    =
+
+                                                   =20
+                 =
+                                  =20
+                                     =
+              =20
+
+                                                      =
+                                                 =20
+
+                   =
+                                                                           =
+         =20
+
+                                                           =
+                                                                           =
+                          <tr>
+                                          =
+                  <td class=3D"pdng_lr" style=3D"padding-left: 30px; paddin=
+g-right: 30px;">
+                                                        =
+        <table style=3D"max-width: 100%; min-width: 100%; border-collapse: =
+collapse;" border=3D"0" width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" =
+align=3D"left">
+                                                         =
+           <tbody>
+                                                      =
+                                                                           =
+                   <tr class=3D"new_box">
+    <td valign=3D"middle" width=
+=3D"80">
+        <a=20
+            href=3D"https://unstop.com/internship/=
+testing-internship-xiaomi-india-282700"
+            style=3D"height: 75px=
+; display: flex; padding: 0; background-color: #ffffff; border: 1px solid #=
+ddd; border-radius: 8px; background-image: url(https://d8it4huxumps7.cloudf=
+ront.net/uploads/images/6200b25da3f84_80x80.jpg); background-size: cover; b=
+ackground-repeat: repeat;"
+        >
+            <img=20
+              =
+  src=3D"https://d8it4huxumps7.cloudfront.net/uploads/images/75x75/625d1039=
+15a1a_xiaomi.png"
+                alt=3D"Testing Internship"
+          =
+      height=3D"auto"
+                style=3D"width:auto;max-width: 65px=
+; margin: auto;height:auto;display: block; max-height: 65px;"
+           =
+ >
+        </a>
+    </td>
+
+    <td class=3D"cptn_box" style=3D"padd=
+ing: 0 15px; box-sizing: border-box;" valign=3D"middle" width=3D"430">
+  =
+      <h2=20
+            class=3D"h2_hover"
+            style=3D"color: #=
+101010; font-size: 14px; font-weight: 500; line-height: 125%;"
+        >=
+
+            <a=20
+                href=3D"https://unstop.com/internship/=
+testing-internship-xiaomi-india-282700"
+                style=3D"color: i=
+nherit !important; text-decoration: none; display: block;"
+              =
+  target=3D"_blank"
+            >
+                Testing Internship
+=
+            </a>
+        </h2>
+
+                    <span=20
+        =
+        class=3D"p_hover"
+                style=3D"font-size: 13px; color=
+: #5a5a5a; line-height: 18px; display: block; margin-top: 5px;"
+         =
+   >
+                <a=20
+                    href=3D"https://unstop.com=
+/internship/testing-internship-xiaomi-india-282700"
+                    s=
+tyle=3D"color: inherit !important; text-decoration: none; display: block;"=
+
+                    target=3D"_blank"
+                >
+            =
+        Xiaomi India
+                </a>
+            </span>
+       =
+=20
+                    <div style=3D"padding-top: 5px;">
+               =
+ <table style=3D"max-width: 100%; min-width: 100%; border-collapse: collaps=
+e;" border=3D"0" width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" align=
+=3D"left">
+                    <tbody>
+                        <tr>
+ =
+                           <td width=3D"16">
+                            =
+    <img=20
+                                    style=3D"width: 16px; displ=
+ay: inline-block; vertical-align: middle;"
+                              =
+      src=3D"https://d8it4huxumps7.cloudfront.net/uploads/images/61fa275333=
+7f1_days_left_icon_blue_1.png"
+                                    alt=3D=
+"Days Left"
+                                />
+                        =
+    </td>
+                            <td style=3D"padding-left: 10px; fo=
+nt-size: 12px; font-weight: 500; color: #0073E6;">
+                      =
+          6 days left
+                            </td>
+               =
+         </tr>
+                    </tbody>
+                </table>
+=
+            </div>
+            </td>
+
+    <td class=3D"last_box" styl=
+e=3D"word-break:break-word; box-sizing: border-box;" valign=3D"middle" widt=
+h=3D"130">
+        <a class=3D"btn_hover"
+            href=3D"https://u=
+nstop.com/internship/testing-internship-xiaomi-india-282700"
+            =
+style=3D"display: block; color: #27497d; text-decoration: none; padding: 6p=
+x 12px; font-weight: 500; font-size: 13px; border: 1px solid #27497d; borde=
+r-radius: 5px; box-sizing: border-box; text-align: center;">
+            =
+<span>
+                                                                  =
+  Apply now
+                                                   =20
+      =
+      </span>
+            <img=20
+                src=3D"https://d8it4hux=
+umps7.cloudfront.net/uploads/images/61fb6557539f0_left_arrow_icon.png"=20
+ =
+               alt=3D""
+                style=3D"display: none;"
+      =
+      >
+        </a>
+    </td>
+</tr>
+
+
+
+                     =
+                                                                           =
+                                                                           =
+                                                     <tr>
+        <td col=
+span=3D"3" style=3D"padding-bottom: 15px; padding-top: 15px;">
+          =
+  <div style=3D"width: 100%; display: block; border-top: 1px solid #e7e7e7;=
+ height: 1px;"></div>
+        </td>
+    </tr>
+
+<tr class=3D"new_box=
+">
+    <td valign=3D"middle" width=3D"80">
+        <a=20
+            hr=
+ef=3D"https://unstop.com/internship/software-quality-assurance-internship-a=
+ltair-280825"
+            style=3D"height: 75px; display: flex; padding: =
+0; background-color: #ffffff; border: 1px solid #ddd; border-radius: 8px; b=
+ackground-image: url(https://d8it4huxumps7.cloudfront.net/uploads/images/62=
+00b25da3f84_80x80.jpg); background-size: cover; background-repeat: repeat;"=
+
+        >
+            <img=20
+                src=3D"https://d8it4huxu=
+mps7.cloudfront.net/uploads/images/75x75/61f2e331d2ceb_altair.png"
+      =
+          alt=3D"Software Quality Assurance Internship"
+                h=
+eight=3D"auto"
+                style=3D"width:auto;max-width: 65px; margi=
+n: auto;height:auto;display: block; max-height: 65px;"
+            >
+  =
+      </a>
+    </td>
+
+    <td class=3D"cptn_box" style=3D"padding: 0 =
+15px; box-sizing: border-box;" valign=3D"middle" width=3D"430">
+        <=
+h2=20
+            class=3D"h2_hover"
+            style=3D"color: #101010;=
+ font-size: 14px; font-weight: 500; line-height: 125%;"
+        >
+     =
+       <a=20
+                href=3D"https://unstop.com/internship/software=
+-quality-assurance-internship-altair-280825"
+                style=3D"col=
+or: inherit !important; text-decoration: none; display: block;"
+         =
+       target=3D"_blank"
+            >
+                Software Quality=
+ Assurance Internship
+            </a>
+        </h2>
+
+             =
+       <span=20
+                class=3D"p_hover"
+                style=
+=3D"font-size: 13px; color: #5a5a5a; line-height: 18px; display: block; mar=
+gin-top: 5px;"
+            >
+                <a=20
+                    =
+href=3D"https://unstop.com/internship/software-quality-assurance-internship=
+-altair-280825"
+                    style=3D"color: inherit !important; t=
+ext-decoration: none; display: block;"
+                    target=3D"_bla=
+nk"
+                >
+                    Altair
+                </a>=
+
+            </span>
+       =20
+                    <div style=3D"paddi=
+ng-top: 5px;">
+                <table style=3D"max-width: 100%; min-width=
+: 100%; border-collapse: collapse;" border=3D"0" width=3D"100%" cellspacing=
+=3D"0" cellpadding=3D"0" align=3D"left">
+                    <tbody>
+  =
+                      <tr>
+                            <td width=3D"16">=
+
+                                <img=20
+                                =
+    style=3D"width: 16px; display: inline-block; vertical-align: middle;"=
+
+                                    src=3D"https://d8it4huxumps7.cloudfr=
+ont.net/uploads/images/61fa2753337f1_days_left_icon_blue_1.png"
+         =
+                           alt=3D"Days Left"
+                            =
+    />
+                            </td>
+                            <t=
+d style=3D"padding-left: 10px; font-size: 12px; font-weight: 500; color: #0=
+073E6;">
+                                6 days left
+                  =
+          </td>
+                        </tr>
+                    </tbo=
+dy>
+                </table>
+            </div>
+            </td>
+=
+
+    <td class=3D"last_box" style=3D"word-break:break-word; box-sizing: b=
+order-box;" valign=3D"middle" width=3D"130">
+        <a class=3D"btn_hove=
+r"
+            href=3D"https://unstop.com/internship/software-quality-ass=
+urance-internship-altair-280825"
+            style=3D"display: block; col=
+or: #27497d; text-decoration: none; padding: 6px 12px; font-weight: 500; fo=
+nt-size: 13px; border: 1px solid #27497d; border-radius: 5px; box-sizing: b=
+order-box; text-align: center;">
+            <span>
+                   =
+                                                 Apply now
+              =
+                                     =20
+            </span>
+            =
+<img=20
+                src=3D"https://d8it4huxumps7.cloudfront.net/uploads=
+/images/61fb6557539f0_left_arrow_icon.png"=20
+                alt=3D""
+  =
+              style=3D"display: none;"
+            >
+        </a>
+   =
+ </td>
+</tr>
+
+
+
+                                                 =
+                                                                           =
+                                                                           =
+                         <tr>
+        <td colspan=3D"3" style=3D"padding-=
+bottom: 15px; padding-top: 15px;">
+            <div style=3D"width: 100%;=
+ display: block; border-top: 1px solid #e7e7e7; height: 1px;"></div>
+    =
+    </td>
+    </tr>
+
+<tr class=3D"new_box">
+    <td valign=3D"middl=
+e" width=3D"80">
+        <a=20
+            href=3D"https://unstop.com/int=
+ernship/web-development-internship-motorola-solutions-286779"
+           =
+ style=3D"height: 75px; display: flex; padding: 0; background-color: #fffff=
+f; border: 1px solid #ddd; border-radius: 8px; background-image: url(https:=
+//d8it4huxumps7.cloudfront.net/uploads/images/6200b25da3f84_80x80.jpg); bac=
+kground-size: cover; background-repeat: repeat;"
+        >
+            =
+<img=20
+                src=3D"https://d8it4huxumps7.cloudfront.net/uploads=
+/images/75x75/626787d9b8487_motorola_logo.jpg"
+                alt=3D"Web=
+ Development Internship"
+                height=3D"auto"
+              =
+  style=3D"width:auto;max-width: 65px; margin: auto;height:auto;display: bl=
+ock; max-height: 65px;"
+            >
+        </a>
+    </td>
+
+   =
+ <td class=3D"cptn_box" style=3D"padding: 0 15px; box-sizing: border-box;" =
+valign=3D"middle" width=3D"430">
+        <h2=20
+            class=3D"h2_h=
+over"
+            style=3D"color: #101010; font-size: 14px; font-weight: =
+500; line-height: 125%;"
+        >
+            <a=20
+                hr=
+ef=3D"https://unstop.com/internship/web-development-internship-motorola-sol=
+utions-286779"
+                style=3D"color: inherit !important; text-d=
+ecoration: none; display: block;"
+                target=3D"_blank"
+   =
+         >
+                Web Development Internship
+            </a>=
+
+        </h2>
+
+                    <span=20
+                class=3D=
+"p_hover"
+                style=3D"font-size: 13px; color: #5a5a5a; line-=
+height: 18px; display: block; margin-top: 5px;"
+            >
+         =
+       <a=20
+                    href=3D"https://unstop.com/internship/web-=
+development-internship-motorola-solutions-286779"
+                    sty=
+le=3D"color: inherit !important; text-decoration: none; display: block;"
+=
+                    target=3D"_blank"
+                >
+               =
+     Motorola Solutions
+                </a>
+            </span>
+    =
+   =20
+                    <div style=3D"padding-top: 5px;">
+            =
+    <table style=3D"max-width: 100%; min-width: 100%; border-collapse: coll=
+apse;" border=3D"0" width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" alig=
+n=3D"left">
+                    <tbody>
+                        <tr>
+=
+                            <td width=3D"16">
+                           =
+     <img=20
+                                    style=3D"width: 16px; disp=
+lay: inline-block; vertical-align: middle;"
+                             =
+       src=3D"https://d8it4huxumps7.cloudfront.net/uploads/images/61fa27533=
+37f1_days_left_icon_blue_1.png"
+                                    alt=
+=3D"Days Left"
+                                />
+                     =
+       </td>
+                            <td style=3D"padding-left: 10px;=
+ font-size: 12px; font-weight: 500; color: #0073E6;">
+                   =
+             8 days left
+                            </td>
+            =
+            </tr>
+                    </tbody>
+                </table>=
+
+            </div>
+            </td>
+
+    <td class=3D"last_box" s=
+tyle=3D"word-break:break-word; box-sizing: border-box;" valign=3D"middle" w=
+idth=3D"130">
+        <a class=3D"btn_hover"
+            href=3D"https:=
+//unstop.com/internship/web-development-internship-motorola-solutions-28677=
+9"
+            style=3D"display: block; color: #27497d; text-decoration: =
+none; padding: 6px 12px; font-weight: 500; font-size: 13px; border: 1px sol=
+id #27497d; border-radius: 5px; box-sizing: border-box; text-align: center;=
+">
+            <span>
+                                                 =
+                   Apply now
+                                            =
+       =20
+            </span>
+            <img=20
+                src=3D=
+"https://d8it4huxumps7.cloudfront.net/uploads/images/61fb6557539f0_left_arr=
+ow_icon.png"=20
+                alt=3D""
+                style=3D"display=
+: none;"
+            >
+        </a>
+    </td>
+</tr>
+
+
+
+    =
+                                                                           =
+                                                                           =
+                                                                      <tr>=
+
+        <td colspan=3D"3" style=3D"padding-bottom: 15px; padding-top: 15=
+px;">
+            <div style=3D"width: 100%; display: block; border-top: =
+1px solid #e7e7e7; height: 1px;"></div>
+        </td>
+    </tr>
+
+<t=
+r class=3D"new_box">
+    <td valign=3D"middle" width=3D"80">
+        <a=
+=20
+            href=3D"https://unstop.com/internship/it-service-internship=
+-sophos-283476"
+            style=3D"height: 75px; display: flex; padding=
+: 0; background-color: #ffffff; border: 1px solid #ddd; border-radius: 8px;=
+ background-image: url(https://d8it4huxumps7.cloudfront.net/uploads/images/=
+6200b25da3f84_80x80.jpg); background-size: cover; background-repeat: repeat=
+;"
+        >
+            <img=20
+                src=3D"https://d8it4hu=
+xumps7.cloudfront.net/uploads/images/75x75/62619d0a14ec7_sophos.png"
+    =
+            alt=3D"IT Service Internship"
+                height=3D"auto"=
+
+                style=3D"width:auto;max-width: 65px; margin: auto;height=
+:auto;display: block; max-height: 65px;"
+            >
+        </a>
+ =
+   </td>
+
+    <td class=3D"cptn_box" style=3D"padding: 0 15px; box-sizi=
+ng: border-box;" valign=3D"middle" width=3D"430">
+        <h2=20
+        =
+    class=3D"h2_hover"
+            style=3D"color: #101010; font-size: 14=
+px; font-weight: 500; line-height: 125%;"
+        >
+            <a=20
+ =
+               href=3D"https://unstop.com/internship/it-service-internship-=
+sophos-283476"
+                style=3D"color: inherit !important; text-d=
+ecoration: none; display: block;"
+                target=3D"_blank"
+   =
+         >
+                IT Service Internship
+            </a>
+   =
+     </h2>
+
+                    <span=20
+                class=3D"p_hov=
+er"
+                style=3D"font-size: 13px; color: #5a5a5a; line-height=
+: 18px; display: block; margin-top: 5px;"
+            >
+               =
+ <a=20
+                    href=3D"https://unstop.com/internship/it-service=
+-internship-sophos-283476"
+                    style=3D"color: inherit !i=
+mportant; text-decoration: none; display: block;"
+                    tar=
+get=3D"_blank"
+                >
+                    Sophos
+         =
+       </a>
+            </span>
+       =20
+                    <div sty=
+le=3D"padding-top: 5px;">
+                <table style=3D"max-width: 100%=
+; min-width: 100%; border-collapse: collapse;" border=3D"0" width=3D"100%" =
+cellspacing=3D"0" cellpadding=3D"0" align=3D"left">
+                    <=
+tbody>
+                        <tr>
+                            <td wid=
+th=3D"16">
+                                <img=20
+                      =
+              style=3D"width: 16px; display: inline-block; vertical-align: =
+middle;"
+                                    src=3D"https://d8it4huxumps7=
+.cloudfront.net/uploads/images/61fa2753337f1_days_left_icon_blue_1.png"
+ =
+                                   alt=3D"Days Left"
+                    =
+            />
+                            </td>
+                      =
+      <td style=3D"padding-left: 10px; font-size: 12px; font-weight: 500; c=
+olor: #0073E6;">
+                                10 days left
+         =
+                   </td>
+                        </tr>
+                =
+    </tbody>
+                </table>
+            </div>
+            =
+</td>
+
+    <td class=3D"last_box" style=3D"word-break:break-word; box-s=
+izing: border-box;" valign=3D"middle" width=3D"130">
+        <a class=3D"=
+btn_hover"
+            href=3D"https://unstop.com/internship/it-service-i=
+nternship-sophos-283476"
+            style=3D"display: block; color: #274=
+97d; text-decoration: none; padding: 6px 12px; font-weight: 500; font-size:=
+ 13px; border: 1px solid #27497d; border-radius: 5px; box-sizing: border-bo=
+x; text-align: center;">
+            <span>
+                           =
+                                         Apply now
+                      =
+                             =20
+            </span>
+            <img=20
+=
+                src=3D"https://d8it4huxumps7.cloudfront.net/uploads/images/=
+61fb6557539f0_left_arrow_icon.png"=20
+                alt=3D""
+          =
+      style=3D"display: none;"
+            >
+        </a>
+    </td>=
+
+</tr>
+
+
+
+                                                       =
+                                                                           =
+                                                                           =
+                   <tr>
+        <td colspan=3D"3" style=3D"padding-bottom=
+: 15px; padding-top: 15px;">
+            <div style=3D"width: 100%; displ=
+ay: block; border-top: 1px solid #e7e7e7; height: 1px;"></div>
+        </=
+td>
+    </tr>
+
+<tr class=3D"new_box">
+    <td valign=3D"middle" wid=
+th=3D"80">
+        <a=20
+            href=3D"https://unstop.com/internshi=
+p/corporate-applications-engineering-internship-globalfoundries-282706"
+ =
+           style=3D"height: 75px; display: flex; padding: 0; background-col=
+or: #ffffff; border: 1px solid #ddd; border-radius: 8px; background-image: =
+url(https://d8it4huxumps7.cloudfront.net/uploads/images/6200b25da3f84_80x80=
+.jpg); background-size: cover; background-repeat: repeat;"
+        >
+  =
+          <img=20
+                src=3D"https://d8it4huxumps7.cloudfront.n=
+et/uploads/images/75x75/625d138898c32_globalfoun.png"
+                alt=
+=3D"Corporate Applications Engineering Internship"
+                height=
+=3D"auto"
+                style=3D"width:auto;max-width: 65px; margin: au=
+to;height:auto;display: block; max-height: 65px;"
+            >
+       =
+ </a>
+    </td>
+
+    <td class=3D"cptn_box" style=3D"padding: 0 15px;=
+ box-sizing: border-box;" valign=3D"middle" width=3D"430">
+        <h2 =
+
+            class=3D"h2_hover"
+            style=3D"color: #101010; fo=
+nt-size: 14px; font-weight: 500; line-height: 125%;"
+        >
+        =
+    <a=20
+                href=3D"https://unstop.com/internship/corporate-a=
+pplications-engineering-internship-globalfoundries-282706"
+              =
+  style=3D"color: inherit !important; text-decoration: none; display: block=
+;"
+                target=3D"_blank"
+            >
+                Co=
+rporate Applications Engineering Internship
+            </a>
+        </=
+h2>
+
+                    <span=20
+                class=3D"p_hover"
+ =
+               style=3D"font-size: 13px; color: #5a5a5a; line-height: 18px;=
+ display: block; margin-top: 5px;"
+            >
+                <a=20
+=
+                    href=3D"https://unstop.com/internship/corporate-applica=
+tions-engineering-internship-globalfoundries-282706"
+                    =
+style=3D"color: inherit !important; text-decoration: none; display: block;"=
+
+                    target=3D"_blank"
+                >
+            =
+        GlobalFoundries
+                </a>
+            </span>
+    =
+   =20
+                    <div style=3D"padding-top: 5px;">
+            =
+    <table style=3D"max-width: 100%; min-width: 100%; border-collapse: coll=
+apse;" border=3D"0" width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" alig=
+n=3D"left">
+                    <tbody>
+                        <tr>
+=
+                            <td width=3D"16">
+                           =
+     <img=20
+                                    style=3D"width: 16px; disp=
+lay: inline-block; vertical-align: middle;"
+                             =
+       src=3D"https://d8it4huxumps7.cloudfront.net/uploads/images/61fa27533=
+37f1_days_left_icon_blue_1.png"
+                                    alt=
+=3D"Days Left"
+                                />
+                     =
+       </td>
+                            <td style=3D"padding-left: 10px;=
+ font-size: 12px; font-weight: 500; color: #0073E6;">
+                   =
+             6 days left
+                            </td>
+            =
+            </tr>
+                    </tbody>
+                </table>=
+
+            </div>
+            </td>
+
+    <td class=3D"last_box" s=
+tyle=3D"word-break:break-word; box-sizing: border-box;" valign=3D"middle" w=
+idth=3D"130">
+        <a class=3D"btn_hover"
+            href=3D"https:=
+//unstop.com/internship/corporate-applications-engineering-internship-globa=
+lfoundries-282706"
+            style=3D"display: block; color: #27497d; t=
+ext-decoration: none; padding: 6px 12px; font-weight: 500; font-size: 13px;=
+ border: 1px solid #27497d; border-radius: 5px; box-sizing: border-box; tex=
+t-align: center;">
+            <span>
+                                 =
+                                   Apply now
+                            =
+                       =20
+            </span>
+            <img=20
+      =
+          src=3D"https://d8it4huxumps7.cloudfront.net/uploads/images/61fb65=
+57539f0_left_arrow_icon.png"=20
+                alt=3D""
+                =
+style=3D"display: none;"
+            >
+        </a>
+    </td>
+</tr>=
+
+
+
+
+                                                               =
+                                                                           =
+         =20
+                                                              =
+                                                                           =
+       <tr>
+                                                             =
+               <td colspan=3D"3" style=3D"padding-top: 30px; text-align: ce=
+nter;">
+                                                                 =
+                                                                           =
+                        <a
+                                              =
+                                          style=3D"box-sizing: border-box; =
+display: inline-block; background: #27497d; color: #fff; padding: 10px 30px=
+; border-radius: 8px; font-size: 14px; font-weight: 500; box-sizing: border=
+-box;"
+                                                                  =
+                      href=3D"https://dare2compete.com/internships"
+     =
+                                                                           =
+        target=3D"_blank"
+                                               =
+                                         rel=3D"noopener"
+               =
+                                                                     >
+  =
+                                                                           =
+           See More Internships
+                                         =
+                                           </a>
+                         =
+                                                                           =
+                                                        </td>
+           =
+                                                             </tr>
+      =
+                                                                 =20
+      =
+                                                              </tbody>
+  =
+                                                              </table>
+  =
+                                                          </td>
+         =
+                                               </tr>
+                    =
+                               =20
+
+                                     =
+                                                                  =20
+
+  =
+                                                                           =
+                          =20
+
+                                          =
+                                                             =20
+
+       =
+                                                                           =
+                     =20
+                                                  =
+                                                     =20
+                  =
+                                 =20
+                                      =
+             =20
+                                                   =20
+   =
+                                                                           =
+                      </tbody>
+                                          =
+  </table>
+
+                                            <table style=3D=
+"max-width: 100%; min-width: 100%; border-collapse: collapse;" border=3D"0"=
+ width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" align=3D"left">
+     =
+                                           <tbody>
+                      =
+                              <tr>
+                                      =
+                  <td>
+                                                  =
+          <div class=3D"h50" style=3D"width: 100%; display: block; height: =
+30px;">
+                                                                &=
+nbsp;
+                                                            </div>=
+
+                                                        </td>
+        =
+                                            </tr>
+                       =
+                         </tbody>
+                                       =
+     </table>
+                                                           =
+                         </td>
+                                    </tr>=
+
+
+                                    <!-- Footer Option 1 -->
+      =
+                                                                  <tr>
+  =
+                                      <td class=3D"footer" style=3D"padding=
+: 30px; background-color: #ffffff; border-top: 1px solid #e7e7e7; border-ra=
+dius: 0 0 8px 8px;">
+                                            <table a=
+lign=3D"left" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100=
+%" style=3D"max-width: 100%; min-width: 100%; border-collapse: collapse;">=
+
+                                                <tbody>
+              =
+                                                                           =
+               <tr>
+                                                     =
+   <td class=3D"tags" style=3D"padding-bottom: 20px; text-align: center;">=
+
+                                                                        =
+                                                    <a
+                  =
+                                                  href=3D"https://dare2comp=
+ete.com/hiring-challenges"
+                                              =
+                      rel=3D"noopener"
+                                  =
+                                  target=3D"_blank"
+                     =
+                                               style=3D"text-decoration: no=
+ne; display: inline-block; padding: 8px 20px; border-radius: 8px; font-weig=
+ht: 500; margin: 3px; font-size: 13px; color: #27497d; background: #e4e8ee;=
+"
+                                                                >
+   =
+                                                                 Hiring Cha=
+llenges
+                                                                <=
+/a>
+                                                                     =
+                                                       <a
+               =
+                                                     href=3D"https://dare2c=
+ompete.com/courses/home"
+                                                =
+                    rel=3D"noopener"
+                                    =
+                                target=3D"_blank"
+                       =
+                                             style=3D"text-decoration: none=
+; display: inline-block; padding: 8px 20px; border-radius: 8px; font-weight=
+: 500; margin: 3px; font-size: 13px; color: #27497d; background: #e4e8ee;"=
+
+                                                                >
+    =
+                                                                Courses
+ =
+                                                               </a>
+     =
+                                                                           =
+                                            <a
+                          =
+                                          href=3D"https://dare2compete.com/=
+scholarships"
+                                                           =
+         rel=3D"noopener"
+                                               =
+                     target=3D"_blank"
+                                  =
+                                  style=3D"text-decoration: none; display: =
+inline-block; padding: 8px 20px; border-radius: 8px; font-weight: 500; marg=
+in: 3px; font-size: 13px; color: #27497d; background: #e4e8ee;"
+         =
+                                                       >
+                =
+                                                    Scholarships
+        =
+                                                        </a>
+            =
+                                                                           =
+                                     <a
+                                 =
+                                   href=3D"https://dare2compete.com/jobs"=
+
+                                                                    rel=
+=3D"noopener"
+                                                           =
+         target=3D"_blank"
+                                              =
+                      style=3D"text-decoration: none; display: inline-block=
+; padding: 8px 20px; border-radius: 8px; font-weight: 500; margin: 3px; fon=
+t-size: 13px; color: #27497d; background: #e4e8ee;"
+                     =
+                                           >
+                            =
+                                        Jobs
+                            =
+                                    </a>
+                                =
+                                                                           =
+         </td>
+                                                    </tr>=
+
+
+                                                    <tr>
+          =
+                                              <td class=3D"updated" style=
+=3D"padding-bottom: 15px;">
+                                             =
+               <table style=3D"width: 100%;">
+                           =
+                                     <tbody>
+                            =
+                                        <tr>
+                            =
+                                            <td style=3D"width: 450px; box-=
+sizing: border-box;" valign=3D"top">
+                                    =
+                                        <span style=3D"color: #000; display=
+: block; font-size: 14px; font-weight: 500; padding-bottom: 10px; text-alig=
+n: center; width: 180px;">
+                                              =
+                                  Stay updated
+                          =
+                                                  </span>
+               =
+                                                             <div>
+      =
+                                                                          <=
+a href=3D"https://play.google.com/store/apps/details?id=3Dcom.dare2compete.=
+app" style=3D"display: inline-block; text-decoration: none; margin-right: 1=
+0px;" target=3D"_blank">
+                                                =
+                                    <img
+                                =
+                                                        style=3D"width: 130=
+px; display: inline-block; vertical-align: middle;"
+                     =
+                                                                   src=3D"h=
+ttps://d8it4huxumps7.cloudfront.net/uploads/images/newsletter-image/google-=
+play.png"
+                                                               =
+                         alt=3D"Google play"
+                            =
+                                                        />
+              =
+                                                                  </a>
+  =
+                                                                           =
+   <a href=3D"https://news.google.com/publications/CAAqBwgKMKPBlwswpOquAw?o=
+c=3D3&ceid=3DIN:en&hl=3Den-IN&gl=3DIN" style=3D"display: inline-block; text=
+-decoration: none;" target=3D"_blank">
+                                  =
+                                                  <img
+                  =
+                                                                      style=
+=3D"width: auto; height: 38px; display: inline-block; vertical-align: middl=
+e;"
+                                                                     =
+                   src=3D"https://d8it4huxumps7.cloudfront.net/uploads/imag=
+es/6200fe0ce6f74_40x40_google_news.png"
+                                 =
+                                                       alt=3D"Google news"=
+
+                                                                        =
+            />
+                                                          =
+                      </a>
+                                              =
+                              </div>
+                                    =
+                                    </td>
+
+                            =
+                                            <td style=3D"width: 180px; box-=
+sizing: border-box; text-align: right;" valign=3D"top">
+                 =
+                                                           <span style=3D"c=
+olor: #000; display: block; font-size: 14px; font-weight: 500; padding-bott=
+om: 10px; text-align: center;">
+                                         =
+                                       Connect with us
+                  =
+                                                          </span>
+       =
+                                                                     <div s=
+tyle=3D"text-align: center;">
+                                           =
+                                     <a href=3D"https://t.me/+ON15qceSy-IyZ=
+jY9" style=3D"display: inline-block; text-decoration: none;" target=3D"_bla=
+nk">
+                                                                    =
+                <img
+                                                    =
+                                    src=3D"https://d8it4huxumps7.cloudfront=
+.net/uploads/images/newsletter-image/telegram-icon.png"
+                 =
+                                                                       alt=
+=3D"Telegram Icon"
+                                                      =
+                                  style=3D"width: 38px;"
+                =
+                                                                    >
+   =
+                                                                           =
+  </a>
+                                                                  =
+              <a href=3D"https://www.instagram.com/unstop.world/" style=3D"=
+display: inline-block; text-decoration: none; margin-left: 5px;" target=3D"=
+_blank">
+                                                                =
+                    <img src=3D"https://d8it4huxumps7.cloudfront.net/upload=
+s/images/newsletter-image/instagram-icon.png" alt=3D"Instagram Icon" style=
+=3D"width: 38px;">
+                                                      =
+                          </a>
+                                          =
+                                      <a href=3D"https://www.linkedin.com/c=
+ompany/unstop/" style=3D"display: inline-block; text-decoration: none; marg=
+in-left: 5px;" target=3D"_blank">
+                                       =
+                                             <img src=3D"https://d8it4huxum=
+ps7.cloudfront.net/uploads/images/newsletter-image/linkedin-icon.png" alt=
+=3D"Linkedin Icon" style=3D"width: 38px;">
+                              =
+                                                  </a>
+                  =
+                                                              <a href=3D"ht=
+tps://discord.com/invite/DvYWXNr4yR" style=3D"display: inline-block; text-d=
+ecoration: none; margin-left: 5px;" target=3D"_blank">
+                  =
+                                                                  <img src=
+=3D"https://d8it4huxumps7.cloudfront.net/uploads/images/unstop/discord-logo=
+.png" alt=3D"discord Icon" style=3D"width: 38px;">
+                      =
+                                                          </a>
+          =
+                                                                  </div>
+=
+                                                                        </t=
+d>
+                                                                    </=
+tr>
+                                                                </tbo=
+dy>
+                                                            </table>=
+
+                                                        </td>
+        =
+                                            </tr>
+                       =
+                             <tr>
+                                       =
+                 <td style=3D"color: #000; font-size: 12px; text-align: cen=
+ter; font-weight: 500;">
+                                                =
+            &copy; 2022 <a href=3D"https://unstop.com/" style=3D"text-decor=
+ation: none; color: #000;">Unstop</a>. All rights
+                       =
+                                     reserved.
+                          =
+                              </td>
+                                     =
+               </tr>
+                                                    =
+<tr>
+                                                        <td style=3D=
+"color: #101010; font-size: 12px; text-align: center;">
+                 =
+                                           <a href=3D"https://unstop.com/ne=
+wsletter-unsubscribe/cHJpbmNlc2hhcm1hNzYyMTRAZ21haWwuY29t"  style=3D"font-s=
+ize: 12px; color: #101010;">Unsubscribe</a>
+                             =
+                               | <a href=3D"mailto:support@unstop.com" styl=
+e=3D"color: #101010; text-decoration: none;">Helpdesk</a>
+               =
+                                         </td>
+                          =
+                          </tr>
+                                         =
+       </tbody>
+                                            </table>
+  =
+                                      </td>
+                             =
+       </tr>
+                                                            =
+        </tbody>
+                            </table>
+                 =
+       </td>
+                    </tr>
+
+                    <!-- Foot=
+er Option 2 -->
+                   =20
+                </tbody>
+       =
+     </table>
+        </div>
+    </body>
+</html>
+
+--_=_swift_1651497743_41a2e96e1f25daec3e291a262acbf9bf_=_
+Content-Transfer-Encoding: QUOTED-PRINTABLE
+Content-Type: TEXT/HTML;
+	charset=utf-8
+
+<!DOCTYPE html>
+<html lang=3D"en">
+    <head>
+        <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Du=
+tf-8" />
+        <meta http-equiv=3D"X-UA-Compatible" content=3D"IE=3Dedge">
+        <title>unstop</title>
+        <meta name=3D"author" content=3D"" content=3D"">
+        <meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-sc=
+ale=3D1.0" />
+        <style type=3D"text/css">
+            @import  url('https://fonts.googleapis.com/css2?family=3DInter:=
+wght@400;500;700;800&');
+
+            body {
+                width: auto;
+                margin: 0;
+                padding: 0;
+                font-size: 14px;
+                -webkit-text-size-adjust: 100% !important;
+                -ms-text-size-adjust: 100% !important;
+                -webkit-font-smoothing: antialiased;
+                background-color: #FFFFFF;
+                font-family: 'Inter', sans-serif;
+            }
+
+            h1,
+            h2,
+            h3,
+            h4,
+            h5,
+            h6,
+            td,
+            a,
+            span {
+                font-family: 'Inter', sans-serif !important;
+            }
+
+            h2,
+            p {
+                margin: 0;
+                padding: 0;
+                display: block;
+                font-style: normal;
+                letter-spacing: normal;
+            }
+
+            h2 {
+                font-size: 16px;
+                font-weight: bold;
+                line-height: 125%;
+            }
+
+            p {
+                margin: 10px 0;
+                font-size: 14px;
+                line-height: 21px;
+            }
+
+            img {
+                border: 0 !important;
+                outline: none !important;
+                display: block;
+                width: 100%;
+                height: auto;
+                margin: 0px;
+                padding: 0px;
+            }
+
+            a {
+                text-decoration: none;
+                color: rgba(0, 0, 0, .75);
+            }
+
+            .ii a[href] {
+                color: rgba(0, 0, 0, .75) !important;
+            }
+
+            .read_more {
+                color: #ffffff;
+                font-weight: 400;
+                background-color: #1077d6;
+                border-radius: 50px;
+                padding: 8px 15px;
+                display: inline-block;
+                font-size: 14px;
+                line-height: normal;
+                text-decoration: none;
+            }
+
+            ul {
+                margin: 0;
+                padding: 0;
+            }
+
+            li {
+                margin: 0;
+                padding: 0;
+                line-height: 150%;
+                font-size: 15px;
+            }
+
+            table {
+                border-collapse: collapse;
+                mso-table-lspace: 0px;
+                mso-table-rspace: 0px;
+                float: none !important;
+            }
+
+            .bg-box {
+                border: 1px solid #e8e8e8;
+            }
+
+            .pdng_box {
+                padding: 15px;
+            }
+
+            .cptn h2,
+            .cptn h3,
+            .items h2,
+            .items h3,
+            .full_item h2,
+            .full_item h3,
+            .cptn p,
+            .register_now,
+            .btn_hover,
+            .participate_now,
+            .h2_hover,
+            .p_hover,
+            .tags a {
+                transition: .3s;
+            }
+
+            .cptn h2:hover,
+            .cptn h3:hover,
+            .items h2:hover,
+            .items h3:hover,
+            .full_item h2:hover,
+            .full_item h3:hover,
+            .cptn p:hover,
+            .h2_hover:hover,
+            .p_hover:hover {
+                color: #0073E6 !important;
+            }
+
+            .register_now:hover {
+                background: #434343 !important;
+            }
+
+            .participate_now:hover,
+            .tags a:hover,
+            .btn_hover:hover {
+                background: #27497d !important;
+                color: #ffffff !important;
+            }
+
+            @media  only screen and (max-width: 600px) {
+                .full_width {
+                    padding-left: 0 !important;
+                    padding-right: 0 !important;
+                    width: 100%;
+                    display: block !important;
+                    clear: both;
+                }
+
+                .bites_pdng_top {
+                    padding-top: 10px !important;
+                }
+
+                .bites_pdng_top h2 {
+                    margin-bottom: 10px !important;
+                }
+
+                .pdng_none {
+                    padding-left: 0 !important;
+                    padding-right: 0 !important;
+                }
+
+                .full_img {
+                    min-height: auto !important;
+                }
+
+                .full-width-sect h2 {
+                    font-size: 16px !important;
+                }
+
+                .small_img {
+                    max-height: 100% !important;
+                }
+
+                .new_box .cptn_box {
+                    width: calc(100% - 110px) !important;
+                    padding: 0 10px !important;
+                }
+                .new_box h2 {
+                    font-size: 13px !important;
+                }
+                .new_box span {
+                    font-size: 12px !important;
+                    line-height: 16px !important;
+                    margin-top: 3px !important;
+                }
+                .new_box p {
+                    font-size: 12px !important;
+                    margin: 5px 0 0 0 !important;
+                    line-height: 14px;
+                }
+                .new_box .last_box {
+                    width: 30px !important;
+                }
+                .new_box .last_box a {
+                    width: 30px;
+                    height: 30px;
+                    background: #27497d !important;
+                    border-radius: 50px !important;
+                    padding: 0 !important;
+                    line-height: 26px !important;
+                }
+                .new_box .last_box span {
+                    display: none !important;
+                }
+                .new_box .last_box img {
+                    display: inline-block !important;
+                    width: auto;
+                    height: 14px;
+                    vertical-align: middle;
+                }
+
+                .m_mobile1 {
+                    text-align: center !important;
+                    margin-top: 10px !important;
+                }
+
+                .m_mobile2 {
+                    text-align: center !important;
+                    margin-bottom: 10px !important;
+                }
+
+                .hdng {
+                    padding-bottom: 15px !important;
+                }
+
+                .hdng a {
+                    font-size: 18px !important;
+                    padding: 10px !important;
+                }
+
+                .pdng {
+                    padding: 0 15px !important;
+                }
+
+                .pdng_lr {
+                    padding-left: 15px !important;
+                    padding-right: 15px !important;
+                }
+
+                .item td {
+                    width: 100% !important;
+                    display: block;
+                    padding: 0 !important;
+                    text-align: left !important;
+                }
+
+                .item .cptn {
+                    padding-top: 12px !important;
+                }
+
+                .even_item .cptn {
+                    padding-top: 0 !important;
+                    padding-bottom: 12px !important;
+                }
+
+                .art_item p {
+                    font-size: 14px !important;
+                    line-height: 21px !important;
+                    display: -webkit-box;
+                    -webkit-line-clamp: 3;
+                    overflow: hidden;
+                    -webkit-box-orient: vertical;
+                }
+
+                .art_img {
+                    width: 120px !important;
+                }
+
+                .user_name {
+                    font-size: 18px !important;
+                }
+
+                .user_dtls {
+                    font-size: 15px !important;
+                    line-height: 20px !important;
+                }
+
+                .bdr_top {
+                    padding-bottom: 15px !important;
+                    padding-top: 15px !important;
+                }
+
+                .items > td {
+                    width: 100% !important;
+                    padding: 0 0 30px !important;
+                    display: block !important;
+                }
+                .items > td:last-child {
+                    padding: 0 !important;
+                }
+
+                .full_item > td {
+                    width: 100% !important;
+                    padding: 0 !important;
+                    display: block !important;
+                }
+
+                .full_item h2 {
+                    margin-top: 15px !important;
+                }
+
+                .participate_now {
+                    margin-top: 15px !important;
+                    font-size: 13px !important;
+                }
+
+                .h40 {
+                    height: 30px !important;
+                }
+                .h10 {
+                    height: 5px !important;
+                }
+
+                .hdng_icon {
+                    padding-left: 15px !important;
+                }
+
+                .footer {
+                    padding: 20px 0 !important;
+                }
+                .tags {
+                    padding-bottom: 10px !important;
+                }
+                .tags a {
+                    font-size: 10px !important;
+                    padding: 7px 10px !important;
+                    margin: 3px 1px !important;
+                    border-radius: 5px !important;
+                }
+                .updated {
+                    padding-bottom: 0 !important;
+                }
+                .updated tr {
+                    display: block;
+                }
+                .updated td {
+                    display: block;
+                    width: 100% !important;
+                    text-align: center !important;
+                    padding-bottom: 10px;
+                }
+                .updated td span {
+                    padding-bottom: 6px !important;
+                    width: 100% !important;
+                }
+                .bg_box {
+                    border: 1px solid #e7e7e7;
+                    border-radius: 8px;
+                }
+                .bg_box > table{
+                    border: 0 !important;
+                }
+                .full_banner {
+                    padding-left: 5px !important;
+                    padding-right: 5px !important;
+                }
+
+                .hdr_option2 {
+                    padding: 15px !important;
+                }
+
+                .hdr_option2 td {
+                    width: 100% !important;
+                    text-align: center !important;
+                    display: block;
+                }
+
+                .hdr_option2 .logo {
+                    margin-bottom: 15px;
+                    padding-top: 0 !important;
+                }
+
+                .hdr_option2 .logo img {
+                    margin: auto;
+                }
+                .mb_none a {
+                    margin: 3px 1px !important;
+                    padding: 6px 10px !important;
+                    font-size: 10px !important;
+                }
+
+
+                .full_width_item td {
+                    width: 100% !important;
+                    display: block;
+                    padding: 0 !important;
+                    text-align: left !important;
+                }
+
+                .full_width_item .cptn {
+                    padding-top: 15px !important;
+                }
+
+                .full_width_item h2 {
+                    font-size: 15px !important;
+                }
+
+                .d2c_icon {
+                    padding: 12px !important;
+                }
+
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class=3D"bg_box" style=3D"width: 100%; background-color: #FFFF=
+FF;">
+            <table style=3D"border-collapse: collapse; border: 0; width: 10=
+0%; max-width: 700px; margin: 0 auto; border: 1px solid #e7e7e7;" cellspaci=
+ng=3D"0" cellpadding=3D"0">
+                <tbody>
+                    <tr>
+                        <td style=3D"background-color: #ffffff; border: 0; =
+padding: 0; border-radius: 8px;" valign=3D"top">
+                            <table style=3D"min-width: 100%; border-collaps=
+e: collapse;" border=3D"0" width=3D"100%" cellspacing=3D"0" cellpadding=3D"=
+0">
+                                <tbody>
+                                    <tr>
+                                        <td valign=3D"top">
+                                            <!-- HEADER Option 1 -->
+                                                                           =
+                 <table style=3D"max-width: 100%; min-width: 100%; border-c=
+ollapse: collapse;" border=3D"0" width=3D"100%" cellspacing=3D"0" cellpaddi=
+ng=3D"0" align=3D"left">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td class=3D"d2=
+c_icon" style=3D"text-align: center; padding: 15px;">
+                                                                <a style=3D=
+"display: block;" href=3D"https://mstats.dare2compete.com/CL0/https:%2F%2Fu=
+nstop.com%2F/1/0109018084efb3c8-f58a41e4-58cb-4465-b947-c386bf7594d6-000000=
+/o_mIrCK9cnMtH1O9eRGM5uLY0q3CUJt1Zinfl1d7fNc=3D48">
+                                                                <img=20
+                                                                    style=
+=3D"width: 90px; display: inline-block; vertical-align: middle;"
+                                                                    src=3D"=
+https://d8it4huxumps7.cloudfront.net/uploads/images/unstop/unstop-logo-500.=
+png"
+                                                                    alt=3D"=
+Checkout this job that we think might be relevant for you"=20
+                                                                />
+                                                                <span style=
+=3D"display: inline-block; border-left: 1px solid rgba(39,73,125,.5); paddi=
+ng-left: 10px; margin-left: 8px; color: #27497d; font-size: 12px; text-alig=
+n: left; vertical-align: middle;">
+                                                                    Formerl=
+y
+                                                                    <strong=
+ style=3D"display: block; font-size: 13px; font-weight: 500; line-height: n=
+ormal;">
+                                                                    Dare2Co=
+mpete
+                                                                    </stron=
+g>
+                                                                </span>
+                                                                </a>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                           =20
+                                            <!-- HEADER Option 2 -->
+                                           =20
+                                           =20
+                                                                           =
+                                                        =20
+                                            <!-- HEADING OPTION  -->
+                                                                           =
+                    =20
+                                                       =20
+                                                                           =
+                                                                           =
+                                          <!-- HEADING OPTION  END -->
+
+                                           =20
+                                            <table align=3D"left" border=3D=
+"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"max-width:100%;min-width:1=
+00%;border-collapse:collapse" width=3D"100%">
+                                                <tbody>
+                                                                           =
+                            =20
+
+                                                   =20
+
+                                                   =20
+
+                                                   =20
+
+                                                   =20
+
+                                                   =20
+                                                   =20
+                                                   =20
+                                                                           =
+                                 <tr>
+                                                            <td class=3D"fu=
+ll_banner" style=3D"padding: 0 10px;">
+                                                                           =
+                                                         <a href=3D"https:/=
+/mstats.dare2compete.com/CL0/https:%2F%2Funstop.com%2Finternships%3Futm_sou=
+rce=3DInternships%26utm_medium=3DD2C-Newsletters%26utm_campaign=3DEng-3rd-Y=
+ear/1/0109018084efb3c8-f58a41e4-58cb-4465-b947-c386bf7594d6-000000/I2LMpi1l=
+krxbLWOvL-dspeNXQB3u18VJLWrfmPATH2I=3D48" target=3D"_blank" style=3D"displa=
+y: block;">
+   =20
+
+           =20
+                        <img=20
+                src=3D"https://d8it4huxumps7.cloudfront.net/uploads/images/=
+newsletter-image/626fc8992cd6c_dream_comp_nl_banner.jpg?d=3D700x400"=20
+                alt=3D""=20
+                style=3D"width: 100%; display: block; margin: 0; border-rad=
+ius: 8px;"
+            >
+            </a>
+                                                                           =
+                                                 </td>
+                                                        </tr>
+                                                   =20
+
+                                                                           =
+                            =20
+
+                                                                           =
+                            =20
+
+                                                                           =
+                            =20
+
+                                                                           =
+                            =20
+
+                                                                           =
+                            =20
+
+                                                                           =
+                            =20
+
+                                                                           =
+                            =20
+                                                                           =
+                            =20
+                                                   =20
+                                                   =20
+                                                   =20
+                                                                           =
+                         </tbody>
+                                            </table>
+
+                                            <table style=3D"max-width: 100%=
+; min-width: 100%; border-collapse: collapse;" border=3D"0" width=3D"100%" =
+cellspacing=3D"0" cellpadding=3D"0" align=3D"left">
+                                                <tbody>
+                                                    <tr>
+                                                        <td>
+                                                            <div class=3D"h=
+50" style=3D"width: 100%; display: block; height: 30px;">
+                                                                &nbsp;
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                                                           =
+                                                        =20
+                                            <!-- HEADING OPTION  -->
+                                                                           =
+                    =20
+                                                       =20
+                                                                           =
+                                         <table align=3D"left" border=3D"0"=
+ cellpadding=3D"0" cellspacing=3D"0" style=3D"max-width:100%;min-width:100%=
+;border-collapse:collapse" width=3D"100%">
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td=
+ class=3D"pdng_lr" style=3D"padding-left: 30px; padding-right: 30px; paddin=
+g-bottom: 20px;">
+                                                                           =
+ <a
+                                                                           =
+     style=3D"text-decoration: none; display: block; color: #455368; font-s=
+ize: 20px; font-weight: 600; line-height: 100%;"
+                                                                           =
+     href=3D"https://mstats.dare2compete.com/CL0/https:%2F%2Fdare2compete.c=
+om%2Finternships/1/0109018084efb3c8-f58a41e4-58cb-4465-b947-c386bf7594d6-00=
+0000/HVB9IeaJUC6C0pdxReRFMC1UKyew4a48WkHHHJL7dQ4=3D48"
+                                                                           =
+ >
+                                                                           =
+     Internships For You
+                                                                           =
+ </a>
+                                                                        </t=
+d>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                                           =
+                                                                           =
+                                          <!-- HEADING OPTION  END -->
+
+                                           =20
+                                            <table align=3D"left" border=3D=
+"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"max-width:100%;min-width:1=
+00%;border-collapse:collapse" width=3D"100%">
+                                                <tbody>
+                                                                           =
+                            =20
+
+                                                   =20
+
+                                                   =20
+
+                                                   =20
+
+                                                   =20
+
+                                                   =20
+                                                   =20
+                                                   =20
+
+                                                   =20
+
+                                                   =20
+
+                                                   =20
+
+                                                   =20
+
+                                                   =20
+                                                   =20
+                                                   =20
+
+                                                   =20
+
+                                                   =20
+
+                                                   =20
+
+                                                   =20
+
+                                                   =20
+                                                   =20
+                                                   =20
+
+                                                   =20
+
+                                                   =20
+
+                                                   =20
+
+                                                   =20
+
+                                                   =20
+                                                   =20
+                                                   =20
+
+                                                   =20
+
+                                                   =20
+
+                                                   =20
+
+                                                   =20
+
+                                                   =20
+                                                   =20
+                                                   =20
+                                                   =20
+
+                                                                           =
+                            =20
+
+                                                                           =
+                            =20
+
+                                                                           =
+                                                                           =
+          <tr>
+                                                            <td class=3D"pd=
+ng_lr" style=3D"padding-left: 30px; padding-right: 30px;">
+                                                                <table styl=
+e=3D"max-width: 100%; min-width: 100%; border-collapse: collapse;" border=
+=3D"0" width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" align=3D"left">
+                                                                    <tbody>
+                                                                           =
+                                                                         <t=
+r class=3D"new_box">
+    <td valign=3D"middle" width=3D"80">
+        <a=20
+            href=3D"https://mstats.dare2compete.com/CL0/https:%2F%2Funstop.=
+com%2Finternship%2Ftesting-internship-xiaomi-india-282700%3Futm_source=3DIn=
+ternships%26utm_medium=3DD2C-Newsletters%26utm_campaign=3DEng-3rd-Year/1/01=
+09018084efb3c8-f58a41e4-58cb-4465-b947-c386bf7594d6-000000/vOtnLRnkAVDQMhR4=
+uFXDWy2s34LpLU9K1h-ZDhhiAII=3D48"
+            style=3D"height: 75px; display: flex; padding: 0; background-co=
+lor: #ffffff; border: 1px solid #ddd; border-radius: 8px; background-image:=
+ url(https://d8it4huxumps7.cloudfront.net/uploads/images/6200b25da3f84_80x8=
+0.jpg); background-size: cover; background-repeat: repeat;"
+        >
+            <img=20
+                src=3D"https://d8it4huxumps7.cloudfront.net/uploads/images/=
+75x75/625d103915a1a_xiaomi.png"
+                alt=3D"Testing Internship"
+                height=3D"auto"
+                style=3D"width:auto;max-width: 65px; margin: auto;height:au=
+to;display: block; max-height: 65px;"
+            >
+        </a>
+    </td>
+
+    <td class=3D"cptn_box" style=3D"padding: 0 15px; box-sizing: border-box=
+;" valign=3D"middle" width=3D"430">
+        <h2=20
+            class=3D"h2_hover"
+            style=3D"color: #101010; font-size: 14px; font-weight: 500; lin=
+e-height: 125%;"
+        >
+            <a=20
+                href=3D"https://mstats.dare2compete.com/CL0/https:%2F%2Funs=
+top.com%2Finternship%2Ftesting-internship-xiaomi-india-282700%3Futm_source=
+=3DInternships%26utm_medium=3DD2C-Newsletters%26utm_campaign=3DEng-3rd-Year=
+/2/0109018084efb3c8-f58a41e4-58cb-4465-b947-c386bf7594d6-000000/oIDvH3wAGhl=
+iEjPixBENJjIyr2Iuv7SKaDsh8f-g5NY=3D48"
+                style=3D"color: inherit !important; text-decoration: none; =
+display: block;"
+                target=3D"_blank"
+            >
+                Testing Internship
+            </a>
+        </h2>
+
+                    <span=20
+                class=3D"p_hover"
+                style=3D"font-size: 13px; color: #5a5a5a; line-height: 18px=
+; display: block; margin-top: 5px;"
+            >
+                <a=20
+                    href=3D"https://mstats.dare2compete.com/CL0/https:%2F%2=
+Funstop.com%2Finternship%2Ftesting-internship-xiaomi-india-282700%3Futm_sou=
+rce=3DInternships%26utm_medium=3DD2C-Newsletters%26utm_campaign=3DEng-3rd-Y=
+ear/3/0109018084efb3c8-f58a41e4-58cb-4465-b947-c386bf7594d6-000000/c2Qk31Tk=
+cUsTyUxBo4ebFVPWUZlA1cFXKk-PcULrcf8=3D48"
+                    style=3D"color: inherit !important; text-decoration: no=
+ne; display: block;"
+                    target=3D"_blank"
+                >
+                    Xiaomi India
+                </a>
+            </span>
+       =20
+                    <div style=3D"padding-top: 5px;">
+                <table style=3D"max-width: 100%; min-width: 100%; border-co=
+llapse: collapse;" border=3D"0" width=3D"100%" cellspacing=3D"0" cellpaddin=
+g=3D"0" align=3D"left">
+                    <tbody>
+                        <tr>
+                            <td width=3D"16">
+                                <img=20
+                                    style=3D"width: 16px; display: inline-b=
+lock; vertical-align: middle;"
+                                    src=3D"https://d8it4huxumps7.cloudfront=
+.net/uploads/images/61fa2753337f1_days_left_icon_blue_1.png"
+                                    alt=3D"Days Left"
+                                />
+                            </td>
+                            <td style=3D"padding-left: 10px; font-size: 12p=
+x; font-weight: 500; color: #0073E6;">
+                                6 days left
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            </td>
+
+    <td class=3D"last_box" style=3D"word-break:break-word; box-sizing: bord=
+er-box;" valign=3D"middle" width=3D"130">
+        <a class=3D"btn_hover"
+            href=3D"https://mstats.dare2compete.com/CL0/https:%2F%2Funstop.=
+com%2Finternship%2Ftesting-internship-xiaomi-india-282700%3Futm_source=3DIn=
+ternships%26utm_medium=3DD2C-Newsletters%26utm_campaign=3DEng-3rd-Year/4/01=
+09018084efb3c8-f58a41e4-58cb-4465-b947-c386bf7594d6-000000/R17EuaL6jK8eMyZm=
+ZX3GH8m_A2y2LPAqCLg9p8osYVk=3D48"
+            style=3D"display: block; color: #27497d; text-decoration: none;=
+ padding: 6px 12px; font-weight: 500; font-size: 13px; border: 1px solid #2=
+7497d; border-radius: 5px; box-sizing: border-box; text-align: center;">
+            <span>
+                                                                    Apply n=
+ow
+                                                   =20
+            </span>
+            <img=20
+                src=3D"https://d8it4huxumps7.cloudfront.net/uploads/images/=
+61fb6557539f0_left_arrow_icon.png"=20
+                alt=3D""
+                style=3D"display: none;"
+            >
+        </a>
+    </td>
+</tr>
+
+
+
+                                                                           =
+                                                                           =
+                                                                          <=
+tr>
+        <td colspan=3D"3" style=3D"padding-bottom: 15px; padding-top: 15px;=
+">
+            <div style=3D"width: 100%; display: block; border-top: 1px soli=
+d #e7e7e7; height: 1px;"></div>
+        </td>
+    </tr>
+
+<tr class=3D"new_box">
+    <td valign=3D"middle" width=3D"80">
+        <a=20
+            href=3D"https://mstats.dare2compete.com/CL0/https:%2F%2Funstop.=
+com%2Finternship%2Fsoftware-quality-assurance-internship-altair-280825%3Fut=
+m_source=3DInternships%26utm_medium=3DD2C-Newsletters%26utm_campaign=3DEng-=
+3rd-Year/1/0109018084efb3c8-f58a41e4-58cb-4465-b947-c386bf7594d6-000000/c0C=
+WoxUOrT3pLdrFbWYF718G1Giia69kdTDqVBcSI6U=3D48"
+            style=3D"height: 75px; display: flex; padding: 0; background-co=
+lor: #ffffff; border: 1px solid #ddd; border-radius: 8px; background-image:=
+ url(https://d8it4huxumps7.cloudfront.net/uploads/images/6200b25da3f84_80x8=
+0.jpg); background-size: cover; background-repeat: repeat;"
+        >
+            <img=20
+                src=3D"https://d8it4huxumps7.cloudfront.net/uploads/images/=
+75x75/61f2e331d2ceb_altair.png"
+                alt=3D"Software Quality Assurance Internship"
+                height=3D"auto"
+                style=3D"width:auto;max-width: 65px; margin: auto;height:au=
+to;display: block; max-height: 65px;"
+            >
+        </a>
+    </td>
+
+    <td class=3D"cptn_box" style=3D"padding: 0 15px; box-sizing: border-box=
+;" valign=3D"middle" width=3D"430">
+        <h2=20
+            class=3D"h2_hover"
+            style=3D"color: #101010; font-size: 14px; font-weight: 500; lin=
+e-height: 125%;"
+        >
+            <a=20
+                href=3D"https://mstats.dare2compete.com/CL0/https:%2F%2Funs=
+top.com%2Finternship%2Fsoftware-quality-assurance-internship-altair-280825%=
+3Futm_source=3DInternships%26utm_medium=3DD2C-Newsletters%26utm_campaign=3D=
+Eng-3rd-Year/2/0109018084efb3c8-f58a41e4-58cb-4465-b947-c386bf7594d6-000000=
+/ZbYxVJIUWIre_lz8rTs_-ijmzi1b3u1EFPdGWFOvlv0=3D48"
+                style=3D"color: inherit !important; text-decoration: none; =
+display: block;"
+                target=3D"_blank"
+            >
+                Software Quality Assurance Internship
+            </a>
+        </h2>
+
+                    <span=20
+                class=3D"p_hover"
+                style=3D"font-size: 13px; color: #5a5a5a; line-height: 18px=
+; display: block; margin-top: 5px;"
+            >
+                <a=20
+                    href=3D"https://mstats.dare2compete.com/CL0/https:%2F%2=
+Funstop.com%2Finternship%2Fsoftware-quality-assurance-internship-altair-280=
+825%3Futm_source=3DInternships%26utm_medium=3DD2C-Newsletters%26utm_campaig=
+n=3DEng-3rd-Year/3/0109018084efb3c8-f58a41e4-58cb-4465-b947-c386bf7594d6-00=
+0000/AyEUUw7j9pGtRGRBSrnVzGmtVj55LKhRY-2nO7ys_cs=3D48"
+                    style=3D"color: inherit !important; text-decoration: no=
+ne; display: block;"
+                    target=3D"_blank"
+                >
+                    Altair
+                </a>
+            </span>
+       =20
+                    <div style=3D"padding-top: 5px;">
+                <table style=3D"max-width: 100%; min-width: 100%; border-co=
+llapse: collapse;" border=3D"0" width=3D"100%" cellspacing=3D"0" cellpaddin=
+g=3D"0" align=3D"left">
+                    <tbody>
+                        <tr>
+                            <td width=3D"16">
+                                <img=20
+                                    style=3D"width: 16px; display: inline-b=
+lock; vertical-align: middle;"
+                                    src=3D"https://d8it4huxumps7.cloudfront=
+.net/uploads/images/61fa2753337f1_days_left_icon_blue_1.png"
+                                    alt=3D"Days Left"
+                                />
+                            </td>
+                            <td style=3D"padding-left: 10px; font-size: 12p=
+x; font-weight: 500; color: #0073E6;">
+                                6 days left
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            </td>
+
+    <td class=3D"last_box" style=3D"word-break:break-word; box-sizing: bord=
+er-box;" valign=3D"middle" width=3D"130">
+        <a class=3D"btn_hover"
+            href=3D"https://mstats.dare2compete.com/CL0/https:%2F%2Funstop.=
+com%2Finternship%2Fsoftware-quality-assurance-internship-altair-280825%3Fut=
+m_source=3DInternships%26utm_medium=3DD2C-Newsletters%26utm_campaign=3DEng-=
+3rd-Year/4/0109018084efb3c8-f58a41e4-58cb-4465-b947-c386bf7594d6-000000/vIw=
+AwHtlqILI_ybVhPx6P91NvtJYLnIJ63Af6eVQmWw=3D48"
+            style=3D"display: block; color: #27497d; text-decoration: none;=
+ padding: 6px 12px; font-weight: 500; font-size: 13px; border: 1px solid #2=
+7497d; border-radius: 5px; box-sizing: border-box; text-align: center;">
+            <span>
+                                                                    Apply n=
+ow
+                                                   =20
+            </span>
+            <img=20
+                src=3D"https://d8it4huxumps7.cloudfront.net/uploads/images/=
+61fb6557539f0_left_arrow_icon.png"=20
+                alt=3D""
+                style=3D"display: none;"
+            >
+        </a>
+    </td>
+</tr>
+
+
+
+                                                                           =
+                                                                           =
+                                                                          <=
+tr>
+        <td colspan=3D"3" style=3D"padding-bottom: 15px; padding-top: 15px;=
+">
+            <div style=3D"width: 100%; display: block; border-top: 1px soli=
+d #e7e7e7; height: 1px;"></div>
+        </td>
+    </tr>
+
+<tr class=3D"new_box">
+    <td valign=3D"middle" width=3D"80">
+        <a=20
+            href=3D"https://mstats.dare2compete.com/CL0/https:%2F%2Funstop.=
+com%2Finternship%2Fweb-development-internship-motorola-solutions-286779%3Fu=
+tm_source=3DInternships%26utm_medium=3DD2C-Newsletters%26utm_campaign=3DEng=
+-3rd-Year/1/0109018084efb3c8-f58a41e4-58cb-4465-b947-c386bf7594d6-000000/G-=
+DSbkomqqUbuPyfcRcmvGwT-IieLr3M24q1gJsb6Fw=3D48"
+            style=3D"height: 75px; display: flex; padding: 0; background-co=
+lor: #ffffff; border: 1px solid #ddd; border-radius: 8px; background-image:=
+ url(https://d8it4huxumps7.cloudfront.net/uploads/images/6200b25da3f84_80x8=
+0.jpg); background-size: cover; background-repeat: repeat;"
+        >
+            <img=20
+                src=3D"https://d8it4huxumps7.cloudfront.net/uploads/images/=
+75x75/626787d9b8487_motorola_logo.jpg"
+                alt=3D"Web Development Internship"
+                height=3D"auto"
+                style=3D"width:auto;max-width: 65px; margin: auto;height:au=
+to;display: block; max-height: 65px;"
+            >
+        </a>
+    </td>
+
+    <td class=3D"cptn_box" style=3D"padding: 0 15px; box-sizing: border-box=
+;" valign=3D"middle" width=3D"430">
+        <h2=20
+            class=3D"h2_hover"
+            style=3D"color: #101010; font-size: 14px; font-weight: 500; lin=
+e-height: 125%;"
+        >
+            <a=20
+                href=3D"https://mstats.dare2compete.com/CL0/https:%2F%2Funs=
+top.com%2Finternship%2Fweb-development-internship-motorola-solutions-286779=
+%3Futm_source=3DInternships%26utm_medium=3DD2C-Newsletters%26utm_campaign=
+=3DEng-3rd-Year/2/0109018084efb3c8-f58a41e4-58cb-4465-b947-c386bf7594d6-000=
+000/ctqSEMN2hr4UB8KoATyPaC7g546rtuOw6dHNQHPUCwU=3D48"
+                style=3D"color: inherit !important; text-decoration: none; =
+display: block;"
+                target=3D"_blank"
+            >
+                Web Development Internship
+            </a>
+        </h2>
+
+                    <span=20
+                class=3D"p_hover"
+                style=3D"font-size: 13px; color: #5a5a5a; line-height: 18px=
+; display: block; margin-top: 5px;"
+            >
+                <a=20
+                    href=3D"https://mstats.dare2compete.com/CL0/https:%2F%2=
+Funstop.com%2Finternship%2Fweb-development-internship-motorola-solutions-28=
+6779%3Futm_source=3DInternships%26utm_medium=3DD2C-Newsletters%26utm_campai=
+gn=3DEng-3rd-Year/3/0109018084efb3c8-f58a41e4-58cb-4465-b947-c386bf7594d6-0=
+00000/uxLMG3uKC1W7rZKV3yRsU3RH93bAl_OlTCfh_647tes=3D48"
+                    style=3D"color: inherit !important; text-decoration: no=
+ne; display: block;"
+                    target=3D"_blank"
+                >
+                    Motorola Solutions
+                </a>
+            </span>
+       =20
+                    <div style=3D"padding-top: 5px;">
+                <table style=3D"max-width: 100%; min-width: 100%; border-co=
+llapse: collapse;" border=3D"0" width=3D"100%" cellspacing=3D"0" cellpaddin=
+g=3D"0" align=3D"left">
+                    <tbody>
+                        <tr>
+                            <td width=3D"16">
+                                <img=20
+                                    style=3D"width: 16px; display: inline-b=
+lock; vertical-align: middle;"
+                                    src=3D"https://d8it4huxumps7.cloudfront=
+.net/uploads/images/61fa2753337f1_days_left_icon_blue_1.png"
+                                    alt=3D"Days Left"
+                                />
+                            </td>
+                            <td style=3D"padding-left: 10px; font-size: 12p=
+x; font-weight: 500; color: #0073E6;">
+                                8 days left
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            </td>
+
+    <td class=3D"last_box" style=3D"word-break:break-word; box-sizing: bord=
+er-box;" valign=3D"middle" width=3D"130">
+        <a class=3D"btn_hover"
+            href=3D"https://mstats.dare2compete.com/CL0/https:%2F%2Funstop.=
+com%2Finternship%2Fweb-development-internship-motorola-solutions-286779%3Fu=
+tm_source=3DInternships%26utm_medium=3DD2C-Newsletters%26utm_campaign=3DEng=
+-3rd-Year/4/0109018084efb3c8-f58a41e4-58cb-4465-b947-c386bf7594d6-000000/uP=
+uI_VOkVmmcoVkyn5OqTbemyvDv3NUL7NopGFRqSMQ=3D48"
+            style=3D"display: block; color: #27497d; text-decoration: none;=
+ padding: 6px 12px; font-weight: 500; font-size: 13px; border: 1px solid #2=
+7497d; border-radius: 5px; box-sizing: border-box; text-align: center;">
+            <span>
+                                                                    Apply n=
+ow
+                                                   =20
+            </span>
+            <img=20
+                src=3D"https://d8it4huxumps7.cloudfront.net/uploads/images/=
+61fb6557539f0_left_arrow_icon.png"=20
+                alt=3D""
+                style=3D"display: none;"
+            >
+        </a>
+    </td>
+</tr>
+
+
+
+                                                                           =
+                                                                           =
+                                                                          <=
+tr>
+        <td colspan=3D"3" style=3D"padding-bottom: 15px; padding-top: 15px;=
+">
+            <div style=3D"width: 100%; display: block; border-top: 1px soli=
+d #e7e7e7; height: 1px;"></div>
+        </td>
+    </tr>
+
+<tr class=3D"new_box">
+    <td valign=3D"middle" width=3D"80">
+        <a=20
+            href=3D"https://mstats.dare2compete.com/CL0/https:%2F%2Funstop.=
+com%2Finternship%2Fit-service-internship-sophos-283476%3Futm_source=3DInter=
+nships%26utm_medium=3DD2C-Newsletters%26utm_campaign=3DEng-3rd-Year/1/01090=
+18084efb3c8-f58a41e4-58cb-4465-b947-c386bf7594d6-000000/BE2DFdvl8Ny1peJbLJl=
+o5CBoBKaL9oMngNMXZra2rUY=3D48"
+            style=3D"height: 75px; display: flex; padding: 0; background-co=
+lor: #ffffff; border: 1px solid #ddd; border-radius: 8px; background-image:=
+ url(https://d8it4huxumps7.cloudfront.net/uploads/images/6200b25da3f84_80x8=
+0.jpg); background-size: cover; background-repeat: repeat;"
+        >
+            <img=20
+                src=3D"https://d8it4huxumps7.cloudfront.net/uploads/images/=
+75x75/62619d0a14ec7_sophos.png"
+                alt=3D"IT Service Internship"
+                height=3D"auto"
+                style=3D"width:auto;max-width: 65px; margin: auto;height:au=
+to;display: block; max-height: 65px;"
+            >
+        </a>
+    </td>
+
+    <td class=3D"cptn_box" style=3D"padding: 0 15px; box-sizing: border-box=
+;" valign=3D"middle" width=3D"430">
+        <h2=20
+            class=3D"h2_hover"
+            style=3D"color: #101010; font-size: 14px; font-weight: 500; lin=
+e-height: 125%;"
+        >
+            <a=20
+                href=3D"https://mstats.dare2compete.com/CL0/https:%2F%2Funs=
+top.com%2Finternship%2Fit-service-internship-sophos-283476%3Futm_source=3DI=
+nternships%26utm_medium=3DD2C-Newsletters%26utm_campaign=3DEng-3rd-Year/2/0=
+109018084efb3c8-f58a41e4-58cb-4465-b947-c386bf7594d6-000000/SN_VdgTjTU2KTLG=
+-bSiUippVrYB7PuBaXS-gYu-6ZE4=3D48"
+                style=3D"color: inherit !important; text-decoration: none; =
+display: block;"
+                target=3D"_blank"
+            >
+                IT Service Internship
+            </a>
+        </h2>
+
+                    <span=20
+                class=3D"p_hover"
+                style=3D"font-size: 13px; color: #5a5a5a; line-height: 18px=
+; display: block; margin-top: 5px;"
+            >
+                <a=20
+                    href=3D"https://mstats.dare2compete.com/CL0/https:%2F%2=
+Funstop.com%2Finternship%2Fit-service-internship-sophos-283476%3Futm_source=
+=3DInternships%26utm_medium=3DD2C-Newsletters%26utm_campaign=3DEng-3rd-Year=
+/3/0109018084efb3c8-f58a41e4-58cb-4465-b947-c386bf7594d6-000000/LY6kSgnqtl5=
+H0BF66RLJFsJeEV3EkR1umAb9NcN4iWM=3D48"
+                    style=3D"color: inherit !important; text-decoration: no=
+ne; display: block;"
+                    target=3D"_blank"
+                >
+                    Sophos
+                </a>
+            </span>
+       =20
+                    <div style=3D"padding-top: 5px;">
+                <table style=3D"max-width: 100%; min-width: 100%; border-co=
+llapse: collapse;" border=3D"0" width=3D"100%" cellspacing=3D"0" cellpaddin=
+g=3D"0" align=3D"left">
+                    <tbody>
+                        <tr>
+                            <td width=3D"16">
+                                <img=20
+                                    style=3D"width: 16px; display: inline-b=
+lock; vertical-align: middle;"
+                                    src=3D"https://d8it4huxumps7.cloudfront=
+.net/uploads/images/61fa2753337f1_days_left_icon_blue_1.png"
+                                    alt=3D"Days Left"
+                                />
+                            </td>
+                            <td style=3D"padding-left: 10px; font-size: 12p=
+x; font-weight: 500; color: #0073E6;">
+                                10 days left
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            </td>
+
+    <td class=3D"last_box" style=3D"word-break:break-word; box-sizing: bord=
+er-box;" valign=3D"middle" width=3D"130">
+        <a class=3D"btn_hover"
+            href=3D"https://mstats.dare2compete.com/CL0/https:%2F%2Funstop.=
+com%2Finternship%2Fit-service-internship-sophos-283476%3Futm_source=3DInter=
+nships%26utm_medium=3DD2C-Newsletters%26utm_campaign=3DEng-3rd-Year/4/01090=
+18084efb3c8-f58a41e4-58cb-4465-b947-c386bf7594d6-000000/k3wxPYAG6-WVZfgCkSh=
+O8qej8SUuK1AXzaMrDHBsbhY=3D48"
+            style=3D"display: block; color: #27497d; text-decoration: none;=
+ padding: 6px 12px; font-weight: 500; font-size: 13px; border: 1px solid #2=
+7497d; border-radius: 5px; box-sizing: border-box; text-align: center;">
+            <span>
+                                                                    Apply n=
+ow
+                                                   =20
+            </span>
+            <img=20
+                src=3D"https://d8it4huxumps7.cloudfront.net/uploads/images/=
+61fb6557539f0_left_arrow_icon.png"=20
+                alt=3D""
+                style=3D"display: none;"
+            >
+        </a>
+    </td>
+</tr>
+
+
+
+                                                                           =
+                                                                           =
+                                                                          <=
+tr>
+        <td colspan=3D"3" style=3D"padding-bottom: 15px; padding-top: 15px;=
+">
+            <div style=3D"width: 100%; display: block; border-top: 1px soli=
+d #e7e7e7; height: 1px;"></div>
+        </td>
+    </tr>
+
+<tr class=3D"new_box">
+    <td valign=3D"middle" width=3D"80">
+        <a=20
+            href=3D"https://mstats.dare2compete.com/CL0/https:%2F%2Funstop.=
+com%2Finternship%2Fcorporate-applications-engineering-internship-globalfoun=
+dries-282706%3Futm_source=3DInternships%26utm_medium=3DD2C-Newsletters%26ut=
+m_campaign=3DEng-3rd-Year/1/0109018084efb3c8-f58a41e4-58cb-4465-b947-c386bf=
+7594d6-000000/xBWsNl_a_ccZdsx-KsGU6vAhIdkl1oFwSNaSQKpLJLI=3D48"
+            style=3D"height: 75px; display: flex; padding: 0; background-co=
+lor: #ffffff; border: 1px solid #ddd; border-radius: 8px; background-image:=
+ url(https://d8it4huxumps7.cloudfront.net/uploads/images/6200b25da3f84_80x8=
+0.jpg); background-size: cover; background-repeat: repeat;"
+        >
+            <img=20
+                src=3D"https://d8it4huxumps7.cloudfront.net/uploads/images/=
+75x75/625d138898c32_globalfoun.png"
+                alt=3D"Corporate Applications Engineering Internship"
+                height=3D"auto"
+                style=3D"width:auto;max-width: 65px; margin: auto;height:au=
+to;display: block; max-height: 65px;"
+            >
+        </a>
+    </td>
+
+    <td class=3D"cptn_box" style=3D"padding: 0 15px; box-sizing: border-box=
+;" valign=3D"middle" width=3D"430">
+        <h2=20
+            class=3D"h2_hover"
+            style=3D"color: #101010; font-size: 14px; font-weight: 500; lin=
+e-height: 125%;"
+        >
+            <a=20
+                href=3D"https://mstats.dare2compete.com/CL0/https:%2F%2Funs=
+top.com%2Finternship%2Fcorporate-applications-engineering-internship-global=
+foundries-282706%3Futm_source=3DInternships%26utm_medium=3DD2C-Newsletters%=
+26utm_campaign=3DEng-3rd-Year/2/0109018084efb3c8-f58a41e4-58cb-4465-b947-c3=
+86bf7594d6-000000/1AT3R156rTfYC-ayqFG5LmVZr9flyJiuEExIy4smtn8=3D48"
+                style=3D"color: inherit !important; text-decoration: none; =
+display: block;"
+                target=3D"_blank"
+            >
+                Corporate Applications Engineering Internship
+            </a>
+        </h2>
+
+                    <span=20
+                class=3D"p_hover"
+                style=3D"font-size: 13px; color: #5a5a5a; line-height: 18px=
+; display: block; margin-top: 5px;"
+            >
+                <a=20
+                    href=3D"https://mstats.dare2compete.com/CL0/https:%2F%2=
+Funstop.com%2Finternship%2Fcorporate-applications-engineering-internship-gl=
+obalfoundries-282706%3Futm_source=3DInternships%26utm_medium=3DD2C-Newslett=
+ers%26utm_campaign=3DEng-3rd-Year/3/0109018084efb3c8-f58a41e4-58cb-4465-b94=
+7-c386bf7594d6-000000/vM5bpmX2AIdrQjoXMo81iPDzEcPCZL-ZOZWArpvFAhE=3D48"
+                    style=3D"color: inherit !important; text-decoration: no=
+ne; display: block;"
+                    target=3D"_blank"
+                >
+                    GlobalFoundries
+                </a>
+            </span>
+       =20
+                    <div style=3D"padding-top: 5px;">
+                <table style=3D"max-width: 100%; min-width: 100%; border-co=
+llapse: collapse;" border=3D"0" width=3D"100%" cellspacing=3D"0" cellpaddin=
+g=3D"0" align=3D"left">
+                    <tbody>
+                        <tr>
+                            <td width=3D"16">
+                                <img=20
+                                    style=3D"width: 16px; display: inline-b=
+lock; vertical-align: middle;"
+                                    src=3D"https://d8it4huxumps7.cloudfront=
+.net/uploads/images/61fa2753337f1_days_left_icon_blue_1.png"
+                                    alt=3D"Days Left"
+                                />
+                            </td>
+                            <td style=3D"padding-left: 10px; font-size: 12p=
+x; font-weight: 500; color: #0073E6;">
+                                6 days left
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            </td>
+
+    <td class=3D"last_box" style=3D"word-break:break-word; box-sizing: bord=
+er-box;" valign=3D"middle" width=3D"130">
+        <a class=3D"btn_hover"
+            href=3D"https://mstats.dare2compete.com/CL0/https:%2F%2Funstop.=
+com%2Finternship%2Fcorporate-applications-engineering-internship-globalfoun=
+dries-282706%3Futm_source=3DInternships%26utm_medium=3DD2C-Newsletters%26ut=
+m_campaign=3DEng-3rd-Year/4/0109018084efb3c8-f58a41e4-58cb-4465-b947-c386bf=
+7594d6-000000/rwjt3QQwN6IIPNgl12Dv_H0vG73RbqZeNrW1LbUVAc0=3D48"
+            style=3D"display: block; color: #27497d; text-decoration: none;=
+ padding: 6px 12px; font-weight: 500; font-size: 13px; border: 1px solid #2=
+7497d; border-radius: 5px; box-sizing: border-box; text-align: center;">
+            <span>
+                                                                    Apply n=
+ow
+                                                   =20
+            </span>
+            <img=20
+                src=3D"https://d8it4huxumps7.cloudfront.net/uploads/images/=
+61fb6557539f0_left_arrow_icon.png"=20
+                alt=3D""
+                style=3D"display: none;"
+            >
+        </a>
+    </td>
+</tr>
+
+
+
+                                                                           =
+                                                                        =20
+                                                                           =
+                                                                     <tr>
+                                                                           =
+ <td colspan=3D"3" style=3D"padding-top: 30px; text-align: center;">
+                                                                           =
+                                                                           =
+              <a
+                                                                           =
+             style=3D"box-sizing: border-box; display: inline-block; backgr=
+ound: #27497d; color: #fff; padding: 10px 30px; border-radius: 8px; font-si=
+ze: 14px; font-weight: 500; box-sizing: border-box;"
+                                                                           =
+             href=3D"https://mstats.dare2compete.com/CL0/https:%2F%2Fdare2c=
+ompete.com%2Finternships/2/0109018084efb3c8-f58a41e4-58cb-4465-b947-c386bf7=
+594d6-000000/H3C9rJqtGSZ_qClJHRx3wCX_djCz5oQokGyaT3H8llA=3D48"
+                                                                           =
+             target=3D"_blank"
+                                                                           =
+             rel=3D"noopener"
+                                                                           =
+         >
+                                                                           =
+             See More Internships
+                                                                           =
+         </a>
+                                                                           =
+                                                                           =
+      </td>
+                                                                        </t=
+r>
+                                                                       =20
+                                                                    </tbody=
+>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                   =20
+
+                                                                           =
+                            =20
+
+                                                                           =
+                            =20
+
+                                                                           =
+                            =20
+
+                                                                           =
+                            =20
+                                                                           =
+                            =20
+                                                   =20
+                                                   =20
+                                                   =20
+                                                                           =
+                         </tbody>
+                                            </table>
+
+                                            <table style=3D"max-width: 100%=
+; min-width: 100%; border-collapse: collapse;" border=3D"0" width=3D"100%" =
+cellspacing=3D"0" cellpadding=3D"0" align=3D"left">
+                                                <tbody>
+                                                    <tr>
+                                                        <td>
+                                                            <div class=3D"h=
+50" style=3D"width: 100%; display: block; height: 30px;">
+                                                                &nbsp;
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                                                           =
+         </td>
+                                    </tr>
+
+                                    <!-- Footer Option 1 -->
+                                                                        <tr=
+>
+                                        <td class=3D"footer" style=3D"paddi=
+ng: 30px; background-color: #ffffff; border-top: 1px solid #e7e7e7; border-=
+radius: 0 0 8px 8px;">
+                                            <table align=3D"left" border=3D=
+"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"max-width: =
+100%; min-width: 100%; border-collapse: collapse;">
+                                                <tbody>
+                                                                           =
+                             <tr>
+                                                        <td class=3D"tags" =
+style=3D"padding-bottom: 20px; text-align: center;">
+                                                                           =
+                                                 <a
+                                                                    href=3D=
+"https://mstats.dare2compete.com/CL0/https:%2F%2Fdare2compete.com%2Fhiring-=
+challenges/1/0109018084efb3c8-f58a41e4-58cb-4465-b947-c386bf7594d6-000000/O=
+jZL32qfG6NCu9Cp4Jbfl6tjAeP4RknzT7naLUBk1Mo=3D48"
+                                                                    rel=3D"=
+noopener"
+                                                                    target=
+=3D"_blank"
+                                                                    style=
+=3D"text-decoration: none; display: inline-block; padding: 8px 20px; border=
+-radius: 8px; font-weight: 500; margin: 3px; font-size: 13px; color: #27497=
+d; background: #e4e8ee;"
+                                                                >
+                                                                    Hiring =
+Challenges
+                                                                </a>
+                                                                           =
+                                                 <a
+                                                                    href=3D=
+"https://mstats.dare2compete.com/CL0/https:%2F%2Fdare2compete.com%2Fcourses=
+%2Fhome/1/0109018084efb3c8-f58a41e4-58cb-4465-b947-c386bf7594d6-000000/Tfjs=
+2S2FZ7rX9DtYjBmZvZD2F5OXnbO1SIuJvmw_Mtk=3D48"
+                                                                    rel=3D"=
+noopener"
+                                                                    target=
+=3D"_blank"
+                                                                    style=
+=3D"text-decoration: none; display: inline-block; padding: 8px 20px; border=
+-radius: 8px; font-weight: 500; margin: 3px; font-size: 13px; color: #27497=
+d; background: #e4e8ee;"
+                                                                >
+                                                                    Courses
+                                                                </a>
+                                                                           =
+                                                 <a
+                                                                    href=3D=
+"https://mstats.dare2compete.com/CL0/https:%2F%2Fdare2compete.com%2Fscholar=
+ships/1/0109018084efb3c8-f58a41e4-58cb-4465-b947-c386bf7594d6-000000/CvQVPY=
+I2n5hh1E9O-fTLw0BR-ZtiJt6T7vEvrmnPOfw=3D48"
+                                                                    rel=3D"=
+noopener"
+                                                                    target=
+=3D"_blank"
+                                                                    style=
+=3D"text-decoration: none; display: inline-block; padding: 8px 20px; border=
+-radius: 8px; font-weight: 500; margin: 3px; font-size: 13px; color: #27497=
+d; background: #e4e8ee;"
+                                                                >
+                                                                    Scholar=
+ships
+                                                                </a>
+                                                                           =
+                                                 <a
+                                                                    href=3D=
+"https://mstats.dare2compete.com/CL0/https:%2F%2Fdare2compete.com%2Fjobs/1/=
+0109018084efb3c8-f58a41e4-58cb-4465-b947-c386bf7594d6-000000/hPWG3NiKsANL9A=
+DBLYMDyNgyQOJw7h8kdq6CZn5K_NA=3D48"
+                                                                    rel=3D"=
+noopener"
+                                                                    target=
+=3D"_blank"
+                                                                    style=
+=3D"text-decoration: none; display: inline-block; padding: 8px 20px; border=
+-radius: 8px; font-weight: 500; margin: 3px; font-size: 13px; color: #27497=
+d; background: #e4e8ee;"
+                                                                >
+                                                                    Jobs
+                                                                </a>
+                                                                           =
+                                         </td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td class=3D"update=
+d" style=3D"padding-bottom: 15px;">
+                                                            <table style=3D=
+"width: 100%;">
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td=
+ style=3D"width: 450px; box-sizing: border-box;" valign=3D"top">
+                                                                           =
+ <span style=3D"color: #000; display: block; font-size: 14px; font-weight: =
+500; padding-bottom: 10px; text-align: center; width: 180px;">
+                                                                           =
+     Stay updated
+                                                                           =
+ </span>
+                                                                           =
+ <div>
+                                                                           =
+     <a href=3D"https://mstats.dare2compete.com/CL0/https:%2F%2Fplay.google=
+.com%2Fstore%2Fapps%2Fdetails%3Fid=3Dcom.dare2compete.app/1/0109018084efb3c=
+8-f58a41e4-58cb-4465-b947-c386bf7594d6-000000/IWPKROZAAO3SgLyp-7aS_qu5LC8cN=
+vLfUU1Su96P560=3D48" style=3D"display: inline-block; text-decoration: none;=
+ margin-right: 10px;" target=3D"_blank">
+                                                                           =
+         <img
+                                                                           =
+             style=3D"width: 130px; display: inline-block; vertical-align: =
+middle;"
+                                                                           =
+             src=3D"https://d8it4huxumps7.cloudfront.net/uploads/images/new=
+sletter-image/google-play.png"
+                                                                           =
+             alt=3D"Google play"
+                                                                           =
+         />
+                                                                           =
+     </a>
+                                                                           =
+     <a href=3D"https://mstats.dare2compete.com/CL0/https:%2F%2Fnews.google=
+.com%2Fpublications%2FCAAqBwgKMKPBlwswpOquAw%3Foc=3D3%26ceid=3DIN:en%26hl=
+=3Den-IN%26gl=3DIN/1/0109018084efb3c8-f58a41e4-58cb-4465-b947-c386bf7594d6-=
+000000/DkT4mFlecAMUrPQXcoxEGL2K7XhJZhDzfYniSzcf90M=3D48" style=3D"display: =
+inline-block; text-decoration: none;" target=3D"_blank">
+                                                                           =
+         <img
+                                                                           =
+             style=3D"width: auto; height: 38px; display: inline-block; ver=
+tical-align: middle;"
+                                                                           =
+             src=3D"https://d8it4huxumps7.cloudfront.net/uploads/images/620=
+0fe0ce6f74_40x40_google_news.png"
+                                                                           =
+             alt=3D"Google news"
+                                                                           =
+         />
+                                                                           =
+     </a>
+                                                                           =
+ </div>
+                                                                        </t=
+d>
+
+                                                                        <td=
+ style=3D"width: 180px; box-sizing: border-box; text-align: right;" valign=
+=3D"top">
+                                                                           =
+ <span style=3D"color: #000; display: block; font-size: 14px; font-weight: =
+500; padding-bottom: 10px; text-align: center;">
+                                                                           =
+     Connect with us
+                                                                           =
+ </span>
+                                                                           =
+ <div style=3D"text-align: center;">
+                                                                           =
+     <a href=3D"https://mstats.dare2compete.com/CL0/https:%2F%2Ft.me%2F%2BO=
+N15qceSy-IyZjY9/1/0109018084efb3c8-f58a41e4-58cb-4465-b947-c386bf7594d6-000=
+000/XpEuIm9f-CxC2Eg4FptjVi7liacSMbmCjACVd7M4X3Q=3D48" style=3D"display: inl=
+ine-block; text-decoration: none;" target=3D"_blank">
+                                                                           =
+         <img
+                                                                           =
+             src=3D"https://d8it4huxumps7.cloudfront.net/uploads/images/new=
+sletter-image/telegram-icon.png"
+                                                                           =
+             alt=3D"Telegram Icon"
+                                                                           =
+             style=3D"width: 38px;"
+                                                                           =
+         >
+                                                                           =
+     </a>
+                                                                           =
+     <a href=3D"https://mstats.dare2compete.com/CL0/https:%2F%2Fwww.instagr=
+am.com%2Funstop.world%2F/1/0109018084efb3c8-f58a41e4-58cb-4465-b947-c386bf7=
+594d6-000000/OgiIqQkgBY9P_9EqVgBs4jO55Zg0UPqo_sq3Fg0xnHo=3D48" style=3D"dis=
+play: inline-block; text-decoration: none; margin-left: 5px;" target=3D"_bl=
+ank">
+                                                                           =
+         <img src=3D"https://d8it4huxumps7.cloudfront.net/uploads/images/ne=
+wsletter-image/instagram-icon.png" alt=3D"Instagram Icon" style=3D"width: 3=
+8px;">
+                                                                           =
+     </a>
+                                                                           =
+     <a href=3D"https://mstats.dare2compete.com/CL0/https:%2F%2Fwww.linkedi=
+n.com%2Fcompany%2Funstop%2F/1/0109018084efb3c8-f58a41e4-58cb-4465-b947-c386=
+bf7594d6-000000/1KbFfCHRiA1kBjWLL1Fi2NjuqvrAGc3hSWTymDbhF-4=3D48" style=3D"=
+display: inline-block; text-decoration: none; margin-left: 5px;" target=3D"=
+_blank">
+                                                                           =
+         <img src=3D"https://d8it4huxumps7.cloudfront.net/uploads/images/ne=
+wsletter-image/linkedin-icon.png" alt=3D"Linkedin Icon" style=3D"width: 38p=
+x;">
+                                                                           =
+     </a>
+                                                                           =
+     <a href=3D"https://mstats.dare2compete.com/CL0/https:%2F%2Fdiscord.com=
+%2Finvite%2FDvYWXNr4yR/1/0109018084efb3c8-f58a41e4-58cb-4465-b947-c386bf759=
+4d6-000000/vsBnUuDlb3-NgdbN0HByrM27ns478uPNongB4rI8IJc=3D48" style=3D"displ=
+ay: inline-block; text-decoration: none; margin-left: 5px;" target=3D"_blan=
+k">
+                                                                           =
+         <img src=3D"https://d8it4huxumps7.cloudfront.net/uploads/images/un=
+stop/discord-logo.png" alt=3D"discord Icon" style=3D"width: 38px;">
+                                                                           =
+     </a>
+                                                                           =
+ </div>
+                                                                        </t=
+d>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style=3D"color:=
+ #000; font-size: 12px; text-align: center; font-weight: 500;">
+                                                            &copy; 2022 <a =
+href=3D"https://mstats.dare2compete.com/CL0/https:%2F%2Funstop.com%2F/2/010=
+9018084efb3c8-f58a41e4-58cb-4465-b947-c386bf7594d6-000000/7sbabZSBrO_qhxv5N=
+ZGJ-OsqrwJGrRADGamNxaU9X0U=3D48" style=3D"text-decoration: none; color: #00=
+0;">Unstop</a>. All rights
+                                                            reserved.
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style=3D"color:=
+ #101010; font-size: 12px; text-align: center;">
+                                                            <a href=3D"http=
+s://mstats.dare2compete.com/CL0/https:%2F%2Funstop.com%2Fnewsletter-unsubsc=
+ribe%2FcHJpbmNlc2hhcm1hNzYyMTRAZ21haWwuY29t%3Futm_source=3DInternships%26ut=
+m_medium=3DD2C-Newsletters%26utm_campaign=3DEng-3rd-Year/1/0109018084efb3c8=
+-f58a41e4-58cb-4465-b947-c386bf7594d6-000000/4bNWdU-3xo7wjJ6wOsCrs_BMd4X7TI=
+oXEXL4jhSew9o=3D48"  style=3D"font-size: 12px; color: #101010;">Unsubscribe=
+</a>
+                                                            | <a href=3D"ma=
+ilto:support@unstop.com" style=3D"color: #101010; text-decoration: none;">H=
+elpdesk</a>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                                                    </tbody=
+>
+                            </table>
+                        </td>
+                    </tr>
+
+                    <!-- Footer Option 2 -->
+                   =20
+                </tbody>
+            </table>
+        </div>
+    <img alt=3D"" src=3D"http://mstats.dare2compete.com/CI0/0109018084efb3c=
+8-f58a41e4-58cb-4465-b947-c386bf7594d6-000000/fRKxOrRd9ErgXIr8O7Qaa03SPy7qz=
+bhDLWF92-rC4qo=3D48" style=3D"display: none; width: 1px; height: 1px;">
+</body>
+</html>
+
+--_=_swift_1651497743_41a2e96e1f25daec3e291a262acbf9bf_=_--
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>conversation-id</key>
+	<integer>10010</integer>
+	<key>date-last-viewed</key>
+	<integer>0</integer>
+	<key>date-received</key>
+	<integer>1651497745</integer>
+	<key>flags</key>
+	<integer>25770064897</integer>
+	<key>gmail-label-ids</key>
+	<array>
+		<integer>2</integer>
+		<integer>3</integer>
+	</array>
+	<key>remote-id</key>
+	<string>10861</string>
+</dict>
+</plist>

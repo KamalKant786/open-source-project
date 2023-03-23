@@ -1,0 +1,3242 @@
+168071    
+Delivered-To: princesharma76214@gmail.com
+Received: by 2002:a4a:9486:0:0:0:0:0 with SMTP id k6csp6529009ooi; Mon, 2 May
+ 2022 05:36:19 -0700 (PDT)
+X-Google-Smtp-Source: ABdhPJyXOhZ9Ye37la/+9nBjGqLZK6q0Oa/rLB02BfhBVfQiYok+TSeg+JJls8oiw5wfJp/1cNWt
+X-Received: by 2002:a5d:6a0a:0:b0:20a:c7dd:d2bb with SMTP id
+ m10-20020a5d6a0a000000b0020ac7ddd2bbmr9286379wru.242.1651494979599; Mon, 02
+ May 2022 05:36:19 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1651494979; cv=none; d=google.com;
+ s=arc-20160816;
+ b=Je7l12G+OpOA5zvpqKzjQcecg4km2jywnQjD5f7CsTx7vpvwJCcNZY4wGEDDnEeyJp
+ 43tA9quLY2EM5CUgcjkai3R48Z3HAmjPr5qqIsIOzGWHYScO+6ckPNIa2AvvsCbRDK0h
+ BlPobRfR/98HMxdeUbhXKZNAeTIubVeV+v/0KrGKQlYgfJ9dcsGsC/YUoSh0SW/Vadfy
+ cay1ieOlqvFB9l5BpO7DJhW2J8KlGuYA1qTXF2Yxbb65c1RGhpXGdYDsbvEE0rCohK6y
+ M8oltlP0Wbliu2Rbjeh4WvwK8+9kKu+zLnryAItjsAwnp/CmMUCtI8+TCmWCSnf/RAAJ VpIQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com;
+ s=arc-20160816;
+ h=feedback-id:bounces-to:mime-version:subject:message-id:to:from:date
+ :dkim-signature:dkim-signature;
+ bh=pSHHH226xvJpRU1Xe2TD78E0ZuWuCrzSWs+QfjYGctk=;
+ b=u54Zu+FVkP/7G3TC4dpv8NP3YhQq3kFzdjTZaKVw3swWpMLz9sk3lcQNaz66MdJ2T1
+ tciKyAFRQ7vTIwKSypMJvYBhuzUpjomR2MEFw0uAt6/J03dzKM+KnTpHa9ru9qjjkWZG
+ prIW49onNRtSVBNr+ck3DAkemfzwmaffIuRk3RVL/WbA4nhWuceASJIem/GZ3p3NV79/
+ MJU8ttxOEPFdy8HVx4bNKjcRrffdKRp6hBr+L/eWzxAtCbG/y2B3qBO8nGvLjoDZ+rNb
+ ev2/Hxj+ENyCql1JDVQZAlbXv0GC4ZaCiJCILXk/qYjSv8PvvTjVyg+yikghj1sL7L11 WB1w==
+ARC-Authentication-Results: i=1; mx.google.com; dkim=pass header.i=@amazon.in
+ header.s=55spn7jg3iwyluzn4ej7wq3ev2vqedgu header.b=WxbOG05z; dkim=pass
+ header.i=@amazonses.com header.s=ihchhvubuqgjsxyuhssfvqohv7z3u4hn
+ header.b=O4J3JhE1; spf=pass (google.com: domain of
+ 202205021236182226a6cf6ca0403cb01f3c172ee0p0eu-c30r4a1vnhz3i3@bounces.amazon.in
+ designates 54.240.0.230 as permitted sender)
+ smtp.mailfrom=202205021236182226a6cf6ca0403cb01f3c172ee0p0eu-C30R4A1VNHZ3I3@bounces.amazon.in;
+ dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=amazon.in
+Return-Path: <202205021236182226a6cf6ca0403cb01f3c172ee0p0eu-C30R4A1VNHZ3I3@bounces.amazon.in>
+Received: from a0-230.smtp-out.eu-west-1.amazonses.com
+ (a0-230.smtp-out.eu-west-1.amazonses.com. [54.240.0.230]) by mx.google.com
+ with ESMTPS id
+ m9-20020a5d64a9000000b0020c622c0625si2764675wrp.41.2022.05.02.05.36.19 for
+ <princesharma76214@gmail.com> (version=TLS1_2
+ cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128); Mon, 02 May 2022 05:36:19
+ -0700 (PDT)
+Received-SPF: pass (google.com: domain of
+ 202205021236182226a6cf6ca0403cb01f3c172ee0p0eu-c30r4a1vnhz3i3@bounces.amazon.in
+ designates 54.240.0.230 as permitted sender) client-ip=54.240.0.230;
+Authentication-Results: mx.google.com; dkim=pass header.i=@amazon.in
+ header.s=55spn7jg3iwyluzn4ej7wq3ev2vqedgu header.b=WxbOG05z; dkim=pass
+ header.i=@amazonses.com header.s=ihchhvubuqgjsxyuhssfvqohv7z3u4hn
+ header.b=O4J3JhE1; spf=pass (google.com: domain of
+ 202205021236182226a6cf6ca0403cb01f3c172ee0p0eu-c30r4a1vnhz3i3@bounces.amazon.in
+ designates 54.240.0.230 as permitted sender)
+ smtp.mailfrom=202205021236182226a6cf6ca0403cb01f3c172ee0p0eu-C30R4A1VNHZ3I3@bounces.amazon.in;
+ dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=amazon.in
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+ s=55spn7jg3iwyluzn4ej7wq3ev2vqedgu; d=amazon.in; t=1651494979;
+ h=Date:From:To:Message-ID:Subject:MIME-Version:Content-Type;
+ bh=iZoE826EuiEwp81ZWlvIH7orC7Xx0s+2QpNKMzW4Rh0=;
+ b=WxbOG05z+u9VuKY+U6I21JKI0SK86haXDe+EhLUoJoDJ3elByZ1AiWb9nDm09Kt7
+ OEEMOs/V4boZ8jEYbIoI8QwQDgKbsSZ0OJ8FfpNGIOETDwO+Hrp/0W1P7+s1mMAus24
+ dzLEy26RKTczmL9bPhW6S2wpdWq4hVAWRAZXOa6w=
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+ s=ihchhvubuqgjsxyuhssfvqohv7z3u4hn; d=amazonses.com; t=1651494979;
+ h=Date:From:To:Message-ID:Subject:MIME-Version:Content-Type:Feedback-ID;
+ bh=iZoE826EuiEwp81ZWlvIH7orC7Xx0s+2QpNKMzW4Rh0=;
+ b=O4J3JhE18J3FSJnry1jur7ykhqmvRr35FRDRli8FoBbAhlL5JQAPyqgI9MxRqEbV
+ sGd0/LeedPoqV/bm3AUumMt2u9sRHvNY1HXM/sXk/Sc2R2wfC0fT4lEfnGOGqXIjd0c
+ z7ug+Ewxn2GPZ1HVXIK8jM/q7CsHcdcYuLK71Sjc=
+Date: Mon, 2 May 2022 12:36:19 +0000
+From: "Amazon.in" <store-news@amazon.in>
+To: princesharma76214@gmail.com
+Message-ID: <0102018084c58604-9cb3f810-b89c-466b-ada4-43f65cd26969-000000@eu-west-1.amazonses.com>
+Subject: Start shopping with Countdown Deals of Summer Sale
+MIME-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="----=_Part_7718742_359743642.1651494979056"
+X-AMAZON-MAIL-RELAY-TYPE: notification
+Bounces-to: 202205021236182226a6cf6ca0403cb01f3c172ee0p0eu-C30R4A1VNHZ3I3@bounces.amazon.in
+X-AMAZON-METADATA: CA=C30R4A1VNHZ3I3-CU=AZUI3HGW3LEYW
+X-Original-MessageID: <urn.rtn.msg.202205021236182226a6cf6ca0403cb01f3c172ee0p0eu@1651494979060.rtn-eu-mktng-c52xl1c-b360a67a.eu-west-1.amazon.com>
+Feedback-ID: 1.eu-west-1.kjoQSiqb8G+7lWWiDVsxjM2m0ynYd4I6yEFlfoox6aY=:AmazonSES
+X-SES-Outgoing: 2022.05.02-54.240.0.230
+
+
+------=_Part_7718742_359743642.1651494979056
+Content-Transfer-Encoding: 7BIT
+Content-Type: TEXT/PLAIN;
+	charset=utf-8
+
+
+
+
+
+
+==========
+AMAZON.IN
+==========
+
+/n
+
+ 
+https://www.amazon.in/events/summersale/
+
+
+    
+--------------
+In the spotlight
+--------------
+
+Redmi 80 cm (32 inches) HD Ready Smart LED TV  L32M6-RA...
+https://www.amazon.in/Redmi-inches-Ready-L32M6-RA-Android/dp/B09F9YQQ7B?ref=grep_pep_np11_t&smid=A3K8GDUW67973J
+
+
+Fujifilm Instax Mini 9 Instant Camera (Flamingo Pink)...
+https://www.amazon.in/Fujifilm-Instax-Mini-Instant-Camera/dp/B08TSDJS5Y?ref=grep_pep_np12_t&smid=A14CZOWI0VEHLG
+
+
+Kindle E-readers
+https://www.amazon.in/deal/f14ebfbf?ref=grep_pep_np13_t&smid=A1TJ5W2Q6QYFKA
+
+
+OnePlus 9 || Buy Now
+https://www.amazon.in/Test-Exclusive_2020_1173-Multi-3GB-Storage/dp/B089MSGHJQ?ref=grep_pep_np14_t&smid=A35FCS7U51TK3C
+
+
+Fire TV Stick Plus includes Zee5, Sony Liv & Voot annual...
+https://www.amazon.in/SonyLIV-subscriptions-all-new-controls-release/dp/B097761D56?ref=grep_pep_np15_t&smid=A3BPFDL77TLJYB
+
+
+OPPO A74 5G (Fantastic Purple,6GB RAM,128GB Storage) 
+https://www.amazon.in/OPPO-Fantastic-Purple-128GB-Storage/dp/B08VB34KJ1?ref=grep_pep_np16_t&smid=A14CZOWI0VEHLG
+
+
+Portronics Key2-A Combo of Multimedia Wireless Keyboard &...
+https://www.amazon.in/Portronics-Combo-Multimedia-Wireless-Light-Weight/dp/B07X2KGB8S?ref=grep_pep_np17_t&smid=A14CZOWI0VEHLG
+
+
+OnePlus 65 Inch Certified Android TVs
+https://www.amazon.in/OnePlus-163-8-inches-Android-65U1S/dp/B095JPKPH3?ref=grep_pep_np18_t&smid=A3K8GDUW67973J
+
+
+    
+    
+    
+    
+--------------
+Explore more deals
+--------------
+
+Inverter Air Conditioners starting INR 24499 / EMI starts...
+https://www.amazon.in/s/browse/?ie=UTF8&node=27411203031&ref=grep_pep_np21_t&smid=A3K8GDUW67973J
+
+
+Womens Clothing Offers
+https://www.amazon.in/deal/cdbbd57d?showVariations=true&ref=grep_pep_np22_t&smid=A1WYWER0W24N8S
+
+
+Exciting offers on ASIAN Shoes
+https://www.amazon.in/deal/8ba52c6c?moreDeals=068d332d&ref=grep_pep_np23_t&smid=A3OZBP9WERCHBG
+
+
+Fans from Top Brands
+https://www.amazon.in/deal/3ee78661?showVariations=true&moreDeals=d4867542,b0ca1732,22176f82,7f204e81,0541390a,8568e91f,8417cfd3&ref=grep_pep_np24_t&smid=AXOGFIT0PZZ7G
+
+
+Guard against power cuts; inverter bulbs, emergency lamps...
+https://www.amazon.in/deal/4e2a4313?showVariations=true&moreDeals=&ref=grep_pep_np25_t&smid=A2AL6IVND0I91F
+
+
+Best Selling Healthcare Devices
+https://www.amazon.in/l/27089348031?ref=grep_pep_np26_t&smid=A2GTG1HPYW8M2P
+
+
+Best of Pressure Washers, Tyre Inflators & Vehicle tools
+https://www.amazon.in/deal/1771c8db?showVariations=true&moreDeals=a01ed4e2,047feb53,6eabf139,d663266f,c262944b,7a24faef&ref=grep_pep_np27_t&smid=A2AL6IVND0I91F
+
+
+Starting INR 6,990 / Up to 25% off on Single Door...
+https://www.amazon.in/s/browse/?ie=UTF8&node=27411206031&ref=grep_pep_np28_t&smid=A3K8GDUW67973J
+
+
+==========
+Amazon.in
+http://www.amazon.in/ref=pe_footer/
+
+Connect with Us
+On Facebook
+http://www.amazon.in/gp/redirect.html/ref=pe_423371_38478931_pe_0_3436_pe_fb_ftr/?location=http://www.facebook.com/AmazonIN&token=2075D5EAC7BB214089728E2183FD391706D41E94
+
+On Twitter
+http://www.amazon.in/gp/redirect.html/ref=pe_423371_38478931_pe_0_3436_pe_tw_ftr/?location=http://twitter.com/AmazonIN&token=A309DFBFCB1E37A808FF531934855DC817F130B6
+
+==========
+
+We hope you found this message to be useful. However, if you'd rather not receive future e-mails of this sort from Amazon.in, please visit the opt-out link here:
+https://www.amazon.in//gp/gss/o/1ZmKKnuF50r3qB58MSiv9hfQAh37H2G6TKBvWXQhHaTVVbiTKQeeRMigZIeeMIPW3.
+
+Please note that product prices and availability are subject to change. Prices and availability were accurate at the time this newsletter was sent; however, they may differ from those you see when you visit Amazon.in. 
+
+
+
+Amazon.in Marketplace platform: Products sold by a Marketplace seller are subject to that seller's terms and conditions of sale. See www.Amazon.in for details.
+
+Reference: 684185261
+
+This message was sent to the following e-mail address: princesharma76214@gmail.com
+
+------=_Part_7718742_359743642.1651494979056
+Content-Transfer-Encoding: QUOTED-PRINTABLE
+Content-Type: TEXT/HTML;
+	charset=utf-8
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.=
+w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns=3D"http://www.w3.org/1999/xhtml">
+ <head>=20
+  <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8" =
+/>=20
+  <meta name=3D"viewport" content=3D"target-densitydpi=3Ddevice-dpi" />=20
+  <meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale =
+=3D 1.0, maximum-scale =3D 1.0" />=20
+  <!--[if !mso]><!-->=20
+  <meta http-equiv=3D"X-UA-Compatible" content=3D"IE=3Dedge" />=20
+  <!--<![endif]-->=20
+  <title></title>=20
+  <!--[if (gte mso 9)|(IE)]>
+        <xml>
+            <o:OfficeDocumentSettings>
+                <o:AllowPNG/>
+                <o:PixelsPerInch>96</o:PixelsPerInch>
+            </o:OfficeDocumentSettings>
+        </xml>
+        <style type=3D"text/css">
+            table {border-collapse: collapse;}
+        </style>
+        <![endif]-->=20
+  <style type=3D"text/css">
+            body {
+                margin: 0 auto !important;
+                padding: 0;
+                background-color: #ffffff;
+            }
+            table {
+                border-spacing: 0;
+                font-family: ember,arial,sans-serif;
+                color: #333333;
+            }
+            td {
+                padding: 0;
+            }
+            img {
+                border: 0;
+            }
+            div[style*=3D"margin: 16px 0"] {=20
+                margin:0 !important;
+            }
+        </style>=20
+ </head>=20
+ <body style=3D"margin: 0 auto !important; padding: 0; background-color: rg=
+b(255, 255, 255)"><img width=3D"1" height=3D"1" src=3D"https://www.amazon.i=
+n/gp/r.html?C=3DTF14L55J41OW&K=3DWMU548AAJTKH&M=3Durn:rtn:msg:2022050212361=
+82226a6cf6ca0403cb01f3c172ee0p0eu&R=3D3K029IT5FG02X&T=3DO&U=3Dhttps%3A%2F%2=
+Fimages-eu.ssl-images-amazon.com%2Fimages%2FG%2F01%2Fnav%2Ftransp.gif&H=3DX=
+MFCUCWVJTYPCXCR4IWZF1CHSMYA&ref_=3Dpe_33574051_684185261_opens" />=20
+  <center class=3D"wrapper" style=3D"width: 100%;
+    table-layout: fixed;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    ">=20
+   <div style=3D"margin: 0 auto; max-width: 640px;">=20
+    <!--[if (gte mso 9)|(IE)]><table width=3D"640" align=3D"center"><tr><td=
+><![endif]-->=20
+    <table width=3D"100%" border=3D"0" cellspacing=3D"0" class=3D"outer" st=
+yle=3D"margin: 0 auto;
+    width: 100%;
+    max-width: 640px;border-spacing: 0; font-family: ember, arial, sans-ser=
+if; color: rgb(51, 51, 51)">=20
+     <tbody>
+      <tr>=20
+       <td valign=3D"middle" style=3D"padding: 0">=20
+        <table width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D=
+"0" style=3D"border-spacing: 0; font-family: ember, arial, sans-serif; colo=
+r: rgb(51, 51, 51)">=20
+         <tbody>
+          <tr>=20
+           <td style=3D"text-align:center;font-size:0;padding: 0">=20
+            <!--[if (gte mso 9)|(IE)]><table width=3D"100%"><tr><td width=
+=3D"400" valign=3D"top"><![endif]-->=20
+            <div style=3D"width:100%;max-width:400px;display:inline-block;v=
+ertical-align:top;">=20
+             <table width=3D"100%" border=3D"0" cellspacing=3D"0" cellpaddi=
+ng=3D"8" style=3D"border-spacing: 0; font-family: ember, arial, sans-serif;=
+ color: rgb(51, 51, 51)">=20
+              <tbody>
+               <tr>=20
+                <td class=3D"inner" style=3D"max-width:380px;padding: 0">=
+=20
+                 <table class=3D"pre-header-super-subject" align=3D"left" w=
+idth=3D"100%" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" style=3D"dis=
+play:inline-block;border-spacing: 0; font-family: ember, arial, sans-serif;=
+ color: rgb(51, 51, 51)">=20
+                  <tbody>
+                   <tr height=3D"10">=20
+                    <td width=3D"100%" style=3D"padding: 0">
+                     <div width=3D"100%" style=3D"font-size:10px; line-heig=
+ht:10px">
+                      &nbsp;
+                     </div></td>=20
+                   </tr>=20
+                   <tr>=20
+                    <td style=3D"text-align:left;padding: 0"> <span class=
+=3D"email_super_subject" style=3D"font-family:verdana,arial,sans-serif;font=
+-size:9px;line-height:11px;color:#555;"> Top deals live early | Shop now </=
+span> </td>=20
+                   </tr>=20
+                   <tr height=3D"10">=20
+                    <td width=3D"100%" style=3D"padding: 0">
+                     <div width=3D"100%" style=3D"font-size:10px; line-heig=
+ht:10px">
+                      &nbsp;
+                     </div></td>=20
+                   </tr>=20
+                  </tbody>
+                 </table></td>=20
+               </tr>=20
+              </tbody>
+             </table>=20
+            </div>=20
+            <!--[if (gte mso 9)|(IE)]></td><td width=3D"240" valign=3D"top"=
+><![endif]-->=20
+            <div style=3D"width:100%;max-width:240px;display:inline-block;v=
+ertical-align:top;">=20
+             <table width=3D"100%" border=3D"0" cellspacing=3D"0" cellpaddi=
+ng=3D"8" style=3D"border-spacing: 0; font-family: ember, arial, sans-serif;=
+ color: rgb(51, 51, 51)">=20
+              <tbody>
+               <tr>=20
+                <td class=3D"inner" style=3D"max-width:220px;padding: 0">=
+=20
+                 <table class=3D"pre-header-csslot" align=3D"right" width=
+=3D"100%" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" style=3D"padding=
+-top:3px;border-spacing: 0; font-family: ember, arial, sans-serif; color: r=
+gb(51, 51, 51)">=20
+                  <tbody>
+                   <tr>=20
+                    <td style=3D"text-align:center;padding: 0"></td>=20
+                   </tr>=20
+                  </tbody>
+                 </table></td>=20
+               </tr>=20
+              </tbody>
+             </table>=20
+            </div>=20
+            <!--[if (gte mso 9)|(IE)]></td></tr></table><![endif]--> </td>=
+=20
+          </tr>=20
+         </tbody>
+        </table>=20
+        <table width=3D"100%" border=3D"0" align=3D"center" cellpadding=3D"=
+0" cellspacing=3D"0" class=3D"deviceWidth" style=3D"padding-bottom:3px;padd=
+ing-top:3px;border-spacing: 0; font-family: ember, arial, sans-serif; color=
+: rgb(51, 51, 51)">=20
+         <tbody>
+          <tr>=20
+           <td align=3D"center" class=3D"header-csslot" style=3D"padding: 0=
+"></td>=20
+          </tr>=20
+         </tbody>
+        </table>=20
+        <table width=3D"100%" height=3D"6" border=3D"0" align=3D"center" ce=
+llpadding=3D"0" cellspacing=3D"0" style=3D"border-spacing: 0; font-family: =
+ember, arial, sans-serif; color: rgb(51, 51, 51)">=20
+         <tbody>
+          <tr>=20
+           <td align=3D"center" style=3D"border-bottom: 6px solid #FF9900;
+    height: 0px !important;
+    max-height: 0px !important;
+    font-size:0px;
+    margin: 0;
+    background-color:#e3e3e3;
+    display: none;border-bottom: 0px solid #ffffff;background-color:#ffffff=
+;padding: 0" class=3D"top-border"> <p>&nbsp;</p> </td>=20
+          </tr>=20
+         </tbody>
+        </table>=20
+        <table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" border=3D=
+"0" class=3D"content-wrapper" style=3D"background-color:#ffffff;border-spac=
+ing: 0; font-family: ember, arial, sans-serif; color: rgb(51, 51, 51)">=20
+         <tbody>
+          <tr>=20
+           <td style=3D"padding: 0"> <style>
+    @media screen and (min-width: 640px) {
+        .header-links-top {
+            padding: 0 0 0 0px;
+        }
+    }
+</style>=20
+            <table width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" borde=
+r=3D"0" style=3D"vertical-align:top;padding:0px;mso-padding-alt:0px;border-=
+spacing: 0; font-family: ember, arial, sans-serif; color: rgb(51, 51, 51)">=
+=20
+             <tbody>=20
+              <tr>=20
+               <td style=3D"padding: 0">=20
+                <table class=3D"logo-top" align=3D"left" width=3D"100%" cel=
+lpadding=3D"0" cellspacing=3D"0" border=3D"0" style=3D"border-spacing: 0; f=
+ont-family: ember, arial, sans-serif; color: rgb(51, 51, 51)">=20
+                 <tbody>=20
+                  <tr>=20
+                   <td style=3D"text-align:center;padding: 0"> <a href=3D"h=
+ttps://www.amazon.in/gp/r.html?C=3DTF14L55J41OW&K=3DWMU548AAJTKH&M=3Durn:rt=
+n:msg:202205021236182226a6cf6ca0403cb01f3c172ee0p0eu&R=3D2K4SHTD5XZ6IM&T=3D=
+C&U=3Dhttps%3A%2F%2Fwww.amazon.in%2Fref%3Dpe_33574051_684185261_sef_logo&H=
+=3DRMAYD0OZFTJAPZZE7XM0AA2XTYGA&ref_=3Dpe_33574051_684185261_sef_logo"> <im=
+g src=3D"http://g-ec2.images-amazon.com/images/G/31/aa/amazon/logo2.gif" al=
+t=3D"Amazon.in" border=3D"0" hspace=3D"6" vspace=3D"6" style=3D"border: 0" =
+/> </a> </td>=20
+                  </tr>=20
+                 </tbody>=20
+                </table> </td>=20
+              </tr>=20
+              <tr height=3D"10">=20
+               <td width=3D"100%" style=3D"padding: 0">
+                <div width=3D"100%" style=3D"font-size:10px; line-height:10=
+px">
+                 &nbsp;
+                </div></td>=20
+              </tr>=20
+              <tr>=20
+               <td width=3D"100%" bgcolor=3D"#ffffff" align=3D"center" clas=
+s=3D"hero-deal-col" valign=3D"top" style=3D"padding: 0">=20
+                <table class=3D"header-links-top" align=3D"right" width=3D"=
+100%" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" style=3D"border-spac=
+ing: 0; font-family: ember, arial, sans-serif; color: rgb(51, 51, 51)">=20
+                 <tbody>=20
+                  <tr>=20
+                   <td style=3D"text-align:center;margin:auto;padding: 0"><=
+a href=3D"" style=3D"font-family:ember,arial,sans-serif;font-size:12px;colo=
+r:#232F3E;font-weight:700;text-align:right;vertical-align:middle;white-spac=
+e:nowrap;text-decoration:none;">Your Amazon.in</a><a href=3D"https://www.am=
+azon.in/gp/r.html?C=3DTF14L55J41OW&K=3DWMU548AAJTKH&M=3Durn:rtn:msg:2022050=
+21236182226a6cf6ca0403cb01f3c172ee0p0eu&R=3D1D04E0JQJFTSB&T=3DC&U=3Dhttps%3=
+A%2F%2Fwww.amazon.in%2Fgp%2Fgoldbox%3Fref_%3Dpe_33574051_684185261&H=3DRXRX=
+ZZN9PTYGFA9G4MB4DRTWD8GA&ref_=3Dpe_33574051_684185261" style=3D"font-family=
+:ember,arial,sans-serif;font-size:12px;color:#232F3E;font-weight:700;text-a=
+lign:right;vertical-align:middle;white-space:nowrap;text-decoration:none;">=
+&nbsp; Today's Deals</a><a href=3D"https://www.amazon.in/gp/f.html?C=3DTF14=
+L55J41OW&K=3DWMU548AAJTKH&M=3Durn:rtn:msg:202205021236182226a6cf6ca0403cb01=
+f3c172ee0p0eu&R=3D1FL8NQ3E4T3TA&T=3DC&U=3Dhttps%3A%2F%2Fwww.amazon.in%2Fgp%=
+2Fsite-directory%2Fref%3Dpe_33574051_684185261_pe_dir_gw%2F&H=3DCPW7HUUIIGU=
+RRJ3CL7QH3LXAVBSA&ref_=3Dpe_33574051_684185261_pe_dir_gw" style=3D"font-fam=
+ily:ember,arial,sans-serif;font-size:12px;color:#232F3E;font-weight:700;tex=
+t-align:right;vertical-align:middle;white-space:nowrap;text-decoration:none=
+;">&nbsp; See All Departments</a></td>=20
+                  </tr>=20
+                 </tbody>=20
+                </table> </td>=20
+              </tr>=20
+             </tbody>=20
+            </table>=20
+            <table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" borde=
+r=3D"0" align=3D"center" style=3D"border-spacing: 0; font-family: ember, ar=
+ial, sans-serif; color: rgb(51, 51, 51)">=20
+             <tbody>
+              <tr height=3D"10">=20
+               <td width=3D"100%" style=3D"padding: 0">
+                <div width=3D"100%" style=3D"font-size:10px; line-height:10=
+px">
+                 &nbsp;
+                </div></td>=20
+              </tr>=20
+              <tr>=20
+               <td style=3D"padding: 0">=20
+                <table width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" b=
+order=3D"0" align=3D"center" class=3D"seperator" style=3D"border-spacing: 0=
+; font-family: ember, arial, sans-serif; color: rgb(51, 51, 51)">=20
+                 <tbody>=20
+                  <tr height=3D"10">=20
+                   <td width=3D"100%" height=3D"10" style=3D"padding: 0">=
+=20
+                    <div width=3D"100%" class=3D"spacer" style=3D"font-size=
+:10px;line-height:10px;">
+                     &nbsp;
+                    </div> </td>=20
+                  </tr>=20
+                 </tbody>=20
+                </table> </td>=20
+              </tr>=20
+             </tbody>
+            </table>=20
+            <table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" align=
+=3D"center" width=3D"85%" style=3D"border-spacing: 0;border-collapse: colla=
+pse; border-width:0; mso-table-lspace:0pt; mso-table-rspace:0pt; padding:0;=
+border-spacing: 0; font-family: ember, arial, sans-serif; color: rgb(51, 51=
+, 51)" class=3D"pep_headline">=20
+             <tbody>
+              <tr>=20
+               <td align=3D"center" valign=3D"middle" style=3D"padding: 0">=
+ <span style=3D"font-size:22px; line-height:26px; mso-line-height-rule: exa=
+ctly; vertical-align: middle;font-family: Ember, Helvetica, Arial, sans-ser=
+if; font-weight:520;"> </span> </td>=20
+              </tr>=20
+             </tbody>
+            </table>
+            <table width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" borde=
+r=3D"0" align=3D"center" class=3D"seperator" style=3D"border-spacing: 0; fo=
+nt-family: ember, arial, sans-serif; color: rgb(51, 51, 51)">=20
+             <tbody>=20
+              <tr height=3D"20">=20
+               <td width=3D"100%" height=3D"20" style=3D"padding: 0">=20
+                <div width=3D"100%" class=3D"spacer" style=3D"font-size:20p=
+x;line-height:20px;">
+                 &nbsp;
+                </div> </td>=20
+              </tr>=20
+             </tbody>=20
+            </table> </td>
+          </tr>
+         </tbody>
+        </table>=20
+        <table width=3D"100%" border=3D"0" align=3D"center" cellpadding=3D"=
+0" cellspacing=3D"0" class=3D"deviceWidth" style=3D"border-spacing: 0; font=
+-family: ember, arial, sans-serif; color: rgb(51, 51, 51)">=20
+         <tbody>
+          <tr>=20
+           <td align=3D"center" class=3D"deviceWidth" style=3D"padding: 0">=
+ <a href=3D"https://www.amazon.in/gp/f.html?C=3DTF14L55J41OW&K=3DWMU548AAJT=
+KH&M=3Durn:rtn:msg:202205021236182226a6cf6ca0403cb01f3c172ee0p0eu&R=3D2D32E=
+ANDH1LLZ&T=3DC&U=3Dhttps%3A%2F%2Fwww.amazon.in%2Fevents%2Fsummersale%2F%3Fr=
+ef_%3Dpe_33574051_684185261&H=3DT5LNNJP0B42SFTFDHFZPKVBEGK0A&ref_=3Dpe_3357=
+4051_684185261">=20
+             <div class=3D"image-csslot-normal">=20
+              <img border=3D"0" align=3D"middle" alt=3D"" src=3D"https://m.=
+media-amazon.com/images/G/31/img19/IN_Out_Bound/MayART22/Push/Teaser_Push_C=
+ounDownDealst.png" style=3D"max-width:100%;border: 0" />=20
+             </div> </a> </td>=20
+          </tr>=20
+         </tbody>
+        </table>=20
+        <table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" align=3D"ce=
+nter" width=3D"100%" bgcolor=3D"#FFFFFF" style=3D"border-spacing:0;margin: =
+0 auto;border-spacing: 0; font-family: ember, arial, sans-serif; color: rgb=
+(51, 51, 51)">=20
+         <tbody>
+          <tr>
+           <td height=3D"32" style=3D"padding: 0"><img src=3D"http://g-ecx.=
+images-amazon.com/images/G/01/e-mail/img14/kc/sp.gif" width=3D"1" height=3D=
+"1" style=3D"display:block; border:0;border: 0" /></td>
+          </tr>=20
+          <tr>=20
+           <td align=3D"left" style=3D"text-align: center; font-size: 0;pad=
+ding: 0">=20
+            <table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=
+=3D"90%" align=3D"center" style=3D"border-spacing: 0;border-spacing: 0; fon=
+t-family: ember, arial, sans-serif; color: rgb(51, 51, 51)">=20
+             <tbody>
+              <tr>=20
+               <td align=3D"left" style=3D"padding: 0"> <a href=3D"https://=
+www.amazon.in/gp/f.html?C=3DTF14L55J41OW&K=3DWMU548AAJTKH&M=3Durn:rtn:msg:2=
+02205021236182226a6cf6ca0403cb01f3c172ee0p0eu&R=3D280IRHRJAZNT3&T=3DC&U=3Dh=
+ttps%3A%2F%2Fwww.amazon.in%2Fevents%2Fsummersale%2F%3Fref_%3Dpe_33574051_68=
+4185261&H=3DHSIF6QVNNCLIQ6VCCM5P2A07CWSA&ref_=3Dpe_33574051_684185261" styl=
+e=3D"color:#000000; text-decoration:none; font-family: Ember, Helvetica, Ar=
+ial, sans-serif; font-size:24px; font-weight:bold; line-height: 26px;font-s=
+ize:16px;font-family:ember,helvetica,sans-serif;font-weight:400;"></a> </td=
+>=20
+              </tr>=20
+             </tbody>
+            </table> </td>=20
+          </tr>=20
+          <tr>
+           <td height=3D"24" style=3D"padding: 0"><img src=3D"http://g-ecx.=
+images-amazon.com/images/G/01/e-mail/img14/kc/sp.gif" width=3D"1" height=3D=
+"1" style=3D"display:block; border:0;border: 0" /></td>
+          </tr>=20
+          <tr>=20
+           <td align=3D"center" style=3D"text-align: center;padding: 0">=20
+            <!--[if (gte mso 9)|(IE)]><table width=3D"100%" align=3D"center=
+" style=3D"border-spacing: 0; margin:auto;border-spacing: 0; text-align:cen=
+ter;"><tr><td><![endif]-->=20
+            <div style=3D"width: 100%; display: inline-block; vertical-alig=
+n: top; margin:0 auto;">=20
+             <table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=
+=3D"80%" style=3D"border-spacing: 0; margin:auto;border-spacing: 0; font-fa=
+mily: ember, arial, sans-serif; color: rgb(51, 51, 51)">=20
+              <tbody>
+               <tr>=20
+                <td height=3D"42" align=3D"center" style=3D"padding: 0">=20
+                 <table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" st=
+yle=3D"border-spacing: 0; margin:auto;border-spacing: 0; font-family: ember=
+, arial, sans-serif; color: rgb(51, 51, 51)">=20
+                  <tbody>
+                   <tr>=20
+                    <td align=3D"center" bgcolor=3D"#ffb900" style=3D"width=
+:100%; min-width:142px; max-width:100%; -webkit-border-radius: 2px; -moz-bo=
+rder-radius: 2px; border-radius: 2px;white-space:nowrap;padding: 0"> <a hre=
+f=3D"https://www.amazon.in/gp/f.html?C=3DTF14L55J41OW&K=3DWMU548AAJTKH&M=3D=
+urn:rtn:msg:202205021236182226a6cf6ca0403cb01f3c172ee0p0eu&R=3DXNO3IY0FS57V=
+&T=3DC&U=3Dhttps%3A%2F%2Fwww.amazon.in%2Fevents%2Fsummersale%2F%3Fref_%3Dpe=
+_33574051_684185261&H=3DGNZQEJVGFKPUP5CBDFDCLFODV48A&ref_=3Dpe_33574051_684=
+185261" style=3D"font-weight:700; font-size: 15px; font-family: Ember, Helv=
+etica, Arial, sans-serif; color: #373d3e;text-decoration: none; -webkit-bor=
+der-radius: 2px; -moz-border-radius: 2px; border-radius: 2px; border:1px so=
+lid #ffb900; padding: 12px 14px; display: block;font-size:16px;">View all d=
+eals</a> </td>=20
+                   </tr>=20
+                  </tbody>
+                 </table> </td>=20
+               </tr>=20
+              </tbody>
+             </table>=20
+            </div>=20
+            <!--[if (gte mso 9)|(IE)]></td></tr></table><![endif]--> </td>=
+=20
+          </tr>=20
+          <tr>
+           <td height=3D"8" style=3D"padding: 0"><img src=3D"http://g-ecx.i=
+mages-amazon.com/images/G/01/e-mail/img14/kc/sp.gif" width=3D"1" height=3D"=
+1" style=3D"display:block; border:0;border: 0" /></td>
+          </tr>=20
+         </tbody>
+        </table>=20
+        <table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" align=3D"ce=
+nter" bgcolor=3D"#ffffff" style=3D"border-spacing: 0; margin: 0 auto;border=
+-spacing: 0; font-family: ember, arial, sans-serif; color: rgb(51, 51, 51)"=
+>=20
+         <tbody>
+          <tr>
+           <td height=3D"24" style=3D"padding: 0"><img src=3D"http://g-ecx.=
+images-amazon.com/images/G/01/e-mail/img14/kc/sp.gif" width=3D"1" height=3D=
+"1" style=3D"display:block; border:0;border: 0" /></td>
+          </tr>
+         </tbody>
+        </table>=20
+        <table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" align=3D"ce=
+nter" style=3D"border-spacing: 0; margin: 0 auto; width: 100%;max-width:640=
+px;border-spacing: 0; font-family: ember, arial, sans-serif; color: rgb(51,=
+ 51, 51)">=20
+         <tbody>
+          <tr>
+           <td height=3D"24" style=3D"padding: 0"><img src=3D"http://g-ecx.=
+images-amazon.com/images/G/01/e-mail/img14/kc/sp.gif" width=3D"1" height=3D=
+"1" style=3D"display:block; border:0;border: 0" /></td>
+          </tr>=20
+          <tr>=20
+           <td style=3D"padding:0;text-align:center;font-size:0;padding: 0"=
+>=20
+            <table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=
+=3D"100%" style=3D"border-spacing: 0;border-spacing: 0; font-family: ember,=
+ arial, sans-serif; color: rgb(51, 51, 51)">=20
+             <tbody>
+              <tr>=20
+               <td style=3D"text-align:left;padding: 0" valign=3D"middle">=
+=20
+                <table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" ali=
+gn=3D"left" width=3D"100%" style=3D"border-spacing: 0; font-family: ember, =
+arial, sans-serif; color: rgb(51, 51, 51)">=20
+                 <tbody>
+                  <tr>=20
+                   <td height=3D"2" style=3D"line-height:2px; font-size:2px=
+;padding: 0" bgcolor=3D"#232F3E"> <img src=3D"http://g-ecx.images-amazon.co=
+m/images/G/01/e-mail/img/softlines/sp.gif" width=3D"1" height=3D"1" style=
+=3D"display:block; border:0;border: 0" alt=3D"=3D =3D =3D =3D =3D =3D =3D =
+=3D =3D =3D =3D =3D =3D =3D =3D =3D =3D =3D =3D =3D" /> </td>=20
+                   <td width=3D"24" height=3D"2" style=3D"line-height:2px; =
+font-size:2px;padding: 0" class=3D"width12"><img src=3D"http://g-ecx.images=
+-amazon.com/images/G/01/e-mail/img/softlines/sp.gif" width=3D"1" height=3D"=
+1" style=3D"display:block; border:0;border: 0" /></td>=20
+                  </tr>=20
+                 </tbody>
+                </table> </td>=20
+               <td style=3D"text-align:center;width:300px;max-width:100%;pa=
+dding: 0" align=3D"center" valign=3D"middle"> <span class=3D"text-divider" =
+style=3D"color:#232F3E; text-decoration:none; font-family: Ember, Helvetica=
+, sans-serif; font-size: 20px; line-height: 20px; font-weight:bold;">In the=
+ spotlight</span> </td>=20
+               <td style=3D"text-align:right;padding: 0" valign=3D"middle">=
+=20
+                <table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" ali=
+gn=3D"right" width=3D"100%" style=3D"border-spacing: 0; font-family: ember,=
+ arial, sans-serif; color: rgb(51, 51, 51)">=20
+                 <tbody>
+                  <tr>=20
+                   <td width=3D"24" height=3D"2" style=3D"line-height:2px; =
+font-size:2px;padding: 0"><img src=3D"http://g-ecx.images-amazon.com/images=
+/G/01/e-mail/img/softlines/sp.gif" width=3D"1" height=3D"1" style=3D"displa=
+y:block; border:0;border: 0" /></td>=20
+                   <td height=3D"2" style=3D"line-height:2px; font-size:2px=
+;padding: 0" bgcolor=3D"#232F3E"> <img src=3D"http://g-ecx.images-amazon.co=
+m/images/G/01/e-mail/img/softlines/sp.gif" width=3D"1" height=3D"1" style=
+=3D"display:block; border:0;border: 0" alt=3D"=3D =3D =3D =3D =3D =3D =3D =
+=3D =3D =3D =3D =3D =3D =3D =3D =3D =3D =3D =3D =3D" /> </td>=20
+                  </tr>=20
+                 </tbody>
+                </table> </td>=20
+              </tr>=20
+             </tbody>
+            </table> </td>=20
+          </tr>=20
+          <tr>
+           <td height=3D"24" style=3D"padding: 0"><img src=3D"http://g-ecx.=
+images-amazon.com/images/G/01/e-mail/img14/kc/sp.gif" width=3D"1" height=3D=
+"1" style=3D"display:block; border:0;border: 0" /></td>
+          </tr>=20
+         </tbody>
+        </table>=20
+        <table width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D=
+"0" style=3D"border-spacing: 0; font-family: ember, arial, sans-serif; colo=
+r: rgb(51, 51, 51)">=20
+         <tbody>
+          <tr>=20
+           <td style=3D"text-align:center;font-size:0;padding: 0">=20
+            <!--[if (gte mso 9)|(IE)]><table width=3D"100%"><tr><td width=
+=3D"320" valign=3D"top"><![endif]-->=20
+            <div style=3D"width:100%;max-width:320px;display:inline-block;v=
+ertical-align:top;">=20
+             <table width=3D"100%" border=3D"0" cellspacing=3D"0" cellpaddi=
+ng=3D"8" style=3D"border-spacing: 0; font-family: ember, arial, sans-serif;=
+ color: rgb(51, 51, 51)">=20
+              <tbody>
+               <tr>=20
+                <td class=3D"inner" style=3D"max-width:300px;padding: 0">=
+=20
+                 <table width=3D"100%" border=3D"0" cellspacing=3D"0" cellp=
+adding=3D"0" style=3D"border-spacing: 0; font-family: ember, arial, sans-se=
+rif; color: rgb(51, 51, 51)">=20
+                  <tbody>
+                   <tr>=20
+                    <td style=3D"text-align:center;font-size:0;padding: 0">=
+=20
+                     <!--[if (gte mso 9)|(IE)]><table width=3D"100%"><tr><t=
+d width=3D"160" valign=3D"top"><![endif]-->=20
+                     <div style=3D"width:100%;max-width:160px;display:inlin=
+e-block;vertical-align:top;">=20
+                      <table width=3D"100%" border=3D"0" cellspacing=3D"0" =
+cellpadding=3D"8" style=3D"border-spacing: 0; font-family: ember, arial, sa=
+ns-serif; color: rgb(51, 51, 51)">=20
+                       <tbody>
+                        <tr>=20
+                         <td class=3D"inner" style=3D"max-width:140px;paddi=
+ng: 0">=20
+                          <table width=3D"100%" cellspacing=3D"0" cellpaddi=
+ng=3D"0" border=3D"0" style=3D"vertical-align:top;padding:8px;border-spacin=
+g: 0; font-family: ember, arial, sans-serif; color: rgb(51, 51, 51)">=20
+                           <tbody>=20
+                            <tr>=20
+                             <td style=3D"display:inline-block;padding: 0">=
+=20
+                              <table width=3D"100%" cellspacing=3D"0" cellp=
+adding=3D"0" border=3D"0" bgcolor=3D"#ffffff" style=3D"border-spacing: 0; f=
+ont-family: ember, arial, sans-serif; color: rgb(51, 51, 51)">=20
+                               <tbody>=20
+                                <tr>=20
+                                 <td valign=3D"bottom" align=3D"center" sty=
+le=3D"vertical-align: middle; padding:8px 8px 8px 8px;padding: 0"> <a href=
+=3D"https://www.amazon.in/gp/r.html?C=3DTF14L55J41OW&K=3DWMU548AAJTKH&M=3Du=
+rn:rtn:msg:202205021236182226a6cf6ca0403cb01f3c172ee0p0eu&R=3D3R82PEHCJD0HE=
+&T=3DC&U=3Dhttps%3A%2F%2Fwww.amazon.in%2FRedmi-inches-Ready-L32M6-RA-Androi=
+d%2Fdp%2FB09F9YQQ7B%3Fref%3Dgrep_pep_np1_img%26ref_%3Dpe_33574051_684185261=
+&H=3DZ9WIWRDUJXT5PJTVQ0RYZGBMGYAA&ref_=3Dpe_33574051_684185261" target=3D"_=
+blank"> <img class=3D"oma_deal_image" src=3D"https://m.media-amazon.com/ima=
+ges/I/41aObp88XLL._AC_SS300_.jpg" alt=3D"Redmi 80 cm (32 inches) HD Ready S=
+mart LED TV  L32M6-RA (Black) (2021 Model)  With Android 11" width=3D"140" =
+border=3D"0" style=3D"border: 0" /> </a> </td>=20
+                                </tr>=20
+                               </tbody>
+                              </table> </td>=20
+                            </tr>=20
+                            <tr height=3D"10">=20
+                             <td width=3D"100%" style=3D"padding: 0">
+                              <div width=3D"100%" style=3D"font-size:10px; =
+line-height:10px">
+                               &nbsp;
+                              </div></td>=20
+                            </tr>=20
+                            <tr>=20
+                             <td width=3D"100%" bgcolor=3D"#ffffff" align=
+=3D"center" class=3D"hero-deal-col" valign=3D"top" style=3D"padding: 0">=20
+                              <table width=3D"100%" cellspacing=3D"0" cellp=
+adding=3D"0" border=3D"0" align=3D"left" style=3D"border-spacing: 0; font-f=
+amily: ember, arial, sans-serif; color: rgb(51, 51, 51)">=20
+                               <tbody>=20
+                                <tr height=3D"5">=20
+                                 <td width=3D"100%" style=3D"padding: 0">
+                                  <div width=3D"100%" style=3D"font-size:5p=
+x; line-height:5px">
+                                   &nbsp;
+                                  </div></td>=20
+                                </tr>=20
+                                <tr>=20
+                                 <td valign=3D"middle" align=3D"left" style=
+=3D"padding: 0"> <span style=3D"font-family:Arial,Helvetica,Sans-Serif;font=
+-size:14px;font-weight:bold;font-style:normal;text-decoration:none;color:#3=
+69;text-align:left;"> <a class=3D"oma_deal_title" style=3D"font-family:Aria=
+l,Helvetica,Sans-Serif;font-size:14px;font-weight:bold;font-style:normal;co=
+lor:#369;text-align:left;line-height:25px;text-decoration:none;font-family:=
+ Ember,Helvetica,Arial,sans-serif;font-size: 14px;line-height: 18px;font-we=
+ight: 500;color: #232F3E;" href=3D"https://www.amazon.in/gp/r.html?C=3DTF14=
+L55J41OW&K=3DWMU548AAJTKH&M=3Durn:rtn:msg:202205021236182226a6cf6ca0403cb01=
+f3c172ee0p0eu&R=3D3SPXGZVIOJEHN&T=3DC&U=3Dhttps%3A%2F%2Fwww.amazon.in%2FRed=
+mi-inches-Ready-L32M6-RA-Android%2Fdp%2FB09F9YQQ7B%3Fref%3Dgrep_pep_np1_t%2=
+6ref_%3Dpe_33574051_684185261&H=3DPZHIHXAX4JMHHQNVH5RAKCPMIGWA&ref_=3Dpe_33=
+574051_684185261" target=3D"_blank"> Redmi 80 cm (32 inches) HD Ready...</a=
+> </span> </td>=20
+                                </tr>=20
+                                <tr height=3D"10">=20
+                                 <td width=3D"100%" style=3D"padding: 0">
+                                  <div width=3D"100%" style=3D"font-size:10=
+px; line-height:10px">
+                                   &nbsp;
+                                  </div></td>=20
+                                </tr>=20
+                                <tr>=20
+                                 <td valign=3D"middle" style=3D"text-align:=
+left;padding: 0"> <font size=3D"2" face=3D"arial,Helvetica,sans-serif"> <sp=
+an class=3D"oma_deal_bprice" style=3D"font-size:18px;line-height:24px;color=
+:black;display:inline-block;text-decoration:none;font-family: Ember,Helveti=
+ca,Arial,sans-serif;font-size: 12px;line-height:24px;">=20
+                                    <strike>=20
+                                     <span style=3D"white-space:nowrap;">Rs=
+. 24,999.00</span>
+                                    </strike> </span> <span class=3D"oma_de=
+al_dprice"> <span style=3D"font-size:18px;line-height:24px;color:#990000;fo=
+nt-weight:bold;text-decoration:none;font-family: Ember,Helvetica,Arial,sans=
+-serif;font-size:14px;line-height: 30px;font-weight: 600;color: #CC0000;"> =
+<span style=3D"white-space:nowrap;">Rs. 13,999.00</span></span> <span style=
+=3D"font-size:18px;line-height:24px;color:#990000;display:inline-block;text=
+-decoration:none;font-family: Ember,Helvetica,Arial,sans-serif;font-size: 1=
+4px;line-height: 30px;font-weight: 600;color: #CC0000;">(44% off)</span> </=
+span> </font></td>=20
+                                </tr>=20
+                                <tr>=20
+                                 <td style=3D"padding: 0">=20
+                                  <table align=3D"left" cellspacing=3D"0" c=
+ellpadding=3D"0" border=3D"0" style=3D"border-spacing: 0; font-family: embe=
+r, arial, sans-serif; color: rgb(51, 51, 51)">=20
+                                   <tbody>
+                                    <tr>
+                                     <td valign=3D"middle" style=3D"backgro=
+und-color:#ffffff; line-height: 15px; font-family:ember,arial,sans-serif;fo=
+nt-size: 11px;color: #444;text-align:left; padding:0px 6px 0px 6px;padding:=
+ 0"> </td>=20
+                                    </tr>
+                                   </tbody>
+                                  </table> </td>=20
+                                </tr>=20
+                                <tr class=3D"spacer">=20
+                                 <td height=3D"10" style=3D"padding: 0">=20
+                                  <div width=3D"1" class=3D"spacer" style=
+=3D"font-size:8px;line-height:8px;">
+                                   &nbsp;
+                                  </div> </td>=20
+                                </tr>=20
+                               </tbody>=20
+                              </table> </td>=20
+                            </tr>=20
+                           </tbody>=20
+                          </table> </td>=20
+                        </tr>=20
+                       </tbody>
+                      </table>=20
+                     </div>=20
+                     <!--[if (gte mso 9)|(IE)]></td><td width=3D"160" valig=
+n=3D"top"><![endif]-->=20
+                     <div style=3D"width:100%;max-width:160px;display:inlin=
+e-block;vertical-align:top;">=20
+                      <table width=3D"100%" border=3D"0" cellspacing=3D"0" =
+cellpadding=3D"8" style=3D"border-spacing: 0; font-family: ember, arial, sa=
+ns-serif; color: rgb(51, 51, 51)">=20
+                       <tbody>
+                        <tr>=20
+                         <td class=3D"inner" style=3D"max-width:140px;paddi=
+ng: 0">=20
+                          <table width=3D"100%" cellspacing=3D"0" cellpaddi=
+ng=3D"0" border=3D"0" style=3D"vertical-align:top;padding:8px;border-spacin=
+g: 0; font-family: ember, arial, sans-serif; color: rgb(51, 51, 51)">=20
+                           <tbody>=20
+                            <tr>=20
+                             <td style=3D"display:inline-block;padding: 0">=
+=20
+                              <table width=3D"100%" cellspacing=3D"0" cellp=
+adding=3D"0" border=3D"0" bgcolor=3D"#ffffff" style=3D"border-spacing: 0; f=
+ont-family: ember, arial, sans-serif; color: rgb(51, 51, 51)">=20
+                               <tbody>=20
+                                <tr>=20
+                                 <td valign=3D"bottom" align=3D"center" sty=
+le=3D"vertical-align: middle; padding:8px 8px 8px 8px;padding: 0"> <a href=
+=3D"https://www.amazon.in/gp/r.html?C=3DTF14L55J41OW&K=3DWMU548AAJTKH&M=3Du=
+rn:rtn:msg:202205021236182226a6cf6ca0403cb01f3c172ee0p0eu&R=3D3FUXGOAWQEDDW=
+&T=3DC&U=3Dhttps%3A%2F%2Fwww.amazon.in%2FFujifilm-Instax-Mini-Instant-Camer=
+a%2Fdp%2FB08TSDJS5Y%3Fref%3Dgrep_pep_np1_img%26ref_%3Dpe_33574051_684185261=
+&H=3DGIZCNS7XKEJCGFAZ1FZQRIXEUOOA&ref_=3Dpe_33574051_684185261" target=3D"_=
+blank"> <img class=3D"oma_deal_image" src=3D"https://m.media-amazon.com/ima=
+ges/I/41VGSE2vOnL._AC_SS300_.jpg" alt=3D"Fujifilm Instax Mini 9 Instant Cam=
+era (Flamingo Pink) Gift Box" width=3D"140" border=3D"0" style=3D"border: 0=
+" /> </a> </td>=20
+                                </tr>=20
+                               </tbody>
+                              </table> </td>=20
+                            </tr>=20
+                            <tr height=3D"10">=20
+                             <td width=3D"100%" style=3D"padding: 0">
+                              <div width=3D"100%" style=3D"font-size:10px; =
+line-height:10px">
+                               &nbsp;
+                              </div></td>=20
+                            </tr>=20
+                            <tr>=20
+                             <td width=3D"100%" bgcolor=3D"#ffffff" align=
+=3D"center" class=3D"hero-deal-col" valign=3D"top" style=3D"padding: 0">=20
+                              <table width=3D"100%" cellspacing=3D"0" cellp=
+adding=3D"0" border=3D"0" align=3D"left" style=3D"border-spacing: 0; font-f=
+amily: ember, arial, sans-serif; color: rgb(51, 51, 51)">=20
+                               <tbody>=20
+                                <tr height=3D"5">=20
+                                 <td width=3D"100%" style=3D"padding: 0">
+                                  <div width=3D"100%" style=3D"font-size:5p=
+x; line-height:5px">
+                                   &nbsp;
+                                  </div></td>=20
+                                </tr>=20
+                                <tr>=20
+                                 <td valign=3D"middle" align=3D"left" style=
+=3D"padding: 0"> <span style=3D"font-family:Arial,Helvetica,Sans-Serif;font=
+-size:14px;font-weight:bold;font-style:normal;text-decoration:none;color:#3=
+69;text-align:left;"> <a class=3D"oma_deal_title" style=3D"font-family:Aria=
+l,Helvetica,Sans-Serif;font-size:14px;font-weight:bold;font-style:normal;co=
+lor:#369;text-align:left;line-height:25px;text-decoration:none;font-family:=
+ Ember,Helvetica,Arial,sans-serif;font-size: 14px;line-height: 18px;font-we=
+ight: 500;color: #232F3E;" href=3D"https://www.amazon.in/gp/r.html?C=3DTF14=
+L55J41OW&K=3DWMU548AAJTKH&M=3Durn:rtn:msg:202205021236182226a6cf6ca0403cb01=
+f3c172ee0p0eu&R=3D1JEQWEGFTB0KJ&T=3DC&U=3Dhttps%3A%2F%2Fwww.amazon.in%2FFuj=
+ifilm-Instax-Mini-Instant-Camera%2Fdp%2FB08TSDJS5Y%3Fref%3Dgrep_pep_np1_t%2=
+6ref_%3Dpe_33574051_684185261&H=3DMETMNLECBKBVNTWARCG4ENBREMQA&ref_=3Dpe_33=
+574051_684185261" target=3D"_blank"> Fujifilm Instax Mini 9 Instant...</a> =
+</span> </td>=20
+                                </tr>=20
+                                <tr height=3D"10">=20
+                                 <td width=3D"100%" style=3D"padding: 0">
+                                  <div width=3D"100%" style=3D"font-size:10=
+px; line-height:10px">
+                                   &nbsp;
+                                  </div></td>=20
+                                </tr>=20
+                                <tr>=20
+                                 <td valign=3D"middle" style=3D"text-align:=
+left;padding: 0"> <font size=3D"2" face=3D"arial,Helvetica,sans-serif"> <sp=
+an class=3D"oma_deal_bprice" style=3D"font-size:18px;line-height:24px;color=
+:black;display:inline-block;text-decoration:none;font-family: Ember,Helveti=
+ca,Arial,sans-serif;font-size: 12px;line-height:24px;">=20
+                                    <strike>=20
+                                     <span style=3D"white-space:nowrap;">Rs=
+. 5,999.00</span>
+                                    </strike> </span> <span class=3D"oma_de=
+al_dprice"> <span style=3D"font-size:18px;line-height:24px;color:#990000;fo=
+nt-weight:bold;text-decoration:none;font-family: Ember,Helvetica,Arial,sans=
+-serif;font-size:14px;line-height: 30px;font-weight: 600;color: #CC0000;"> =
+<span style=3D"white-space:nowrap;">Rs. 4,999.00</span></span> <span style=
+=3D"font-size:18px;line-height:24px;color:#990000;display:inline-block;text=
+-decoration:none;font-family: Ember,Helvetica,Arial,sans-serif;font-size: 1=
+4px;line-height: 30px;font-weight: 600;color: #CC0000;">(17% off)</span> </=
+span> </font></td>=20
+                                </tr>=20
+                                <tr>=20
+                                 <td style=3D"padding: 0">=20
+                                  <table align=3D"left" cellspacing=3D"0" c=
+ellpadding=3D"0" border=3D"0" style=3D"border-spacing: 0; font-family: embe=
+r, arial, sans-serif; color: rgb(51, 51, 51)">=20
+                                   <tbody>
+                                    <tr>
+                                     <td valign=3D"middle" style=3D"backgro=
+und-color:#ffffff; line-height: 15px; font-family:ember,arial,sans-serif;fo=
+nt-size: 11px;color: #444;text-align:left; padding:0px 6px 0px 6px;padding:=
+ 0"> Ends at 23:45 IST, or while supplies last </td>=20
+                                    </tr>
+                                   </tbody>
+                                  </table> </td>=20
+                                </tr>=20
+                                <tr class=3D"spacer">=20
+                                 <td height=3D"10" style=3D"padding: 0">=20
+                                  <div width=3D"1" class=3D"spacer" style=
+=3D"font-size:8px;line-height:8px;">
+                                   &nbsp;
+                                  </div> </td>=20
+                                </tr>=20
+                               </tbody>=20
+                              </table> </td>=20
+                            </tr>=20
+                           </tbody>=20
+                          </table> </td>=20
+                        </tr>=20
+                       </tbody>
+                      </table>=20
+                     </div>=20
+                     <!--[if (gte mso 9)|(IE)]></td></tr></table><![endif]-=
+-> </td>=20
+                   </tr>=20
+                  </tbody>
+                 </table> </td>=20
+               </tr>=20
+              </tbody>
+             </table>=20
+            </div>=20
+            <!--[if (gte mso 9)|(IE)]></td><td width=3D"320" valign=3D"top"=
+><![endif]-->=20
+            <div style=3D"width:100%;max-width:320px;display:inline-block;v=
+ertical-align:top;">=20
+             <table width=3D"100%" border=3D"0" cellspacing=3D"0" cellpaddi=
+ng=3D"8" style=3D"border-spacing: 0; font-family: ember, arial, sans-serif;=
+ color: rgb(51, 51, 51)">=20
+              <tbody>
+               <tr>=20
+                <td class=3D"inner" style=3D"max-width:300px;padding: 0">=
+=20
+                 <table width=3D"100%" border=3D"0" cellspacing=3D"0" cellp=
+adding=3D"0" style=3D"border-spacing: 0; font-family: ember, arial, sans-se=
+rif; color: rgb(51, 51, 51)">=20
+                  <tbody>
+                   <tr>=20
+                    <td style=3D"text-align:center;font-size:0;padding: 0">=
+=20
+                     <!--[if (gte mso 9)|(IE)]><table width=3D"100%"><tr><t=
+d width=3D"160" valign=3D"top"><![endif]-->=20
+                     <div style=3D"width:100%;max-width:160px;display:inlin=
+e-block;vertical-align:top;">=20
+                      <table width=3D"100%" border=3D"0" cellspacing=3D"0" =
+cellpadding=3D"8" style=3D"border-spacing: 0; font-family: ember, arial, sa=
+ns-serif; color: rgb(51, 51, 51)">=20
+                       <tbody>
+                        <tr>=20
+                         <td class=3D"inner" style=3D"max-width:140px;paddi=
+ng: 0">=20
+                          <table width=3D"100%" cellspacing=3D"0" cellpaddi=
+ng=3D"0" border=3D"0" style=3D"vertical-align:top;padding:8px;border-spacin=
+g: 0; font-family: ember, arial, sans-serif; color: rgb(51, 51, 51)">=20
+                           <tbody>=20
+                            <tr>=20
+                             <td style=3D"display:inline-block;padding: 0">=
+=20
+                              <table width=3D"100%" cellspacing=3D"0" cellp=
+adding=3D"0" border=3D"0" bgcolor=3D"#ffffff" style=3D"border-spacing: 0; f=
+ont-family: ember, arial, sans-serif; color: rgb(51, 51, 51)">=20
+                               <tbody>=20
+                                <tr>=20
+                                 <td valign=3D"bottom" align=3D"center" sty=
+le=3D"vertical-align: middle; padding:8px 8px 8px 8px;padding: 0"> <a href=
+=3D"https://www.amazon.in/gp/r.html?C=3DTF14L55J41OW&K=3DWMU548AAJTKH&M=3Du=
+rn:rtn:msg:202205021236182226a6cf6ca0403cb01f3c172ee0p0eu&R=3D1UWIWJI7C1PLJ=
+&T=3DC&U=3Dhttps%3A%2F%2Fwww.amazon.in%2Fdeal%2Ff14ebfbf%3Fref%3Dgrep_pep_n=
+p1_img%26ref_%3Dpe_33574051_684185261&H=3D375E0TBTCJDTD8XSM28SH4J3OTAA&ref_=
+=3Dpe_33574051_684185261" target=3D"_blank"> <img class=3D"oma_deal_image" =
+src=3D"https://m.media-amazon.com/images/I/41d9zc8svrL._AC_SS300_.jpg" alt=
+=3D"Kindle E-readers" width=3D"140" border=3D"0" style=3D"border: 0" /> </a=
+> </td>=20
+                                </tr>=20
+                               </tbody>
+                              </table> </td>=20
+                            </tr>=20
+                            <tr height=3D"10">=20
+                             <td width=3D"100%" style=3D"padding: 0">
+                              <div width=3D"100%" style=3D"font-size:10px; =
+line-height:10px">
+                               &nbsp;
+                              </div></td>=20
+                            </tr>=20
+                            <tr>=20
+                             <td width=3D"100%" bgcolor=3D"#ffffff" align=
+=3D"center" class=3D"hero-deal-col" valign=3D"top" style=3D"padding: 0">=20
+                              <table width=3D"100%" cellspacing=3D"0" cellp=
+adding=3D"0" border=3D"0" align=3D"left" style=3D"border-spacing: 0; font-f=
+amily: ember, arial, sans-serif; color: rgb(51, 51, 51)">=20
+                               <tbody>=20
+                                <tr height=3D"5">=20
+                                 <td width=3D"100%" style=3D"padding: 0">
+                                  <div width=3D"100%" style=3D"font-size:5p=
+x; line-height:5px">
+                                   &nbsp;
+                                  </div></td>=20
+                                </tr>=20
+                                <tr>=20
+                                 <td valign=3D"middle" align=3D"left" style=
+=3D"padding: 0"> <span style=3D"font-family:Arial,Helvetica,Sans-Serif;font=
+-size:14px;font-weight:bold;font-style:normal;text-decoration:none;color:#3=
+69;text-align:left;"> <a class=3D"oma_deal_title" style=3D"font-family:Aria=
+l,Helvetica,Sans-Serif;font-size:14px;font-weight:bold;font-style:normal;co=
+lor:#369;text-align:left;line-height:25px;text-decoration:none;font-family:=
+ Ember,Helvetica,Arial,sans-serif;font-size: 14px;line-height: 18px;font-we=
+ight: 500;color: #232F3E;" href=3D"https://www.amazon.in/gp/r.html?C=3DTF14=
+L55J41OW&K=3DWMU548AAJTKH&M=3Durn:rtn:msg:202205021236182226a6cf6ca0403cb01=
+f3c172ee0p0eu&R=3D3KENWDAUPA5ZW&T=3DC&U=3Dhttps%3A%2F%2Fwww.amazon.in%2Fdea=
+l%2Ff14ebfbf%3Fref%3Dgrep_pep_np1_t%26ref_%3Dpe_33574051_684185261&H=3DPQSZ=
+XK3QXMQKXXCHTDCFJPFZHXOA&ref_=3Dpe_33574051_684185261" target=3D"_blank"> K=
+indle E-readers</a> </span> </td>=20
+                                </tr>=20
+                                <tr height=3D"10">=20
+                                 <td width=3D"100%" style=3D"padding: 0">
+                                  <div width=3D"100%" style=3D"font-size:10=
+px; line-height:10px">
+                                   &nbsp;
+                                  </div></td>=20
+                                </tr>=20
+                                <tr>=20
+                                 <td valign=3D"middle" style=3D"text-align:=
+left;padding: 0"> <font size=3D"2" face=3D"arial,Helvetica,sans-serif"> <sp=
+an class=3D"oma_deal_dprice" style=3D"font-size:18px;line-height:24px;color=
+:#990000;font-weight:bold;text-decoration:none;font-family: Ember,Helvetica=
+,Arial,sans-serif;font-size:14px;line-height: 30px;font-weight: 600;color: =
+#CC0000;"> <span style=3D"white-space:nowrap;">Rs. 6,799.00</span> - <span =
+style=3D"white-space:nowrap;">Rs. 25,999.00</span> </span> </font></td>=20
+                                </tr>=20
+                                <tr>=20
+                                 <td style=3D"padding: 0">=20
+                                  <table align=3D"left" cellspacing=3D"0" c=
+ellpadding=3D"0" border=3D"0" style=3D"border-spacing: 0; font-family: embe=
+r, arial, sans-serif; color: rgb(51, 51, 51)">=20
+                                   <tbody>
+                                    <tr>
+                                     <td valign=3D"middle" style=3D"backgro=
+und-color:#ffffff; line-height: 15px; font-family:ember,arial,sans-serif;fo=
+nt-size: 11px;color: #444;text-align:left; padding:0px 6px 0px 6px;padding:=
+ 0"> </td>=20
+                                    </tr>
+                                   </tbody>
+                                  </table> </td>=20
+                                </tr>=20
+                                <tr class=3D"spacer">=20
+                                 <td height=3D"10" style=3D"padding: 0">=20
+                                  <div width=3D"1" class=3D"spacer" style=
+=3D"font-size:8px;line-height:8px;">
+                                   &nbsp;
+                                  </div> </td>=20
+                                </tr>=20
+                               </tbody>=20
+                              </table> </td>=20
+                            </tr>=20
+                           </tbody>=20
+                          </table> </td>=20
+                        </tr>=20
+                       </tbody>
+                      </table>=20
+                     </div>=20
+                     <!--[if (gte mso 9)|(IE)]></td><td width=3D"160" valig=
+n=3D"top"><![endif]-->=20
+                     <div style=3D"width:100%;max-width:160px;display:inlin=
+e-block;vertical-align:top;">=20
+                      <table width=3D"100%" border=3D"0" cellspacing=3D"0" =
+cellpadding=3D"8" style=3D"border-spacing: 0; font-family: ember, arial, sa=
+ns-serif; color: rgb(51, 51, 51)">=20
+                       <tbody>
+                        <tr>=20
+                         <td class=3D"inner" style=3D"max-width:140px;paddi=
+ng: 0">=20
+                          <table width=3D"100%" cellspacing=3D"0" cellpaddi=
+ng=3D"0" border=3D"0" style=3D"vertical-align:top;padding:8px;border-spacin=
+g: 0; font-family: ember, arial, sans-serif; color: rgb(51, 51, 51)">=20
+                           <tbody>=20
+                            <tr>=20
+                             <td style=3D"display:inline-block;padding: 0">=
+=20
+                              <table width=3D"100%" cellspacing=3D"0" cellp=
+adding=3D"0" border=3D"0" bgcolor=3D"#ffffff" style=3D"border-spacing: 0; f=
+ont-family: ember, arial, sans-serif; color: rgb(51, 51, 51)">=20
+                               <tbody>=20
+                                <tr>=20
+                                 <td valign=3D"bottom" align=3D"center" sty=
+le=3D"vertical-align: middle; padding:8px 8px 8px 8px;padding: 0"> <a href=
+=3D"https://www.amazon.in/gp/r.html?C=3DTF14L55J41OW&K=3DWMU548AAJTKH&M=3Du=
+rn:rtn:msg:202205021236182226a6cf6ca0403cb01f3c172ee0p0eu&R=3DFMU32AX6GB6J&=
+T=3DC&U=3Dhttps%3A%2F%2Fwww.amazon.in%2FTest-Exclusive_2020_1173-Multi-3GB-=
+Storage%2Fdp%2FB089MSGHJQ%3Fref%3Dgrep_pep_np1_img%26ref_%3Dpe_33574051_684=
+185261&H=3DA2BGAUZDA4DXERA9QOLWTDBHF4CA&ref_=3Dpe_33574051_684185261" targe=
+t=3D"_blank"> <img class=3D"oma_deal_image" src=3D"https://m.media-amazon.c=
+om/images/I/417uExCG6KL._AC_SS300_.jpg" alt=3D"OnePlus 9 || Buy Now" width=
+=3D"140" border=3D"0" style=3D"border: 0" /> </a> </td>=20
+                                </tr>=20
+                               </tbody>
+                              </table> </td>=20
+                            </tr>=20
+                            <tr height=3D"10">=20
+                             <td width=3D"100%" style=3D"padding: 0">
+                              <div width=3D"100%" style=3D"font-size:10px; =
+line-height:10px">
+                               &nbsp;
+                              </div></td>=20
+                            </tr>=20
+                            <tr>=20
+                             <td width=3D"100%" bgcolor=3D"#ffffff" align=
+=3D"center" class=3D"hero-deal-col" valign=3D"top" style=3D"padding: 0">=20
+                              <table width=3D"100%" cellspacing=3D"0" cellp=
+adding=3D"0" border=3D"0" align=3D"left" style=3D"border-spacing: 0; font-f=
+amily: ember, arial, sans-serif; color: rgb(51, 51, 51)">=20
+                               <tbody>=20
+                                <tr height=3D"5">=20
+                                 <td width=3D"100%" style=3D"padding: 0">
+                                  <div width=3D"100%" style=3D"font-size:5p=
+x; line-height:5px">
+                                   &nbsp;
+                                  </div></td>=20
+                                </tr>=20
+                                <tr>=20
+                                 <td valign=3D"middle" align=3D"left" style=
+=3D"padding: 0"> <span style=3D"font-family:Arial,Helvetica,Sans-Serif;font=
+-size:14px;font-weight:bold;font-style:normal;text-decoration:none;color:#3=
+69;text-align:left;"> <a class=3D"oma_deal_title" style=3D"font-family:Aria=
+l,Helvetica,Sans-Serif;font-size:14px;font-weight:bold;font-style:normal;co=
+lor:#369;text-align:left;line-height:25px;text-decoration:none;font-family:=
+ Ember,Helvetica,Arial,sans-serif;font-size: 14px;line-height: 18px;font-we=
+ight: 500;color: #232F3E;" href=3D"https://www.amazon.in/gp/r.html?C=3DTF14=
+L55J41OW&K=3DWMU548AAJTKH&M=3Durn:rtn:msg:202205021236182226a6cf6ca0403cb01=
+f3c172ee0p0eu&R=3D12MKB9XWPZVMB&T=3DC&U=3Dhttps%3A%2F%2Fwww.amazon.in%2FTes=
+t-Exclusive_2020_1173-Multi-3GB-Storage%2Fdp%2FB089MSGHJQ%3Fref%3Dgrep_pep_=
+np1_t%26ref_%3Dpe_33574051_684185261&H=3D4VWELESWUP0VRWA03H37VS9OT9AA&ref_=
+=3Dpe_33574051_684185261" target=3D"_blank"> OnePlus 9 || Buy Now</a> </spa=
+n> </td>=20
+                                </tr>=20
+                                <tr height=3D"10">=20
+                                 <td width=3D"100%" style=3D"padding: 0">
+                                  <div width=3D"100%" style=3D"font-size:10=
+px; line-height:10px">
+                                   &nbsp;
+                                  </div></td>=20
+                                </tr>=20
+                                <tr>=20
+                                 <td valign=3D"middle" style=3D"text-align:=
+left;padding: 0"> <font size=3D"2" face=3D"arial,Helvetica,sans-serif"> <sp=
+an class=3D"oma_deal_bprice" style=3D"font-size:18px;line-height:24px;color=
+:black;display:inline-block;text-decoration:none;font-family: Ember,Helveti=
+ca,Arial,sans-serif;font-size: 12px;line-height:24px;">=20
+                                    <strike>=20
+                                     <span style=3D"white-space:nowrap;">Rs=
+. 54,999.00</span>
+                                    </strike> </span> <span class=3D"oma_de=
+al_dprice"> <span style=3D"font-size:18px;line-height:24px;color:#990000;fo=
+nt-weight:bold;text-decoration:none;font-family: Ember,Helvetica,Arial,sans=
+-serif;font-size:14px;line-height: 30px;font-weight: 600;color: #CC0000;"> =
+<span style=3D"white-space:nowrap;">Rs. 49,999.00</span></span> <span style=
+=3D"font-size:18px;line-height:24px;color:#990000;display:inline-block;text=
+-decoration:none;font-family: Ember,Helvetica,Arial,sans-serif;font-size: 1=
+4px;line-height: 30px;font-weight: 600;color: #CC0000;">(9% off)</span> </s=
+pan> </font></td>=20
+                                </tr>=20
+                                <tr>=20
+                                 <td style=3D"padding: 0">=20
+                                  <table align=3D"left" cellspacing=3D"0" c=
+ellpadding=3D"0" border=3D"0" style=3D"border-spacing: 0; font-family: embe=
+r, arial, sans-serif; color: rgb(51, 51, 51)">=20
+                                   <tbody>
+                                    <tr>
+                                     <td valign=3D"middle" style=3D"backgro=
+und-color:#ffffff; line-height: 15px; font-family:ember,arial,sans-serif;fo=
+nt-size: 11px;color: #444;text-align:left; padding:0px 6px 0px 6px;padding:=
+ 0"> </td>=20
+                                    </tr>
+                                   </tbody>
+                                  </table> </td>=20
+                                </tr>=20
+                                <tr class=3D"spacer">=20
+                                 <td height=3D"10" style=3D"padding: 0">=20
+                                  <div width=3D"1" class=3D"spacer" style=
+=3D"font-size:8px;line-height:8px;">
+                                   &nbsp;
+                                  </div> </td>=20
+                                </tr>=20
+                               </tbody>=20
+                              </table> </td>=20
+                            </tr>=20
+                           </tbody>=20
+                          </table> </td>=20
+                        </tr>=20
+                       </tbody>
+                      </table>=20
+                     </div>=20
+                     <!--[if (gte mso 9)|(IE)]></td></tr></table><![endif]-=
+-> </td>=20
+                   </tr>=20
+                  </tbody>
+                 </table> </td>=20
+               </tr>=20
+              </tbody>
+             </table>=20
+            </div>=20
+            <!--[if (gte mso 9)|(IE)]></td></tr></table><![endif]--> </td>=
+=20
+          </tr>=20
+         </tbody>
+        </table>=20
+        <table width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D=
+"0" style=3D"border-spacing: 0; font-family: ember, arial, sans-serif; colo=
+r: rgb(51, 51, 51)">=20
+         <tbody>
+          <tr>=20
+           <td style=3D"text-align:center;font-size:0;padding: 0">=20
+            <!--[if (gte mso 9)|(IE)]><table width=3D"100%"><tr><td width=
+=3D"320" valign=3D"top"><![endif]-->=20
+            <div style=3D"width:100%;max-width:320px;display:inline-block;v=
+ertical-align:top;">=20
+             <table width=3D"100%" border=3D"0" cellspacing=3D"0" cellpaddi=
+ng=3D"8" style=3D"border-spacing: 0; font-family: ember, arial, sans-serif;=
+ color: rgb(51, 51, 51)">=20
+              <tbody>
+               <tr>=20
+                <td class=3D"inner" style=3D"max-width:300px;padding: 0">=
+=20
+                 <table width=3D"100%" border=3D"0" cellspacing=3D"0" cellp=
+adding=3D"0" style=3D"border-spacing: 0; font-family: ember, arial, sans-se=
+rif; color: rgb(51, 51, 51)">=20
+                  <tbody>
+                   <tr>=20
+                    <td style=3D"text-align:center;font-size:0;padding: 0">=
+=20
+                     <!--[if (gte mso 9)|(IE)]><table width=3D"100%"><tr><t=
+d width=3D"160" valign=3D"top"><![endif]-->=20
+                     <div style=3D"width:100%;max-width:160px;display:inlin=
+e-block;vertical-align:top;">=20
+                      <table width=3D"100%" border=3D"0" cellspacing=3D"0" =
+cellpadding=3D"8" style=3D"border-spacing: 0; font-family: ember, arial, sa=
+ns-serif; color: rgb(51, 51, 51)">=20
+                       <tbody>
+                        <tr>=20
+                         <td class=3D"inner" style=3D"max-width:140px;paddi=
+ng: 0">=20
+                          <table width=3D"100%" cellspacing=3D"0" cellpaddi=
+ng=3D"0" border=3D"0" style=3D"vertical-align:top;padding:8px;border-spacin=
+g: 0; font-family: ember, arial, sans-serif; color: rgb(51, 51, 51)">=20
+                           <tbody>=20
+                            <tr>=20
+                             <td style=3D"display:inline-block;padding: 0">=
+=20
+                              <table width=3D"100%" cellspacing=3D"0" cellp=
+adding=3D"0" border=3D"0" bgcolor=3D"#ffffff" style=3D"border-spacing: 0; f=
+ont-family: ember, arial, sans-serif; color: rgb(51, 51, 51)">=20
+                               <tbody>=20
+                                <tr>=20
+                                 <td valign=3D"bottom" align=3D"center" sty=
+le=3D"vertical-align: middle; padding:8px 8px 8px 8px;padding: 0"> <a href=
+=3D"https://www.amazon.in/gp/r.html?C=3DTF14L55J41OW&K=3DWMU548AAJTKH&M=3Du=
+rn:rtn:msg:202205021236182226a6cf6ca0403cb01f3c172ee0p0eu&R=3D2K3C59WVPC5JT=
+&T=3DC&U=3Dhttps%3A%2F%2Fwww.amazon.in%2FSonyLIV-subscriptions-all-new-cont=
+rols-release%2Fdp%2FB097761D56%3Fref%3Dgrep_pep_np1_img%26ref_%3Dpe_3357405=
+1_684185261&H=3DSCOYFT2686ABS3O6EKXQXUGTRAQA&ref_=3Dpe_33574051_684185261" =
+target=3D"_blank"> <img class=3D"oma_deal_image" src=3D"https://m.media-ama=
+zon.com/images/I/41UoHTtCNgL._AC_SS300_.jpg" alt=3D"Fire TV Stick Plus incl=
+udes Zee5, Sony Liv &amp; Voot annual subscriptions" width=3D"140" border=
+=3D"0" style=3D"border: 0" /> </a> </td>=20
+                                </tr>=20
+                               </tbody>
+                              </table> </td>=20
+                            </tr>=20
+                            <tr height=3D"10">=20
+                             <td width=3D"100%" style=3D"padding: 0">
+                              <div width=3D"100%" style=3D"font-size:10px; =
+line-height:10px">
+                               &nbsp;
+                              </div></td>=20
+                            </tr>=20
+                            <tr>=20
+                             <td width=3D"100%" bgcolor=3D"#ffffff" align=
+=3D"center" class=3D"hero-deal-col" valign=3D"top" style=3D"padding: 0">=20
+                              <table width=3D"100%" cellspacing=3D"0" cellp=
+adding=3D"0" border=3D"0" align=3D"left" style=3D"border-spacing: 0; font-f=
+amily: ember, arial, sans-serif; color: rgb(51, 51, 51)">=20
+                               <tbody>=20
+                                <tr height=3D"5">=20
+                                 <td width=3D"100%" style=3D"padding: 0">
+                                  <div width=3D"100%" style=3D"font-size:5p=
+x; line-height:5px">
+                                   &nbsp;
+                                  </div></td>=20
+                                </tr>=20
+                                <tr>=20
+                                 <td valign=3D"middle" align=3D"left" style=
+=3D"padding: 0"> <span style=3D"font-family:Arial,Helvetica,Sans-Serif;font=
+-size:14px;font-weight:bold;font-style:normal;text-decoration:none;color:#3=
+69;text-align:left;"> <a class=3D"oma_deal_title" style=3D"font-family:Aria=
+l,Helvetica,Sans-Serif;font-size:14px;font-weight:bold;font-style:normal;co=
+lor:#369;text-align:left;line-height:25px;text-decoration:none;font-family:=
+ Ember,Helvetica,Arial,sans-serif;font-size: 14px;line-height: 18px;font-we=
+ight: 500;color: #232F3E;" href=3D"https://www.amazon.in/gp/r.html?C=3DTF14=
+L55J41OW&K=3DWMU548AAJTKH&M=3Durn:rtn:msg:202205021236182226a6cf6ca0403cb01=
+f3c172ee0p0eu&R=3DEG7NY3ZHUGZQ&T=3DC&U=3Dhttps%3A%2F%2Fwww.amazon.in%2FSony=
+LIV-subscriptions-all-new-controls-release%2Fdp%2FB097761D56%3Fref%3Dgrep_p=
+ep_np1_t%26ref_%3Dpe_33574051_684185261&H=3D78VT2N4DT2Y9CNRWOF9ADQUDCRQA&re=
+f_=3Dpe_33574051_684185261" target=3D"_blank"> Fire TV Stick Plus includes =
+Zee5,...</a> </span> </td>=20
+                                </tr>=20
+                                <tr height=3D"10">=20
+                                 <td width=3D"100%" style=3D"padding: 0">
+                                  <div width=3D"100%" style=3D"font-size:10=
+px; line-height:10px">
+                                   &nbsp;
+                                  </div></td>=20
+                                </tr>=20
+                                <tr>=20
+                                 <td valign=3D"middle" style=3D"text-align:=
+left;padding: 0"> <font size=3D"2" face=3D"arial,Helvetica,sans-serif"> <sp=
+an class=3D"oma_deal_bprice" style=3D"font-size:18px;line-height:24px;color=
+:black;display:inline-block;text-decoration:none;font-family: Ember,Helveti=
+ca,Arial,sans-serif;font-size: 12px;line-height:24px;">=20
+                                    <strike>=20
+                                     <span style=3D"white-space:nowrap;">Rs=
+. 4,999.00</span>
+                                    </strike> </span> <span class=3D"oma_de=
+al_dprice"> <span style=3D"font-size:18px;line-height:24px;color:#990000;fo=
+nt-weight:bold;text-decoration:none;font-family: Ember,Helvetica,Arial,sans=
+-serif;font-size:14px;line-height: 30px;font-weight: 600;color: #CC0000;"> =
+<span style=3D"white-space:nowrap;">Rs. 3,899.00</span></span> <span style=
+=3D"font-size:18px;line-height:24px;color:#990000;display:inline-block;text=
+-decoration:none;font-family: Ember,Helvetica,Arial,sans-serif;font-size: 1=
+4px;line-height: 30px;font-weight: 600;color: #CC0000;">(22% off)</span> </=
+span> </font></td>=20
+                                </tr>=20
+                                <tr>=20
+                                 <td style=3D"padding: 0">=20
+                                  <table align=3D"left" cellspacing=3D"0" c=
+ellpadding=3D"0" border=3D"0" style=3D"border-spacing: 0; font-family: embe=
+r, arial, sans-serif; color: rgb(51, 51, 51)">=20
+                                   <tbody>
+                                    <tr>
+                                     <td valign=3D"middle" style=3D"backgro=
+und-color:#ffffff; line-height: 15px; font-family:ember,arial,sans-serif;fo=
+nt-size: 11px;color: #444;text-align:left; padding:0px 6px 0px 6px;padding:=
+ 0"> </td>=20
+                                    </tr>
+                                   </tbody>
+                                  </table> </td>=20
+                                </tr>=20
+                                <tr class=3D"spacer">=20
+                                 <td height=3D"10" style=3D"padding: 0">=20
+                                  <div width=3D"1" class=3D"spacer" style=
+=3D"font-size:8px;line-height:8px;">
+                                   &nbsp;
+                                  </div> </td>=20
+                                </tr>=20
+                               </tbody>=20
+                              </table> </td>=20
+                            </tr>=20
+                           </tbody>=20
+                          </table> </td>=20
+                        </tr>=20
+                       </tbody>
+                      </table>=20
+                     </div>=20
+                     <!--[if (gte mso 9)|(IE)]></td><td width=3D"160" valig=
+n=3D"top"><![endif]-->=20
+                     <div style=3D"width:100%;max-width:160px;display:inlin=
+e-block;vertical-align:top;">=20
+                      <table width=3D"100%" border=3D"0" cellspacing=3D"0" =
+cellpadding=3D"8" style=3D"border-spacing: 0; font-family: ember, arial, sa=
+ns-serif; color: rgb(51, 51, 51)">=20
+                       <tbody>
+                        <tr>=20
+                         <td class=3D"inner" style=3D"max-width:140px;paddi=
+ng: 0">=20
+                          <table width=3D"100%" cellspacing=3D"0" cellpaddi=
+ng=3D"0" border=3D"0" style=3D"vertical-align:top;padding:8px;border-spacin=
+g: 0; font-family: ember, arial, sans-serif; color: rgb(51, 51, 51)">=20
+                           <tbody>=20
+                            <tr>=20
+                             <td style=3D"display:inline-block;padding: 0">=
+=20
+                              <table width=3D"100%" cellspacing=3D"0" cellp=
+adding=3D"0" border=3D"0" bgcolor=3D"#ffffff" style=3D"border-spacing: 0; f=
+ont-family: ember, arial, sans-serif; color: rgb(51, 51, 51)">=20
+                               <tbody>=20
+                                <tr>=20
+                                 <td valign=3D"bottom" align=3D"center" sty=
+le=3D"vertical-align: middle; padding:8px 8px 8px 8px;padding: 0"> <a href=
+=3D"https://www.amazon.in/gp/r.html?C=3DTF14L55J41OW&K=3DWMU548AAJTKH&M=3Du=
+rn:rtn:msg:202205021236182226a6cf6ca0403cb01f3c172ee0p0eu&R=3D3I6VTTZNH01AG=
+&T=3DC&U=3Dhttps%3A%2F%2Fwww.amazon.in%2FOPPO-Fantastic-Purple-128GB-Storag=
+e%2Fdp%2FB08VB34KJ1%3Fref%3Dgrep_pep_np1_img%26ref_%3Dpe_33574051_684185261=
+&H=3DSLKZUTQCVGNG1A0XV9MNLTNCGCWA&ref_=3Dpe_33574051_684185261" target=3D"_=
+blank"> <img class=3D"oma_deal_image" src=3D"https://m.media-amazon.com/ima=
+ges/I/41BnHjRP0ZS._AC_SS300_.jpg" alt=3D"OPPO A74 5G (Fantastic Purple,6GB =
+RAM,128GB Storage) " width=3D"140" border=3D"0" style=3D"border: 0" /> </a>=
+ </td>=20
+                                </tr>=20
+                               </tbody>
+                              </table> </td>=20
+                            </tr>=20
+                            <tr height=3D"10">=20
+                             <td width=3D"100%" style=3D"padding: 0">
+                              <div width=3D"100%" style=3D"font-size:10px; =
+line-height:10px">
+                               &nbsp;
+                              </div></td>=20
+                            </tr>=20
+                            <tr>=20
+                             <td width=3D"100%" bgcolor=3D"#ffffff" align=
+=3D"center" class=3D"hero-deal-col" valign=3D"top" style=3D"padding: 0">=20
+                              <table width=3D"100%" cellspacing=3D"0" cellp=
+adding=3D"0" border=3D"0" align=3D"left" style=3D"border-spacing: 0; font-f=
+amily: ember, arial, sans-serif; color: rgb(51, 51, 51)">=20
+                               <tbody>=20
+                                <tr height=3D"5">=20
+                                 <td width=3D"100%" style=3D"padding: 0">
+                                  <div width=3D"100%" style=3D"font-size:5p=
+x; line-height:5px">
+                                   &nbsp;
+                                  </div></td>=20
+                                </tr>=20
+                                <tr>=20
+                                 <td valign=3D"middle" align=3D"left" style=
+=3D"padding: 0"> <span style=3D"font-family:Arial,Helvetica,Sans-Serif;font=
+-size:14px;font-weight:bold;font-style:normal;text-decoration:none;color:#3=
+69;text-align:left;"> <a class=3D"oma_deal_title" style=3D"font-family:Aria=
+l,Helvetica,Sans-Serif;font-size:14px;font-weight:bold;font-style:normal;co=
+lor:#369;text-align:left;line-height:25px;text-decoration:none;font-family:=
+ Ember,Helvetica,Arial,sans-serif;font-size: 14px;line-height: 18px;font-we=
+ight: 500;color: #232F3E;" href=3D"https://www.amazon.in/gp/r.html?C=3DTF14=
+L55J41OW&K=3DWMU548AAJTKH&M=3Durn:rtn:msg:202205021236182226a6cf6ca0403cb01=
+f3c172ee0p0eu&R=3D1MJ4DGXPPRJBH&T=3DC&U=3Dhttps%3A%2F%2Fwww.amazon.in%2FOPP=
+O-Fantastic-Purple-128GB-Storage%2Fdp%2FB08VB34KJ1%3Fref%3Dgrep_pep_np1_t%2=
+6ref_%3Dpe_33574051_684185261&H=3DLFI2ITNHTM6TUGMNATA0HUVVTKEA&ref_=3Dpe_33=
+574051_684185261" target=3D"_blank"> OPPO A74 5G (Fantastic Purple,6GB...</=
+a> </span> </td>=20
+                                </tr>=20
+                                <tr height=3D"10">=20
+                                 <td width=3D"100%" style=3D"padding: 0">
+                                  <div width=3D"100%" style=3D"font-size:10=
+px; line-height:10px">
+                                   &nbsp;
+                                  </div></td>=20
+                                </tr>=20
+                                <tr>=20
+                                 <td valign=3D"middle" style=3D"text-align:=
+left;padding: 0"> <font size=3D"2" face=3D"arial,Helvetica,sans-serif"> <sp=
+an class=3D"oma_deal_bprice" style=3D"font-size:18px;line-height:24px;color=
+:black;display:inline-block;text-decoration:none;font-family: Ember,Helveti=
+ca,Arial,sans-serif;font-size: 12px;line-height:24px;">=20
+                                    <strike>=20
+                                     <span style=3D"white-space:nowrap;">Rs=
+. 20,990.00</span>
+                                    </strike> </span> <span class=3D"oma_de=
+al_dprice"> <span style=3D"font-size:18px;line-height:24px;color:#990000;fo=
+nt-weight:bold;text-decoration:none;font-family: Ember,Helvetica,Arial,sans=
+-serif;font-size:14px;line-height: 30px;font-weight: 600;color: #CC0000;"> =
+<span style=3D"white-space:nowrap;">Rs. 15,490.00</span></span> <span style=
+=3D"font-size:18px;line-height:24px;color:#990000;display:inline-block;text=
+-decoration:none;font-family: Ember,Helvetica,Arial,sans-serif;font-size: 1=
+4px;line-height: 30px;font-weight: 600;color: #CC0000;">(26% off)</span> </=
+span> </font></td>=20
+                                </tr>=20
+                                <tr>=20
+                                 <td style=3D"padding: 0">=20
+                                  <table align=3D"left" cellspacing=3D"0" c=
+ellpadding=3D"0" border=3D"0" style=3D"border-spacing: 0; font-family: embe=
+r, arial, sans-serif; color: rgb(51, 51, 51)">=20
+                                   <tbody>
+                                    <tr>
+                                     <td valign=3D"middle" style=3D"backgro=
+und-color:#ffffff; line-height: 15px; font-family:ember,arial,sans-serif;fo=
+nt-size: 11px;color: #444;text-align:left; padding:0px 6px 0px 6px;padding:=
+ 0"> </td>=20
+                                    </tr>
+                                   </tbody>
+                                  </table> </td>=20
+                                </tr>=20
+                                <tr class=3D"spacer">=20
+                                 <td height=3D"10" style=3D"padding: 0">=20
+                                  <div width=3D"1" class=3D"spacer" style=
+=3D"font-size:8px;line-height:8px;">
+                                   &nbsp;
+                                  </div> </td>=20
+                                </tr>=20
+                               </tbody>=20
+                              </table> </td>=20
+                            </tr>=20
+                           </tbody>=20
+                          </table> </td>=20
+                        </tr>=20
+                       </tbody>
+                      </table>=20
+                     </div>=20
+                     <!--[if (gte mso 9)|(IE)]></td></tr></table><![endif]-=
+-> </td>=20
+                   </tr>=20
+                  </tbody>
+                 </table> </td>=20
+               </tr>=20
+              </tbody>
+             </table>=20
+            </div>=20
+            <!--[if (gte mso 9)|(IE)]></td><td width=3D"320" valign=3D"top"=
+><![endif]-->=20
+            <div style=3D"width:100%;max-width:320px;display:inline-block;v=
+ertical-align:top;">=20
+             <table width=3D"100%" border=3D"0" cellspacing=3D"0" cellpaddi=
+ng=3D"8" style=3D"border-spacing: 0; font-family: ember, arial, sans-serif;=
+ color: rgb(51, 51, 51)">=20
+              <tbody>
+               <tr>=20
+                <td class=3D"inner" style=3D"max-width:300px;padding: 0">=
+=20
+                 <table width=3D"100%" border=3D"0" cellspacing=3D"0" cellp=
+adding=3D"0" style=3D"border-spacing: 0; font-family: ember, arial, sans-se=
+rif; color: rgb(51, 51, 51)">=20
+                  <tbody>
+                   <tr>=20
+                    <td style=3D"text-align:center;font-size:0;padding: 0">=
+=20
+                     <!--[if (gte mso 9)|(IE)]><table width=3D"100%"><tr><t=
+d width=3D"160" valign=3D"top"><![endif]-->=20
+                     <div style=3D"width:100%;max-width:160px;display:inlin=
+e-block;vertical-align:top;">=20
+                      <table width=3D"100%" border=3D"0" cellspacing=3D"0" =
+cellpadding=3D"8" style=3D"border-spacing: 0; font-family: ember, arial, sa=
+ns-serif; color: rgb(51, 51, 51)">=20
+                       <tbody>
+                        <tr>=20
+                         <td class=3D"inner" style=3D"max-width:140px;paddi=
+ng: 0">=20
+                          <table width=3D"100%" cellspacing=3D"0" cellpaddi=
+ng=3D"0" border=3D"0" style=3D"vertical-align:top;padding:8px;border-spacin=
+g: 0; font-family: ember, arial, sans-serif; color: rgb(51, 51, 51)">=20
+                           <tbody>=20
+                            <tr>=20
+                             <td style=3D"display:inline-block;padding: 0">=
+=20
+                              <table width=3D"100%" cellspacing=3D"0" cellp=
+adding=3D"0" border=3D"0" bgcolor=3D"#ffffff" style=3D"border-spacing: 0; f=
+ont-family: ember, arial, sans-serif; color: rgb(51, 51, 51)">=20
+                               <tbody>=20
+                                <tr>=20
+                                 <td valign=3D"bottom" align=3D"center" sty=
+le=3D"vertical-align: middle; padding:8px 8px 8px 8px;padding: 0"> <a href=
+=3D"https://www.amazon.in/gp/r.html?C=3DTF14L55J41OW&K=3DWMU548AAJTKH&M=3Du=
+rn:rtn:msg:202205021236182226a6cf6ca0403cb01f3c172ee0p0eu&R=3D1ZR339YIZFMTH=
+&T=3DC&U=3Dhttps%3A%2F%2Fwww.amazon.in%2FPortronics-Combo-Multimedia-Wirele=
+ss-Light-Weight%2Fdp%2FB07X2KGB8S%3Fref%3Dgrep_pep_np1_img%26ref_%3Dpe_3357=
+4051_684185261&H=3DU79GAYSOUJETMXODEYEUDBOEHH4A&ref_=3Dpe_33574051_68418526=
+1" target=3D"_blank"> <img class=3D"oma_deal_image" src=3D"https://m.media-=
+amazon.com/images/I/41+McFbX0gL._AC_SS300_.jpg" alt=3D"Portronics Key2-A Co=
+mbo of Multimedia Wireless Keyboard &amp; Mouse, Compact Light-Weight for P=
+Cs, Laptops and Smart TV, Black" width=3D"140" border=3D"0" style=3D"border=
+: 0" /> </a> </td>=20
+                                </tr>=20
+                               </tbody>
+                              </table> </td>=20
+                            </tr>=20
+                            <tr height=3D"10">=20
+                             <td width=3D"100%" style=3D"padding: 0">
+                              <div width=3D"100%" style=3D"font-size:10px; =
+line-height:10px">
+                               &nbsp;
+                              </div></td>=20
+                            </tr>=20
+                            <tr>=20
+                             <td width=3D"100%" bgcolor=3D"#ffffff" align=
+=3D"center" class=3D"hero-deal-col" valign=3D"top" style=3D"padding: 0">=20
+                              <table width=3D"100%" cellspacing=3D"0" cellp=
+adding=3D"0" border=3D"0" align=3D"left" style=3D"border-spacing: 0; font-f=
+amily: ember, arial, sans-serif; color: rgb(51, 51, 51)">=20
+                               <tbody>=20
+                                <tr height=3D"5">=20
+                                 <td width=3D"100%" style=3D"padding: 0">
+                                  <div width=3D"100%" style=3D"font-size:5p=
+x; line-height:5px">
+                                   &nbsp;
+                                  </div></td>=20
+                                </tr>=20
+                                <tr>=20
+                                 <td valign=3D"middle" align=3D"left" style=
+=3D"padding: 0"> <span style=3D"font-family:Arial,Helvetica,Sans-Serif;font=
+-size:14px;font-weight:bold;font-style:normal;text-decoration:none;color:#3=
+69;text-align:left;"> <a class=3D"oma_deal_title" style=3D"font-family:Aria=
+l,Helvetica,Sans-Serif;font-size:14px;font-weight:bold;font-style:normal;co=
+lor:#369;text-align:left;line-height:25px;text-decoration:none;font-family:=
+ Ember,Helvetica,Arial,sans-serif;font-size: 14px;line-height: 18px;font-we=
+ight: 500;color: #232F3E;" href=3D"https://www.amazon.in/gp/r.html?C=3DTF14=
+L55J41OW&K=3DWMU548AAJTKH&M=3Durn:rtn:msg:202205021236182226a6cf6ca0403cb01=
+f3c172ee0p0eu&R=3DT1J6JYYBN723&T=3DC&U=3Dhttps%3A%2F%2Fwww.amazon.in%2FPort=
+ronics-Combo-Multimedia-Wireless-Light-Weight%2Fdp%2FB07X2KGB8S%3Fref%3Dgre=
+p_pep_np1_t%26ref_%3Dpe_33574051_684185261&H=3DJ95G5FLRXJPYA9XTKNNKS64JPYGA=
+&ref_=3Dpe_33574051_684185261" target=3D"_blank"> Portronics Key2-A Combo o=
+f...</a> </span> </td>=20
+                                </tr>=20
+                                <tr height=3D"10">=20
+                                 <td width=3D"100%" style=3D"padding: 0">
+                                  <div width=3D"100%" style=3D"font-size:10=
+px; line-height:10px">
+                                   &nbsp;
+                                  </div></td>=20
+                                </tr>=20
+                                <tr>=20
+                                 <td valign=3D"middle" style=3D"text-align:=
+left;padding: 0"> <font size=3D"2" face=3D"arial,Helvetica,sans-serif"> <sp=
+an class=3D"oma_deal_bprice" style=3D"font-size:18px;line-height:24px;color=
+:black;display:inline-block;text-decoration:none;font-family: Ember,Helveti=
+ca,Arial,sans-serif;font-size: 12px;line-height:24px;">=20
+                                    <strike>=20
+                                     <span style=3D"white-space:nowrap;">Rs=
+. 1,499.00</span>
+                                    </strike> </span> <span class=3D"oma_de=
+al_dprice"> <span style=3D"font-size:18px;line-height:24px;color:#990000;fo=
+nt-weight:bold;text-decoration:none;font-family: Ember,Helvetica,Arial,sans=
+-serif;font-size:14px;line-height: 30px;font-weight: 600;color: #CC0000;"> =
+<span style=3D"white-space:nowrap;">Rs. 1,079.00</span></span> <span style=
+=3D"font-size:18px;line-height:24px;color:#990000;display:inline-block;text=
+-decoration:none;font-family: Ember,Helvetica,Arial,sans-serif;font-size: 1=
+4px;line-height: 30px;font-weight: 600;color: #CC0000;">(28% off)</span> </=
+span> </font></td>=20
+                                </tr>=20
+                                <tr>=20
+                                 <td style=3D"padding: 0">=20
+                                  <table align=3D"left" cellspacing=3D"0" c=
+ellpadding=3D"0" border=3D"0" style=3D"border-spacing: 0; font-family: embe=
+r, arial, sans-serif; color: rgb(51, 51, 51)">=20
+                                   <tbody>
+                                    <tr>
+                                     <td valign=3D"middle" style=3D"backgro=
+und-color:#ffffff; line-height: 15px; font-family:ember,arial,sans-serif;fo=
+nt-size: 11px;color: #444;text-align:left; padding:0px 6px 0px 6px;padding:=
+ 0"> Ends at 23:45 IST, or while supplies last </td>=20
+                                    </tr>
+                                   </tbody>
+                                  </table> </td>=20
+                                </tr>=20
+                                <tr class=3D"spacer">=20
+                                 <td height=3D"10" style=3D"padding: 0">=20
+                                  <div width=3D"1" class=3D"spacer" style=
+=3D"font-size:8px;line-height:8px;">
+                                   &nbsp;
+                                  </div> </td>=20
+                                </tr>=20
+                               </tbody>=20
+                              </table> </td>=20
+                            </tr>=20
+                           </tbody>=20
+                          </table> </td>=20
+                        </tr>=20
+                       </tbody>
+                      </table>=20
+                     </div>=20
+                     <!--[if (gte mso 9)|(IE)]></td><td width=3D"160" valig=
+n=3D"top"><![endif]-->=20
+                     <div style=3D"width:100%;max-width:160px;display:inlin=
+e-block;vertical-align:top;">=20
+                      <table width=3D"100%" border=3D"0" cellspacing=3D"0" =
+cellpadding=3D"8" style=3D"border-spacing: 0; font-family: ember, arial, sa=
+ns-serif; color: rgb(51, 51, 51)">=20
+                       <tbody>
+                        <tr>=20
+                         <td class=3D"inner" style=3D"max-width:140px;paddi=
+ng: 0">=20
+                          <table width=3D"100%" cellspacing=3D"0" cellpaddi=
+ng=3D"0" border=3D"0" style=3D"vertical-align:top;padding:8px;border-spacin=
+g: 0; font-family: ember, arial, sans-serif; color: rgb(51, 51, 51)">=20
+                           <tbody>=20
+                            <tr>=20
+                             <td style=3D"display:inline-block;padding: 0">=
+=20
+                              <table width=3D"100%" cellspacing=3D"0" cellp=
+adding=3D"0" border=3D"0" bgcolor=3D"#ffffff" style=3D"border-spacing: 0; f=
+ont-family: ember, arial, sans-serif; color: rgb(51, 51, 51)">=20
+                               <tbody>=20
+                                <tr>=20
+                                 <td valign=3D"bottom" align=3D"center" sty=
+le=3D"vertical-align: middle; padding:8px 8px 8px 8px;padding: 0"> <a href=
+=3D"https://www.amazon.in/gp/r.html?C=3DTF14L55J41OW&K=3DWMU548AAJTKH&M=3Du=
+rn:rtn:msg:202205021236182226a6cf6ca0403cb01f3c172ee0p0eu&R=3D2RK8PS2FYRSS7=
+&T=3DC&U=3Dhttps%3A%2F%2Fwww.amazon.in%2FOnePlus-163-8-inches-Android-65U1S=
+%2Fdp%2FB095JPKPH3%3Fref%3Dgrep_pep_np1_img%26ref_%3Dpe_33574051_684185261&=
+H=3DBYWQGZKNW5EYYHPAPJRLTETLXZCA&ref_=3Dpe_33574051_684185261" target=3D"_b=
+lank"> <img class=3D"oma_deal_image" src=3D"https://m.media-amazon.com/imag=
+es/I/41JpykaA98S._AC_SS300_.jpg" alt=3D"OnePlus 65 Inch Certified Android T=
+Vs" width=3D"140" border=3D"0" style=3D"border: 0" /> </a> </td>=20
+                                </tr>=20
+                               </tbody>
+                              </table> </td>=20
+                            </tr>=20
+                            <tr height=3D"10">=20
+                             <td width=3D"100%" style=3D"padding: 0">
+                              <div width=3D"100%" style=3D"font-size:10px; =
+line-height:10px">
+                               &nbsp;
+                              </div></td>=20
+                            </tr>=20
+                            <tr>=20
+                             <td width=3D"100%" bgcolor=3D"#ffffff" align=
+=3D"center" class=3D"hero-deal-col" valign=3D"top" style=3D"padding: 0">=20
+                              <table width=3D"100%" cellspacing=3D"0" cellp=
+adding=3D"0" border=3D"0" align=3D"left" style=3D"border-spacing: 0; font-f=
+amily: ember, arial, sans-serif; color: rgb(51, 51, 51)">=20
+                               <tbody>=20
+                                <tr height=3D"5">=20
+                                 <td width=3D"100%" style=3D"padding: 0">
+                                  <div width=3D"100%" style=3D"font-size:5p=
+x; line-height:5px">
+                                   &nbsp;
+                                  </div></td>=20
+                                </tr>=20
+                                <tr>=20
+                                 <td valign=3D"middle" align=3D"left" style=
+=3D"padding: 0"> <span style=3D"font-family:Arial,Helvetica,Sans-Serif;font=
+-size:14px;font-weight:bold;font-style:normal;text-decoration:none;color:#3=
+69;text-align:left;"> <a class=3D"oma_deal_title" style=3D"font-family:Aria=
+l,Helvetica,Sans-Serif;font-size:14px;font-weight:bold;font-style:normal;co=
+lor:#369;text-align:left;line-height:25px;text-decoration:none;font-family:=
+ Ember,Helvetica,Arial,sans-serif;font-size: 14px;line-height: 18px;font-we=
+ight: 500;color: #232F3E;" href=3D"https://www.amazon.in/gp/r.html?C=3DTF14=
+L55J41OW&K=3DWMU548AAJTKH&M=3Durn:rtn:msg:202205021236182226a6cf6ca0403cb01=
+f3c172ee0p0eu&R=3D326F65YYPZIGD&T=3DC&U=3Dhttps%3A%2F%2Fwww.amazon.in%2FOne=
+Plus-163-8-inches-Android-65U1S%2Fdp%2FB095JPKPH3%3Fref%3Dgrep_pep_np1_t%26=
+ref_%3Dpe_33574051_684185261&H=3DWIUHY5QFZAXUVUFQYQKXEKGKH5YA&ref_=3Dpe_335=
+74051_684185261" target=3D"_blank"> OnePlus 65 Inch Certified Android...</a=
+> </span> </td>=20
+                                </tr>=20
+                                <tr height=3D"10">=20
+                                 <td width=3D"100%" style=3D"padding: 0">
+                                  <div width=3D"100%" style=3D"font-size:10=
+px; line-height:10px">
+                                   &nbsp;
+                                  </div></td>=20
+                                </tr>=20
+                                <tr>=20
+                                 <td valign=3D"middle" style=3D"text-align:=
+left;padding: 0"> <font size=3D"2" face=3D"arial,Helvetica,sans-serif"> <sp=
+an class=3D"oma_deal_bprice" style=3D"font-size:18px;line-height:24px;color=
+:black;display:inline-block;text-decoration:none;font-family: Ember,Helveti=
+ca,Arial,sans-serif;font-size: 12px;line-height:24px;">=20
+                                    <strike>=20
+                                     <span style=3D"white-space:nowrap;">Rs=
+. 69,999.00</span>
+                                    </strike> </span> <span class=3D"oma_de=
+al_dprice"> <span style=3D"font-size:18px;line-height:24px;color:#990000;fo=
+nt-weight:bold;text-decoration:none;font-family: Ember,Helvetica,Arial,sans=
+-serif;font-size:14px;line-height: 30px;font-weight: 600;color: #CC0000;"> =
+<span style=3D"white-space:nowrap;">Rs. 61,999.00</span></span> <span style=
+=3D"font-size:18px;line-height:24px;color:#990000;display:inline-block;text=
+-decoration:none;font-family: Ember,Helvetica,Arial,sans-serif;font-size: 1=
+4px;line-height: 30px;font-weight: 600;color: #CC0000;">(11% off)</span> </=
+span> </font></td>=20
+                                </tr>=20
+                                <tr>=20
+                                 <td style=3D"padding: 0">=20
+                                  <table align=3D"left" cellspacing=3D"0" c=
+ellpadding=3D"0" border=3D"0" style=3D"border-spacing: 0; font-family: embe=
+r, arial, sans-serif; color: rgb(51, 51, 51)">=20
+                                   <tbody>
+                                    <tr>
+                                     <td valign=3D"middle" style=3D"backgro=
+und-color:#ffffff; line-height: 15px; font-family:ember,arial,sans-serif;fo=
+nt-size: 11px;color: #444;text-align:left; padding:0px 6px 0px 6px;padding:=
+ 0"> </td>=20
+                                    </tr>
+                                   </tbody>
+                                  </table> </td>=20
+                                </tr>=20
+                                <tr class=3D"spacer">=20
+                                 <td height=3D"10" style=3D"padding: 0">=20
+                                  <div width=3D"1" class=3D"spacer" style=
+=3D"font-size:8px;line-height:8px;">
+                                   &nbsp;
+                                  </div> </td>=20
+                                </tr>=20
+                               </tbody>=20
+                              </table> </td>=20
+                            </tr>=20
+                           </tbody>=20
+                          </table> </td>=20
+                        </tr>=20
+                       </tbody>
+                      </table>=20
+                     </div>=20
+                     <!--[if (gte mso 9)|(IE)]></td></tr></table><![endif]-=
+-> </td>=20
+                   </tr>=20
+                  </tbody>
+                 </table> </td>=20
+               </tr>=20
+              </tbody>
+             </table>=20
+            </div>=20
+            <!--[if (gte mso 9)|(IE)]></td></tr></table><![endif]--> </td>=
+=20
+          </tr>=20
+         </tbody>
+        </table>=20
+        <table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" align=3D"ce=
+nter" style=3D"border-spacing: 0; margin: 0 auto; width: 100%;max-width:640=
+px;border-spacing: 0; font-family: ember, arial, sans-serif; color: rgb(51,=
+ 51, 51)">=20
+         <tbody>
+          <tr>
+           <td height=3D"24" style=3D"padding: 0"><img src=3D"http://g-ecx.=
+images-amazon.com/images/G/01/e-mail/img14/kc/sp.gif" width=3D"1" height=3D=
+"1" style=3D"display:block; border:0;border: 0" /></td>
+          </tr>=20
+          <tr>=20
+           <td style=3D"padding:0;text-align:center;font-size:0;padding: 0"=
+>=20
+            <table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=
+=3D"100%" style=3D"border-spacing: 0;border-spacing: 0; font-family: ember,=
+ arial, sans-serif; color: rgb(51, 51, 51)">=20
+             <tbody>
+              <tr>=20
+               <td style=3D"text-align:left;padding: 0" valign=3D"middle">=
+=20
+                <table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" ali=
+gn=3D"left" width=3D"100%" style=3D"border-spacing: 0; font-family: ember, =
+arial, sans-serif; color: rgb(51, 51, 51)">=20
+                 <tbody>
+                  <tr>=20
+                   <td height=3D"2" style=3D"line-height:2px; font-size:2px=
+;padding: 0" bgcolor=3D"#232F3E"> <img src=3D"http://g-ecx.images-amazon.co=
+m/images/G/01/e-mail/img/softlines/sp.gif" width=3D"1" height=3D"1" style=
+=3D"display:block; border:0;border: 0" alt=3D"=3D =3D =3D =3D =3D =3D =3D =
+=3D =3D =3D =3D =3D =3D =3D =3D =3D =3D =3D =3D =3D" /> </td>=20
+                   <td width=3D"24" height=3D"2" style=3D"line-height:2px; =
+font-size:2px;padding: 0" class=3D"width12"><img src=3D"http://g-ecx.images=
+-amazon.com/images/G/01/e-mail/img/softlines/sp.gif" width=3D"1" height=3D"=
+1" style=3D"display:block; border:0;border: 0" /></td>=20
+                  </tr>=20
+                 </tbody>
+                </table> </td>=20
+               <td style=3D"text-align:center;width:300px;max-width:100%;pa=
+dding: 0" align=3D"center" valign=3D"middle"> <span class=3D"text-divider" =
+style=3D"color:#232F3E; text-decoration:none; font-family: Ember, Helvetica=
+, sans-serif; font-size: 20px; line-height: 20px; font-weight:bold;">Explor=
+e more deals</span> </td>=20
+               <td style=3D"text-align:right;padding: 0" valign=3D"middle">=
+=20
+                <table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" ali=
+gn=3D"right" width=3D"100%" style=3D"border-spacing: 0; font-family: ember,=
+ arial, sans-serif; color: rgb(51, 51, 51)">=20
+                 <tbody>
+                  <tr>=20
+                   <td width=3D"24" height=3D"2" style=3D"line-height:2px; =
+font-size:2px;padding: 0"><img src=3D"http://g-ecx.images-amazon.com/images=
+/G/01/e-mail/img/softlines/sp.gif" width=3D"1" height=3D"1" style=3D"displa=
+y:block; border:0;border: 0" /></td>=20
+                   <td height=3D"2" style=3D"line-height:2px; font-size:2px=
+;padding: 0" bgcolor=3D"#232F3E"> <img src=3D"http://g-ecx.images-amazon.co=
+m/images/G/01/e-mail/img/softlines/sp.gif" width=3D"1" height=3D"1" style=
+=3D"display:block; border:0;border: 0" alt=3D"=3D =3D =3D =3D =3D =3D =3D =
+=3D =3D =3D =3D =3D =3D =3D =3D =3D =3D =3D =3D =3D" /> </td>=20
+                  </tr>=20
+                 </tbody>
+                </table> </td>=20
+              </tr>=20
+             </tbody>
+            </table> </td>=20
+          </tr>=20
+          <tr>
+           <td height=3D"24" style=3D"padding: 0"><img src=3D"http://g-ecx.=
+images-amazon.com/images/G/01/e-mail/img14/kc/sp.gif" width=3D"1" height=3D=
+"1" style=3D"display:block; border:0;border: 0" /></td>
+          </tr>=20
+         </tbody>
+        </table>=20
+        <table width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D=
+"0" style=3D"border-spacing: 0; font-family: ember, arial, sans-serif; colo=
+r: rgb(51, 51, 51)">=20
+         <tbody>
+          <tr>=20
+           <td style=3D"text-align:center;font-size:0;padding: 0">=20
+            <!--[if (gte mso 9)|(IE)]><table width=3D"100%"><tr><td width=
+=3D"320" valign=3D"top"><![endif]-->=20
+            <div style=3D"width:100%;max-width:320px;display:inline-block;v=
+ertical-align:top;">=20
+             <table width=3D"100%" border=3D"0" cellspacing=3D"0" cellpaddi=
+ng=3D"8" style=3D"border-spacing: 0; font-family: ember, arial, sans-serif;=
+ color: rgb(51, 51, 51)">=20
+              <tbody>
+               <tr>=20
+                <td class=3D"inner" style=3D"max-width:300px;padding: 0">=
+=20
+                 <table width=3D"100%" border=3D"0" cellspacing=3D"0" cellp=
+adding=3D"0" style=3D"border-spacing: 0; font-family: ember, arial, sans-se=
+rif; color: rgb(51, 51, 51)">=20
+                  <tbody>
+                   <tr>=20
+                    <td style=3D"text-align:center;font-size:0;padding: 0">=
+=20
+                     <!--[if (gte mso 9)|(IE)]><table width=3D"100%"><tr><t=
+d width=3D"160" valign=3D"top"><![endif]-->=20
+                     <div style=3D"width:100%;max-width:160px;display:inlin=
+e-block;vertical-align:top;">=20
+                      <table width=3D"100%" border=3D"0" cellspacing=3D"0" =
+cellpadding=3D"8" style=3D"border-spacing: 0; font-family: ember, arial, sa=
+ns-serif; color: rgb(51, 51, 51)">=20
+                       <tbody>
+                        <tr>=20
+                         <td class=3D"inner" style=3D"max-width:140px;paddi=
+ng: 0">=20
+                          <table width=3D"100%" cellspacing=3D"0" cellpaddi=
+ng=3D"0" border=3D"0" style=3D"vertical-align:top;padding:8px;border-spacin=
+g: 0; font-family: ember, arial, sans-serif; color: rgb(51, 51, 51)">=20
+                           <tbody>=20
+                            <tr>=20
+                             <td style=3D"display:inline-block;padding: 0">=
+=20
+                              <table width=3D"100%" cellspacing=3D"0" cellp=
+adding=3D"0" border=3D"0" bgcolor=3D"#ffffff" style=3D"border-spacing: 0; f=
+ont-family: ember, arial, sans-serif; color: rgb(51, 51, 51)">=20
+                               <tbody>=20
+                                <tr>=20
+                                 <td valign=3D"bottom" align=3D"center" sty=
+le=3D"vertical-align: middle; padding:8px 8px 8px 8px;padding: 0"> <a href=
+=3D"https://www.amazon.in/gp/f.html?C=3DTF14L55J41OW&K=3DWMU548AAJTKH&M=3Du=
+rn:rtn:msg:202205021236182226a6cf6ca0403cb01f3c172ee0p0eu&R=3D1HF3AK8XP4AIA=
+&T=3DC&U=3Dhttps%3A%2F%2Fwww.amazon.in%2Fs%2Fbrowse%2F%3Fie%3DUTF8%26node%3=
+D27411203031%26ref%3Dgrep_pep_np2_img%26ref_%3Dpe_33574051_684185261&H=3DFY=
+6AALKK7BGQKWWHVIBV1GHIHUYA&ref_=3Dpe_33574051_684185261" target=3D"_blank">=
+ <img class=3D"oma_deal_image" src=3D"https://m.media-amazon.com/images/I/2=
+18SlpQBspL._AC_SS300_.jpg" alt=3D"Inverter Air Conditioners starting INR 24=
+499 / EMI starts INR 1153/month / Exchange available" width=3D"140" border=
+=3D"0" style=3D"border: 0" /> </a> </td>=20
+                                </tr>=20
+                               </tbody>
+                              </table> </td>=20
+                            </tr>=20
+                            <tr height=3D"10">=20
+                             <td width=3D"100%" style=3D"padding: 0">
+                              <div width=3D"100%" style=3D"font-size:10px; =
+line-height:10px">
+                               &nbsp;
+                              </div></td>=20
+                            </tr>=20
+                            <tr>=20
+                             <td width=3D"100%" bgcolor=3D"#ffffff" align=
+=3D"center" class=3D"hero-deal-col" valign=3D"top" style=3D"padding: 0">=20
+                              <table width=3D"100%" cellspacing=3D"0" cellp=
+adding=3D"0" border=3D"0" align=3D"left" style=3D"border-spacing: 0; font-f=
+amily: ember, arial, sans-serif; color: rgb(51, 51, 51)">=20
+                               <tbody>=20
+                                <tr height=3D"5">=20
+                                 <td width=3D"100%" style=3D"padding: 0">
+                                  <div width=3D"100%" style=3D"font-size:5p=
+x; line-height:5px">
+                                   &nbsp;
+                                  </div></td>=20
+                                </tr>=20
+                                <tr>=20
+                                 <td valign=3D"middle" align=3D"left" style=
+=3D"padding: 0"> <span style=3D"font-family:Arial,Helvetica,Sans-Serif;font=
+-size:14px;font-weight:bold;font-style:normal;text-decoration:none;color:#3=
+69;text-align:left;"> <a class=3D"oma_deal_title" style=3D"font-family:Aria=
+l,Helvetica,Sans-Serif;font-size:14px;font-weight:bold;font-style:normal;co=
+lor:#369;text-align:left;line-height:25px;text-decoration:none;font-family:=
+ Ember,Helvetica,Arial,sans-serif;font-size: 14px;line-height: 18px;font-we=
+ight: 500;color: #232F3E;" href=3D"https://www.amazon.in/gp/f.html?C=3DTF14=
+L55J41OW&K=3DWMU548AAJTKH&M=3Durn:rtn:msg:202205021236182226a6cf6ca0403cb01=
+f3c172ee0p0eu&R=3DNUEWJN0D9IZQ&T=3DC&U=3Dhttps%3A%2F%2Fwww.amazon.in%2Fs%2F=
+browse%2F%3Fie%3DUTF8%26node%3D27411203031%26ref%3Dgrep_pep_np2_t%26ref_%3D=
+pe_33574051_684185261&H=3DUHLB5ASD3I2IS9CYPG4K4YZA5AGA&ref_=3Dpe_33574051_6=
+84185261" target=3D"_blank"> Inverter Air Conditioners...</a> </span> </td>=
+=20
+                                </tr>=20
+                                <tr height=3D"10">=20
+                                 <td width=3D"100%" style=3D"padding: 0">
+                                  <div width=3D"100%" style=3D"font-size:10=
+px; line-height:10px">
+                                   &nbsp;
+                                  </div></td>=20
+                                </tr>=20
+                                <tr>=20
+                                 <td valign=3D"middle" style=3D"text-align:=
+left;padding: 0"> <font size=3D"2" face=3D"arial,Helvetica,sans-serif"> <sp=
+an class=3D"oma_deal_dprice" style=3D"font-size:18px;line-height:24px;color=
+:#990000;font-weight:bold;text-decoration:none;font-family: Ember,Helvetica=
+,Arial,sans-serif;font-size:14px;line-height: 30px;font-weight: 600;color: =
+#CC0000;"> <span style=3D"white-space:nowrap;">Rs. 27,990.00</span> - <span=
+ style=3D"white-space:nowrap;">Rs. 36,000.00</span> </span> </font></td>=20
+                                </tr>=20
+                                <tr>=20
+                                 <td style=3D"padding: 0">=20
+                                  <table align=3D"left" cellspacing=3D"0" c=
+ellpadding=3D"0" border=3D"0" style=3D"border-spacing: 0; font-family: embe=
+r, arial, sans-serif; color: rgb(51, 51, 51)">=20
+                                   <tbody>
+                                    <tr>
+                                     <td valign=3D"middle" style=3D"backgro=
+und-color:#ffffff; line-height: 15px; font-family:ember,arial,sans-serif;fo=
+nt-size: 11px;color: #444;text-align:left; padding:0px 6px 0px 6px;padding:=
+ 0"> </td>=20
+                                    </tr>
+                                   </tbody>
+                                  </table> </td>=20
+                                </tr>=20
+                                <tr class=3D"spacer">=20
+                                 <td height=3D"10" style=3D"padding: 0">=20
+                                  <div width=3D"1" class=3D"spacer" style=
+=3D"font-size:8px;line-height:8px;">
+                                   &nbsp;
+                                  </div> </td>=20
+                                </tr>=20
+                               </tbody>=20
+                              </table> </td>=20
+                            </tr>=20
+                           </tbody>=20
+                          </table> </td>=20
+                        </tr>=20
+                       </tbody>
+                      </table>=20
+                     </div>=20
+                     <!--[if (gte mso 9)|(IE)]></td><td width=3D"160" valig=
+n=3D"top"><![endif]-->=20
+                     <div style=3D"width:100%;max-width:160px;display:inlin=
+e-block;vertical-align:top;">=20
+                      <table width=3D"100%" border=3D"0" cellspacing=3D"0" =
+cellpadding=3D"8" style=3D"border-spacing: 0; font-family: ember, arial, sa=
+ns-serif; color: rgb(51, 51, 51)">=20
+                       <tbody>
+                        <tr>=20
+                         <td class=3D"inner" style=3D"max-width:140px;paddi=
+ng: 0">=20
+                          <table width=3D"100%" cellspacing=3D"0" cellpaddi=
+ng=3D"0" border=3D"0" style=3D"vertical-align:top;padding:8px;border-spacin=
+g: 0; font-family: ember, arial, sans-serif; color: rgb(51, 51, 51)">=20
+                           <tbody>=20
+                            <tr>=20
+                             <td style=3D"display:inline-block;padding: 0">=
+=20
+                              <table width=3D"100%" cellspacing=3D"0" cellp=
+adding=3D"0" border=3D"0" bgcolor=3D"#ffffff" style=3D"border-spacing: 0; f=
+ont-family: ember, arial, sans-serif; color: rgb(51, 51, 51)">=20
+                               <tbody>=20
+                                <tr>=20
+                                 <td valign=3D"bottom" align=3D"center" sty=
+le=3D"vertical-align: middle; padding:8px 8px 8px 8px;padding: 0"> <a href=
+=3D"https://www.amazon.in/gp/r.html?C=3DTF14L55J41OW&K=3DWMU548AAJTKH&M=3Du=
+rn:rtn:msg:202205021236182226a6cf6ca0403cb01f3c172ee0p0eu&R=3DT6Z4JIBLJIKW&=
+T=3DC&U=3Dhttps%3A%2F%2Fwww.amazon.in%2Fdeal%2Fcdbbd57d%3FshowVariations%3D=
+true%26ref%3Dgrep_pep_np2_img%26ref_%3Dpe_33574051_684185261&H=3DDOKYVRCAP8=
+ZHPNIXF7UNAEYNT1WA&ref_=3Dpe_33574051_684185261" target=3D"_blank"> <img cl=
+ass=3D"oma_deal_image" src=3D"https://m.media-amazon.com/images/I/31zJPhne7=
+qL._AC_SS300_.jpg" alt=3D"Womens Clothing Offers" width=3D"140" border=3D"0=
+" style=3D"border: 0" /> </a> </td>=20
+                                </tr>=20
+                               </tbody>
+                              </table> </td>=20
+                            </tr>=20
+                            <tr height=3D"10">=20
+                             <td width=3D"100%" style=3D"padding: 0">
+                              <div width=3D"100%" style=3D"font-size:10px; =
+line-height:10px">
+                               &nbsp;
+                              </div></td>=20
+                            </tr>=20
+                            <tr>=20
+                             <td width=3D"100%" bgcolor=3D"#ffffff" align=
+=3D"center" class=3D"hero-deal-col" valign=3D"top" style=3D"padding: 0">=20
+                              <table width=3D"100%" cellspacing=3D"0" cellp=
+adding=3D"0" border=3D"0" align=3D"left" style=3D"border-spacing: 0; font-f=
+amily: ember, arial, sans-serif; color: rgb(51, 51, 51)">=20
+                               <tbody>=20
+                                <tr height=3D"5">=20
+                                 <td width=3D"100%" style=3D"padding: 0">
+                                  <div width=3D"100%" style=3D"font-size:5p=
+x; line-height:5px">
+                                   &nbsp;
+                                  </div></td>=20
+                                </tr>=20
+                                <tr>=20
+                                 <td valign=3D"middle" align=3D"left" style=
+=3D"padding: 0"> <span style=3D"font-family:Arial,Helvetica,Sans-Serif;font=
+-size:14px;font-weight:bold;font-style:normal;text-decoration:none;color:#3=
+69;text-align:left;"> <a class=3D"oma_deal_title" style=3D"font-family:Aria=
+l,Helvetica,Sans-Serif;font-size:14px;font-weight:bold;font-style:normal;co=
+lor:#369;text-align:left;line-height:25px;text-decoration:none;font-family:=
+ Ember,Helvetica,Arial,sans-serif;font-size: 14px;line-height: 18px;font-we=
+ight: 500;color: #232F3E;" href=3D"https://www.amazon.in/gp/r.html?C=3DTF14=
+L55J41OW&K=3DWMU548AAJTKH&M=3Durn:rtn:msg:202205021236182226a6cf6ca0403cb01=
+f3c172ee0p0eu&R=3D1OZNZW4CIC97E&T=3DC&U=3Dhttps%3A%2F%2Fwww.amazon.in%2Fdea=
+l%2Fcdbbd57d%3FshowVariations%3Dtrue%26ref%3Dgrep_pep_np2_t%26ref_%3Dpe_335=
+74051_684185261&H=3DL0XKGWJGU8ZPF2NUDJP14PXYRWSA&ref_=3Dpe_33574051_6841852=
+61" target=3D"_blank"> Womens Clothing Offers</a> </span> </td>=20
+                                </tr>=20
+                                <tr height=3D"10">=20
+                                 <td width=3D"100%" style=3D"padding: 0">
+                                  <div width=3D"100%" style=3D"font-size:10=
+px; line-height:10px">
+                                   &nbsp;
+                                  </div></td>=20
+                                </tr>=20
+                                <tr>=20
+                                 <td valign=3D"middle" style=3D"text-align:=
+left;padding: 0"> <font size=3D"2" face=3D"arial,Helvetica,sans-serif"> <sp=
+an class=3D"oma_deal_dprice" style=3D"font-size:18px;line-height:24px;color=
+:#990000;font-weight:bold;text-decoration:none;font-family: Ember,Helvetica=
+,Arial,sans-serif;font-size:14px;line-height: 30px;font-weight: 600;color: =
+#CC0000;"> <span style=3D"white-space:nowrap;">Rs. 219.00</span> - <span st=
+yle=3D"white-space:nowrap;">Rs. 7,329.00</span> </span> </font></td>=20
+                                </tr>=20
+                                <tr>=20
+                                 <td style=3D"padding: 0">=20
+                                  <table align=3D"left" cellspacing=3D"0" c=
+ellpadding=3D"0" border=3D"0" style=3D"border-spacing: 0; font-family: embe=
+r, arial, sans-serif; color: rgb(51, 51, 51)">=20
+                                   <tbody>
+                                    <tr>
+                                     <td valign=3D"middle" style=3D"backgro=
+und-color:#ffffff; line-height: 15px; font-family:ember,arial,sans-serif;fo=
+nt-size: 11px;color: #444;text-align:left; padding:0px 6px 0px 6px;padding:=
+ 0"> </td>=20
+                                    </tr>
+                                   </tbody>
+                                  </table> </td>=20
+                                </tr>=20
+                                <tr class=3D"spacer">=20
+                                 <td height=3D"10" style=3D"padding: 0">=20
+                                  <div width=3D"1" class=3D"spacer" style=
+=3D"font-size:8px;line-height:8px;">
+                                   &nbsp;
+                                  </div> </td>=20
+                                </tr>=20
+                               </tbody>=20
+                              </table> </td>=20
+                            </tr>=20
+                           </tbody>=20
+                          </table> </td>=20
+                        </tr>=20
+                       </tbody>
+                      </table>=20
+                     </div>=20
+                     <!--[if (gte mso 9)|(IE)]></td></tr></table><![endif]-=
+-> </td>=20
+                   </tr>=20
+                  </tbody>
+                 </table> </td>=20
+               </tr>=20
+              </tbody>
+             </table>=20
+            </div>=20
+            <!--[if (gte mso 9)|(IE)]></td><td width=3D"320" valign=3D"top"=
+><![endif]-->=20
+            <div style=3D"width:100%;max-width:320px;display:inline-block;v=
+ertical-align:top;">=20
+             <table width=3D"100%" border=3D"0" cellspacing=3D"0" cellpaddi=
+ng=3D"8" style=3D"border-spacing: 0; font-family: ember, arial, sans-serif;=
+ color: rgb(51, 51, 51)">=20
+              <tbody>
+               <tr>=20
+                <td class=3D"inner" style=3D"max-width:300px;padding: 0">=
+=20
+                 <table width=3D"100%" border=3D"0" cellspacing=3D"0" cellp=
+adding=3D"0" style=3D"border-spacing: 0; font-family: ember, arial, sans-se=
+rif; color: rgb(51, 51, 51)">=20
+                  <tbody>
+                   <tr>=20
+                    <td style=3D"text-align:center;font-size:0;padding: 0">=
+=20
+                     <!--[if (gte mso 9)|(IE)]><table width=3D"100%"><tr><t=
+d width=3D"160" valign=3D"top"><![endif]-->=20
+                     <div style=3D"width:100%;max-width:160px;display:inlin=
+e-block;vertical-align:top;">=20
+                      <table width=3D"100%" border=3D"0" cellspacing=3D"0" =
+cellpadding=3D"8" style=3D"border-spacing: 0; font-family: ember, arial, sa=
+ns-serif; color: rgb(51, 51, 51)">=20
+                       <tbody>
+                        <tr>=20
+                         <td class=3D"inner" style=3D"max-width:140px;paddi=
+ng: 0">=20
+                          <table width=3D"100%" cellspacing=3D"0" cellpaddi=
+ng=3D"0" border=3D"0" style=3D"vertical-align:top;padding:8px;border-spacin=
+g: 0; font-family: ember, arial, sans-serif; color: rgb(51, 51, 51)">=20
+                           <tbody>=20
+                            <tr>=20
+                             <td style=3D"display:inline-block;padding: 0">=
+=20
+                              <table width=3D"100%" cellspacing=3D"0" cellp=
+adding=3D"0" border=3D"0" bgcolor=3D"#ffffff" style=3D"border-spacing: 0; f=
+ont-family: ember, arial, sans-serif; color: rgb(51, 51, 51)">=20
+                               <tbody>=20
+                                <tr>=20
+                                 <td valign=3D"bottom" align=3D"center" sty=
+le=3D"vertical-align: middle; padding:8px 8px 8px 8px;padding: 0"> <a href=
+=3D"https://www.amazon.in/gp/r.html?C=3DTF14L55J41OW&K=3DWMU548AAJTKH&M=3Du=
+rn:rtn:msg:202205021236182226a6cf6ca0403cb01f3c172ee0p0eu&R=3D2UBGRMX5MLOMV=
+&T=3DC&U=3Dhttps%3A%2F%2Fwww.amazon.in%2Fdeal%2F8ba52c6c%3FmoreDeals%3D068d=
+332d%26ref%3Dgrep_pep_np2_img%26ref_%3Dpe_33574051_684185261&H=3DYIOICMPM2H=
+F6NLBWE6QW7ISYVWKA&ref_=3Dpe_33574051_684185261" target=3D"_blank"> <img cl=
+ass=3D"oma_deal_image" src=3D"https://m.media-amazon.com/images/I/41vs4fLIM=
+fL._AC_SS300_.jpg" alt=3D"Exciting offers on ASIAN Shoes" width=3D"140" bor=
+der=3D"0" style=3D"border: 0" /> </a> </td>=20
+                                </tr>=20
+                               </tbody>
+                              </table> </td>=20
+                            </tr>=20
+                            <tr height=3D"10">=20
+                             <td width=3D"100%" style=3D"padding: 0">
+                              <div width=3D"100%" style=3D"font-size:10px; =
+line-height:10px">
+                               &nbsp;
+                              </div></td>=20
+                            </tr>=20
+                            <tr>=20
+                             <td width=3D"100%" bgcolor=3D"#ffffff" align=
+=3D"center" class=3D"hero-deal-col" valign=3D"top" style=3D"padding: 0">=20
+                              <table width=3D"100%" cellspacing=3D"0" cellp=
+adding=3D"0" border=3D"0" align=3D"left" style=3D"border-spacing: 0; font-f=
+amily: ember, arial, sans-serif; color: rgb(51, 51, 51)">=20
+                               <tbody>=20
+                                <tr height=3D"5">=20
+                                 <td width=3D"100%" style=3D"padding: 0">
+                                  <div width=3D"100%" style=3D"font-size:5p=
+x; line-height:5px">
+                                   &nbsp;
+                                  </div></td>=20
+                                </tr>=20
+                                <tr>=20
+                                 <td valign=3D"middle" align=3D"left" style=
+=3D"padding: 0"> <span style=3D"font-family:Arial,Helvetica,Sans-Serif;font=
+-size:14px;font-weight:bold;font-style:normal;text-decoration:none;color:#3=
+69;text-align:left;"> <a class=3D"oma_deal_title" style=3D"font-family:Aria=
+l,Helvetica,Sans-Serif;font-size:14px;font-weight:bold;font-style:normal;co=
+lor:#369;text-align:left;line-height:25px;text-decoration:none;font-family:=
+ Ember,Helvetica,Arial,sans-serif;font-size: 14px;line-height: 18px;font-we=
+ight: 500;color: #232F3E;" href=3D"https://www.amazon.in/gp/r.html?C=3DTF14=
+L55J41OW&K=3DWMU548AAJTKH&M=3Durn:rtn:msg:202205021236182226a6cf6ca0403cb01=
+f3c172ee0p0eu&R=3D20OQSUR0YKC0L&T=3DC&U=3Dhttps%3A%2F%2Fwww.amazon.in%2Fdea=
+l%2F8ba52c6c%3FmoreDeals%3D068d332d%26ref%3Dgrep_pep_np2_t%26ref_%3Dpe_3357=
+4051_684185261&H=3D5S2XDNQQPNNT1INFLYXKUZ8XVI4A&ref_=3Dpe_33574051_68418526=
+1" target=3D"_blank"> Exciting offers on ASIAN Shoes</a> </span> </td>=20
+                                </tr>=20
+                                <tr height=3D"10">=20
+                                 <td width=3D"100%" style=3D"padding: 0">
+                                  <div width=3D"100%" style=3D"font-size:10=
+px; line-height:10px">
+                                   &nbsp;
+                                  </div></td>=20
+                                </tr>=20
+                                <tr>=20
+                                 <td valign=3D"middle" style=3D"text-align:=
+left;padding: 0"> <font size=3D"2" face=3D"arial,Helvetica,sans-serif"> <sp=
+an class=3D"oma_deal_dprice" style=3D"font-size:18px;line-height:24px;color=
+:#990000;font-weight:bold;text-decoration:none;font-family: Ember,Helvetica=
+,Arial,sans-serif;font-size:14px;line-height: 30px;font-weight: 600;color: =
+#CC0000;"> <span style=3D"white-space:nowrap;">Rs. 449.00</span> - <span st=
+yle=3D"white-space:nowrap;">Rs. 1,198.00</span> </span> </font></td>=20
+                                </tr>=20
+                                <tr>=20
+                                 <td style=3D"padding: 0">=20
+                                  <table align=3D"left" cellspacing=3D"0" c=
+ellpadding=3D"0" border=3D"0" style=3D"border-spacing: 0; font-family: embe=
+r, arial, sans-serif; color: rgb(51, 51, 51)">=20
+                                   <tbody>
+                                    <tr>
+                                     <td valign=3D"middle" style=3D"backgro=
+und-color:#ffffff; line-height: 15px; font-family:ember,arial,sans-serif;fo=
+nt-size: 11px;color: #444;text-align:left; padding:0px 6px 0px 6px;padding:=
+ 0"> </td>=20
+                                    </tr>
+                                   </tbody>
+                                  </table> </td>=20
+                                </tr>=20
+                                <tr class=3D"spacer">=20
+                                 <td height=3D"10" style=3D"padding: 0">=20
+                                  <div width=3D"1" class=3D"spacer" style=
+=3D"font-size:8px;line-height:8px;">
+                                   &nbsp;
+                                  </div> </td>=20
+                                </tr>=20
+                               </tbody>=20
+                              </table> </td>=20
+                            </tr>=20
+                           </tbody>=20
+                          </table> </td>=20
+                        </tr>=20
+                       </tbody>
+                      </table>=20
+                     </div>=20
+                     <!--[if (gte mso 9)|(IE)]></td><td width=3D"160" valig=
+n=3D"top"><![endif]-->=20
+                     <div style=3D"width:100%;max-width:160px;display:inlin=
+e-block;vertical-align:top;">=20
+                      <table width=3D"100%" border=3D"0" cellspacing=3D"0" =
+cellpadding=3D"8" style=3D"border-spacing: 0; font-family: ember, arial, sa=
+ns-serif; color: rgb(51, 51, 51)">=20
+                       <tbody>
+                        <tr>=20
+                         <td class=3D"inner" style=3D"max-width:140px;paddi=
+ng: 0">=20
+                          <table width=3D"100%" cellspacing=3D"0" cellpaddi=
+ng=3D"0" border=3D"0" style=3D"vertical-align:top;padding:8px;border-spacin=
+g: 0; font-family: ember, arial, sans-serif; color: rgb(51, 51, 51)">=20
+                           <tbody>=20
+                            <tr>=20
+                             <td style=3D"display:inline-block;padding: 0">=
+=20
+                              <table width=3D"100%" cellspacing=3D"0" cellp=
+adding=3D"0" border=3D"0" bgcolor=3D"#ffffff" style=3D"border-spacing: 0; f=
+ont-family: ember, arial, sans-serif; color: rgb(51, 51, 51)">=20
+                               <tbody>=20
+                                <tr>=20
+                                 <td valign=3D"bottom" align=3D"center" sty=
+le=3D"vertical-align: middle; padding:8px 8px 8px 8px;padding: 0"> <a href=
+=3D"https://www.amazon.in/gp/r.html?C=3DTF14L55J41OW&K=3DWMU548AAJTKH&M=3Du=
+rn:rtn:msg:202205021236182226a6cf6ca0403cb01f3c172ee0p0eu&R=3D3IMZ0SS9D40RE=
+&T=3DC&U=3Dhttps%3A%2F%2Fwww.amazon.in%2Fdeal%2F3ee78661%3FshowVariations%3=
+Dtrue%26moreDeals%3Dd4867542%2Cb0ca1732%2C22176f82%2C7f204e81%2C0541390a%2C=
+8568e91f%2C8417cfd3%26ref%3Dgrep_pep_np2_img%26ref_%3Dpe_33574051_684185261=
+&H=3DEMCIOQUHAFQLNMH5PTLZVNM4DQCA&ref_=3Dpe_33574051_684185261" target=3D"_=
+blank"> <img class=3D"oma_deal_image" src=3D"https://m.media-amazon.com/ima=
+ges/I/31CM9HiuvRL._AC_SS300_.jpg" alt=3D"Fans from Top Brands" width=3D"140=
+" border=3D"0" style=3D"border: 0" /> </a> </td>=20
+                                </tr>=20
+                               </tbody>
+                              </table> </td>=20
+                            </tr>=20
+                            <tr height=3D"10">=20
+                             <td width=3D"100%" style=3D"padding: 0">
+                              <div width=3D"100%" style=3D"font-size:10px; =
+line-height:10px">
+                               &nbsp;
+                              </div></td>=20
+                            </tr>=20
+                            <tr>=20
+                             <td width=3D"100%" bgcolor=3D"#ffffff" align=
+=3D"center" class=3D"hero-deal-col" valign=3D"top" style=3D"padding: 0">=20
+                              <table width=3D"100%" cellspacing=3D"0" cellp=
+adding=3D"0" border=3D"0" align=3D"left" style=3D"border-spacing: 0; font-f=
+amily: ember, arial, sans-serif; color: rgb(51, 51, 51)">=20
+                               <tbody>=20
+                                <tr height=3D"5">=20
+                                 <td width=3D"100%" style=3D"padding: 0">
+                                  <div width=3D"100%" style=3D"font-size:5p=
+x; line-height:5px">
+                                   &nbsp;
+                                  </div></td>=20
+                                </tr>=20
+                                <tr>=20
+                                 <td valign=3D"middle" align=3D"left" style=
+=3D"padding: 0"> <span style=3D"font-family:Arial,Helvetica,Sans-Serif;font=
+-size:14px;font-weight:bold;font-style:normal;text-decoration:none;color:#3=
+69;text-align:left;"> <a class=3D"oma_deal_title" style=3D"font-family:Aria=
+l,Helvetica,Sans-Serif;font-size:14px;font-weight:bold;font-style:normal;co=
+lor:#369;text-align:left;line-height:25px;text-decoration:none;font-family:=
+ Ember,Helvetica,Arial,sans-serif;font-size: 14px;line-height: 18px;font-we=
+ight: 500;color: #232F3E;" href=3D"https://www.amazon.in/gp/r.html?C=3DTF14=
+L55J41OW&K=3DWMU548AAJTKH&M=3Durn:rtn:msg:202205021236182226a6cf6ca0403cb01=
+f3c172ee0p0eu&R=3D2IZ8GVK3YEH4A&T=3DC&U=3Dhttps%3A%2F%2Fwww.amazon.in%2Fdea=
+l%2F3ee78661%3FshowVariations%3Dtrue%26moreDeals%3Dd4867542%2Cb0ca1732%2C22=
+176f82%2C7f204e81%2C0541390a%2C8568e91f%2C8417cfd3%26ref%3Dgrep_pep_np2_t%2=
+6ref_%3Dpe_33574051_684185261&H=3DVODERM1HYJWUAAA0ACHFU4GVIYIA&ref_=3Dpe_33=
+574051_684185261" target=3D"_blank"> Fans from Top Brands</a> </span> </td>=
+=20
+                                </tr>=20
+                                <tr height=3D"10">=20
+                                 <td width=3D"100%" style=3D"padding: 0">
+                                  <div width=3D"100%" style=3D"font-size:10=
+px; line-height:10px">
+                                   &nbsp;
+                                  </div></td>=20
+                                </tr>=20
+                                <tr>=20
+                                 <td valign=3D"middle" style=3D"text-align:=
+left;padding: 0"> <font size=3D"2" face=3D"arial,Helvetica,sans-serif"> <sp=
+an class=3D"oma_deal_dprice" style=3D"font-size:18px;line-height:24px;color=
+:#990000;font-weight:bold;text-decoration:none;font-family: Ember,Helvetica=
+,Arial,sans-serif;font-size:14px;line-height: 30px;font-weight: 600;color: =
+#CC0000;"> <span style=3D"white-space:nowrap;">Rs. 915.00</span> - <span st=
+yle=3D"white-space:nowrap;">Rs. 10,649.00</span> </span> </font></td>=20
+                                </tr>=20
+                                <tr>=20
+                                 <td style=3D"padding: 0">=20
+                                  <table align=3D"left" cellspacing=3D"0" c=
+ellpadding=3D"0" border=3D"0" style=3D"border-spacing: 0; font-family: embe=
+r, arial, sans-serif; color: rgb(51, 51, 51)">=20
+                                   <tbody>
+                                    <tr>
+                                     <td valign=3D"middle" style=3D"backgro=
+und-color:#ffffff; line-height: 15px; font-family:ember,arial,sans-serif;fo=
+nt-size: 11px;color: #444;text-align:left; padding:0px 6px 0px 6px;padding:=
+ 0"> </td>=20
+                                    </tr>
+                                   </tbody>
+                                  </table> </td>=20
+                                </tr>=20
+                                <tr class=3D"spacer">=20
+                                 <td height=3D"10" style=3D"padding: 0">=20
+                                  <div width=3D"1" class=3D"spacer" style=
+=3D"font-size:8px;line-height:8px;">
+                                   &nbsp;
+                                  </div> </td>=20
+                                </tr>=20
+                               </tbody>=20
+                              </table> </td>=20
+                            </tr>=20
+                           </tbody>=20
+                          </table> </td>=20
+                        </tr>=20
+                       </tbody>
+                      </table>=20
+                     </div>=20
+                     <!--[if (gte mso 9)|(IE)]></td></tr></table><![endif]-=
+-> </td>=20
+                   </tr>=20
+                  </tbody>
+                 </table> </td>=20
+               </tr>=20
+              </tbody>
+             </table>=20
+            </div>=20
+            <!--[if (gte mso 9)|(IE)]></td></tr></table><![endif]--> </td>=
+=20
+          </tr>=20
+         </tbody>
+        </table>=20
+        <table width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D=
+"0" style=3D"border-spacing: 0; font-family: ember, arial, sans-serif; colo=
+r: rgb(51, 51, 51)">=20
+         <tbody>
+          <tr>=20
+           <td style=3D"text-align:center;font-size:0;padding: 0">=20
+            <!--[if (gte mso 9)|(IE)]><table width=3D"100%"><tr><td width=
+=3D"320" valign=3D"top"><![endif]-->=20
+            <div style=3D"width:100%;max-width:320px;display:inline-block;v=
+ertical-align:top;">=20
+             <table width=3D"100%" border=3D"0" cellspacing=3D"0" cellpaddi=
+ng=3D"8" style=3D"border-spacing: 0; font-family: ember, arial, sans-serif;=
+ color: rgb(51, 51, 51)">=20
+              <tbody>
+               <tr>=20
+                <td class=3D"inner" style=3D"max-width:300px;padding: 0">=
+=20
+                 <table width=3D"100%" border=3D"0" cellspacing=3D"0" cellp=
+adding=3D"0" style=3D"border-spacing: 0; font-family: ember, arial, sans-se=
+rif; color: rgb(51, 51, 51)">=20
+                  <tbody>
+                   <tr>=20
+                    <td style=3D"text-align:center;font-size:0;padding: 0">=
+=20
+                     <!--[if (gte mso 9)|(IE)]><table width=3D"100%"><tr><t=
+d width=3D"160" valign=3D"top"><![endif]-->=20
+                     <div style=3D"width:100%;max-width:160px;display:inlin=
+e-block;vertical-align:top;">=20
+                      <table width=3D"100%" border=3D"0" cellspacing=3D"0" =
+cellpadding=3D"8" style=3D"border-spacing: 0; font-family: ember, arial, sa=
+ns-serif; color: rgb(51, 51, 51)">=20
+                       <tbody>
+                        <tr>=20
+                         <td class=3D"inner" style=3D"max-width:140px;paddi=
+ng: 0">=20
+                          <table width=3D"100%" cellspacing=3D"0" cellpaddi=
+ng=3D"0" border=3D"0" style=3D"vertical-align:top;padding:8px;border-spacin=
+g: 0; font-family: ember, arial, sans-serif; color: rgb(51, 51, 51)">=20
+                           <tbody>=20
+                            <tr>=20
+                             <td style=3D"display:inline-block;padding: 0">=
+=20
+                              <table width=3D"100%" cellspacing=3D"0" cellp=
+adding=3D"0" border=3D"0" bgcolor=3D"#ffffff" style=3D"border-spacing: 0; f=
+ont-family: ember, arial, sans-serif; color: rgb(51, 51, 51)">=20
+                               <tbody>=20
+                                <tr>=20
+                                 <td valign=3D"bottom" align=3D"center" sty=
+le=3D"vertical-align: middle; padding:8px 8px 8px 8px;padding: 0"> <a href=
+=3D"https://www.amazon.in/gp/r.html?C=3DTF14L55J41OW&K=3DWMU548AAJTKH&M=3Du=
+rn:rtn:msg:202205021236182226a6cf6ca0403cb01f3c172ee0p0eu&R=3DXNX5MQOCWFQ1&=
+T=3DC&U=3Dhttps%3A%2F%2Fwww.amazon.in%2Fdeal%2F4e2a4313%3FshowVariations%3D=
+true%26moreDeals%3D%26ref%3Dgrep_pep_np2_img%26ref_%3Dpe_33574051_684185261=
+&H=3DLJTPN86PAPEMFH8LLFSGH2SSQVCA&ref_=3Dpe_33574051_684185261" target=3D"_=
+blank"> <img class=3D"oma_deal_image" src=3D"https://m.media-amazon.com/ima=
+ges/I/51pH5joKobL._AC_SS300_.jpg" alt=3D"Guard against power cuts; inverter=
+ bulbs, emergency lamps and more" width=3D"140" border=3D"0" style=3D"borde=
+r: 0" /> </a> </td>=20
+                                </tr>=20
+                               </tbody>
+                              </table> </td>=20
+                            </tr>=20
+                            <tr height=3D"10">=20
+                             <td width=3D"100%" style=3D"padding: 0">
+                              <div width=3D"100%" style=3D"font-size:10px; =
+line-height:10px">
+                               &nbsp;
+                              </div></td>=20
+                            </tr>=20
+                            <tr>=20
+                             <td width=3D"100%" bgcolor=3D"#ffffff" align=
+=3D"center" class=3D"hero-deal-col" valign=3D"top" style=3D"padding: 0">=20
+                              <table width=3D"100%" cellspacing=3D"0" cellp=
+adding=3D"0" border=3D"0" align=3D"left" style=3D"border-spacing: 0; font-f=
+amily: ember, arial, sans-serif; color: rgb(51, 51, 51)">=20
+                               <tbody>=20
+                                <tr height=3D"5">=20
+                                 <td width=3D"100%" style=3D"padding: 0">
+                                  <div width=3D"100%" style=3D"font-size:5p=
+x; line-height:5px">
+                                   &nbsp;
+                                  </div></td>=20
+                                </tr>=20
+                                <tr>=20
+                                 <td valign=3D"middle" align=3D"left" style=
+=3D"padding: 0"> <span style=3D"font-family:Arial,Helvetica,Sans-Serif;font=
+-size:14px;font-weight:bold;font-style:normal;text-decoration:none;color:#3=
+69;text-align:left;"> <a class=3D"oma_deal_title" style=3D"font-family:Aria=
+l,Helvetica,Sans-Serif;font-size:14px;font-weight:bold;font-style:normal;co=
+lor:#369;text-align:left;line-height:25px;text-decoration:none;font-family:=
+ Ember,Helvetica,Arial,sans-serif;font-size: 14px;line-height: 18px;font-we=
+ight: 500;color: #232F3E;" href=3D"https://www.amazon.in/gp/r.html?C=3DTF14=
+L55J41OW&K=3DWMU548AAJTKH&M=3Durn:rtn:msg:202205021236182226a6cf6ca0403cb01=
+f3c172ee0p0eu&R=3D6N7JY32JCSCY&T=3DC&U=3Dhttps%3A%2F%2Fwww.amazon.in%2Fdeal=
+%2F4e2a4313%3FshowVariations%3Dtrue%26moreDeals%3D%26ref%3Dgrep_pep_np2_t%2=
+6ref_%3Dpe_33574051_684185261&H=3DVZIS19PSQ66ARW5OLFMKHB41UZ4A&ref_=3Dpe_33=
+574051_684185261" target=3D"_blank"> Guard against power cuts;...</a> </spa=
+n> </td>=20
+                                </tr>=20
+                                <tr height=3D"10">=20
+                                 <td width=3D"100%" style=3D"padding: 0">
+                                  <div width=3D"100%" style=3D"font-size:10=
+px; line-height:10px">
+                                   &nbsp;
+                                  </div></td>=20
+                                </tr>=20
+                                <tr>=20
+                                 <td valign=3D"middle" style=3D"text-align:=
+left;padding: 0"> <font size=3D"2" face=3D"arial,Helvetica,sans-serif"> <sp=
+an class=3D"oma_deal_dprice" style=3D"font-size:18px;line-height:24px;color=
+:#990000;font-weight:bold;text-decoration:none;font-family: Ember,Helvetica=
+,Arial,sans-serif;font-size:14px;line-height: 30px;font-weight: 600;color: =
+#CC0000;"> <span style=3D"white-space:nowrap;">Rs. 331.00</span> - <span st=
+yle=3D"white-space:nowrap;">Rs. 1,747.00</span> </span> </font></td>=20
+                                </tr>=20
+                                <tr>=20
+                                 <td style=3D"padding: 0">=20
+                                  <table align=3D"left" cellspacing=3D"0" c=
+ellpadding=3D"0" border=3D"0" style=3D"border-spacing: 0; font-family: embe=
+r, arial, sans-serif; color: rgb(51, 51, 51)">=20
+                                   <tbody>
+                                    <tr>
+                                     <td valign=3D"middle" style=3D"backgro=
+und-color:#ffffff; line-height: 15px; font-family:ember,arial,sans-serif;fo=
+nt-size: 11px;color: #444;text-align:left; padding:0px 6px 0px 6px;padding:=
+ 0"> </td>=20
+                                    </tr>
+                                   </tbody>
+                                  </table> </td>=20
+                                </tr>=20
+                                <tr class=3D"spacer">=20
+                                 <td height=3D"10" style=3D"padding: 0">=20
+                                  <div width=3D"1" class=3D"spacer" style=
+=3D"font-size:8px;line-height:8px;">
+                                   &nbsp;
+                                  </div> </td>=20
+                                </tr>=20
+                               </tbody>=20
+                              </table> </td>=20
+                            </tr>=20
+                           </tbody>=20
+                          </table> </td>=20
+                        </tr>=20
+                       </tbody>
+                      </table>=20
+                     </div>=20
+                     <!--[if (gte mso 9)|(IE)]></td><td width=3D"160" valig=
+n=3D"top"><![endif]-->=20
+                     <div style=3D"width:100%;max-width:160px;display:inlin=
+e-block;vertical-align:top;">=20
+                      <table width=3D"100%" border=3D"0" cellspacing=3D"0" =
+cellpadding=3D"8" style=3D"border-spacing: 0; font-family: ember, arial, sa=
+ns-serif; color: rgb(51, 51, 51)">=20
+                       <tbody>
+                        <tr>=20
+                         <td class=3D"inner" style=3D"max-width:140px;paddi=
+ng: 0">=20
+                          <table width=3D"100%" cellspacing=3D"0" cellpaddi=
+ng=3D"0" border=3D"0" style=3D"vertical-align:top;padding:8px;border-spacin=
+g: 0; font-family: ember, arial, sans-serif; color: rgb(51, 51, 51)">=20
+                           <tbody>=20
+                            <tr>=20
+                             <td style=3D"display:inline-block;padding: 0">=
+=20
+                              <table width=3D"100%" cellspacing=3D"0" cellp=
+adding=3D"0" border=3D"0" bgcolor=3D"#ffffff" style=3D"border-spacing: 0; f=
+ont-family: ember, arial, sans-serif; color: rgb(51, 51, 51)">=20
+                               <tbody>=20
+                                <tr>=20
+                                 <td valign=3D"bottom" align=3D"center" sty=
+le=3D"vertical-align: middle; padding:8px 8px 8px 8px;padding: 0"> <a href=
+=3D"https://www.amazon.in/gp/r.html?C=3DTF14L55J41OW&K=3DWMU548AAJTKH&M=3Du=
+rn:rtn:msg:202205021236182226a6cf6ca0403cb01f3c172ee0p0eu&R=3D1C2UG640M4S7Q=
+&T=3DC&U=3Dhttps%3A%2F%2Fwww.amazon.in%2Fl%2F27089348031%3Fref%3Dgrep_pep_n=
+p2_img%26ref_%3Dpe_33574051_684185261&H=3D7ILUC7R7D7OTRSAJGY0IG22D6E4A&ref_=
+=3Dpe_33574051_684185261" target=3D"_blank"> <img class=3D"oma_deal_image" =
+src=3D"https://m.media-amazon.com/images/I/31CZB0JdTlL._AC_SS300_.jpg" alt=
+=3D"Best Selling Healthcare Devices" width=3D"140" border=3D"0" style=3D"bo=
+rder: 0" /> </a> </td>=20
+                                </tr>=20
+                               </tbody>
+                              </table> </td>=20
+                            </tr>=20
+                            <tr height=3D"10">=20
+                             <td width=3D"100%" style=3D"padding: 0">
+                              <div width=3D"100%" style=3D"font-size:10px; =
+line-height:10px">
+                               &nbsp;
+                              </div></td>=20
+                            </tr>=20
+                            <tr>=20
+                             <td width=3D"100%" bgcolor=3D"#ffffff" align=
+=3D"center" class=3D"hero-deal-col" valign=3D"top" style=3D"padding: 0">=20
+                              <table width=3D"100%" cellspacing=3D"0" cellp=
+adding=3D"0" border=3D"0" align=3D"left" style=3D"border-spacing: 0; font-f=
+amily: ember, arial, sans-serif; color: rgb(51, 51, 51)">=20
+                               <tbody>=20
+                                <tr height=3D"5">=20
+                                 <td width=3D"100%" style=3D"padding: 0">
+                                  <div width=3D"100%" style=3D"font-size:5p=
+x; line-height:5px">
+                                   &nbsp;
+                                  </div></td>=20
+                                </tr>=20
+                                <tr>=20
+                                 <td valign=3D"middle" align=3D"left" style=
+=3D"padding: 0"> <span style=3D"font-family:Arial,Helvetica,Sans-Serif;font=
+-size:14px;font-weight:bold;font-style:normal;text-decoration:none;color:#3=
+69;text-align:left;"> <a class=3D"oma_deal_title" style=3D"font-family:Aria=
+l,Helvetica,Sans-Serif;font-size:14px;font-weight:bold;font-style:normal;co=
+lor:#369;text-align:left;line-height:25px;text-decoration:none;font-family:=
+ Ember,Helvetica,Arial,sans-serif;font-size: 14px;line-height: 18px;font-we=
+ight: 500;color: #232F3E;" href=3D"https://www.amazon.in/gp/r.html?C=3DTF14=
+L55J41OW&K=3DWMU548AAJTKH&M=3Durn:rtn:msg:202205021236182226a6cf6ca0403cb01=
+f3c172ee0p0eu&R=3D28PYYY67JEXCS&T=3DC&U=3Dhttps%3A%2F%2Fwww.amazon.in%2Fl%2=
+F27089348031%3Fref%3Dgrep_pep_np2_t%26ref_%3Dpe_33574051_684185261&H=3DQ6CL=
+GSI4POWR46WJPACKXBT5MPQA&ref_=3Dpe_33574051_684185261" target=3D"_blank"> B=
+est Selling Healthcare Devices</a> </span> </td>=20
+                                </tr>=20
+                                <tr height=3D"10">=20
+                                 <td width=3D"100%" style=3D"padding: 0">
+                                  <div width=3D"100%" style=3D"font-size:10=
+px; line-height:10px">
+                                   &nbsp;
+                                  </div></td>=20
+                                </tr>=20
+                                <tr>=20
+                                 <td valign=3D"middle" style=3D"text-align:=
+left;padding: 0"> <font size=3D"2" face=3D"arial,Helvetica,sans-serif"> <sp=
+an class=3D"oma_deal_dprice" style=3D"font-size:18px;line-height:24px;color=
+:#990000;font-weight:bold;text-decoration:none;font-family: Ember,Helvetica=
+,Arial,sans-serif;font-size:14px;line-height: 30px;font-weight: 600;color: =
+#CC0000;"> <span style=3D"white-space:nowrap;">Rs. 749.00</span> - <span st=
+yle=3D"white-space:nowrap;">Rs. 8,999.00</span> </span> </font></td>=20
+                                </tr>=20
+                                <tr>=20
+                                 <td style=3D"padding: 0">=20
+                                  <table align=3D"left" cellspacing=3D"0" c=
+ellpadding=3D"0" border=3D"0" style=3D"border-spacing: 0; font-family: embe=
+r, arial, sans-serif; color: rgb(51, 51, 51)">=20
+                                   <tbody>
+                                    <tr>
+                                     <td valign=3D"middle" style=3D"backgro=
+und-color:#ffffff; line-height: 15px; font-family:ember,arial,sans-serif;fo=
+nt-size: 11px;color: #444;text-align:left; padding:0px 6px 0px 6px;padding:=
+ 0"> </td>=20
+                                    </tr>
+                                   </tbody>
+                                  </table> </td>=20
+                                </tr>=20
+                                <tr class=3D"spacer">=20
+                                 <td height=3D"10" style=3D"padding: 0">=20
+                                  <div width=3D"1" class=3D"spacer" style=
+=3D"font-size:8px;line-height:8px;">
+                                   &nbsp;
+                                  </div> </td>=20
+                                </tr>=20
+                               </tbody>=20
+                              </table> </td>=20
+                            </tr>=20
+                           </tbody>=20
+                          </table> </td>=20
+                        </tr>=20
+                       </tbody>
+                      </table>=20
+                     </div>=20
+                     <!--[if (gte mso 9)|(IE)]></td></tr></table><![endif]-=
+-> </td>=20
+                   </tr>=20
+                  </tbody>
+                 </table> </td>=20
+               </tr>=20
+              </tbody>
+             </table>=20
+            </div>=20
+            <!--[if (gte mso 9)|(IE)]></td><td width=3D"320" valign=3D"top"=
+><![endif]-->=20
+            <div style=3D"width:100%;max-width:320px;display:inline-block;v=
+ertical-align:top;">=20
+             <table width=3D"100%" border=3D"0" cellspacing=3D"0" cellpaddi=
+ng=3D"8" style=3D"border-spacing: 0; font-family: ember, arial, sans-serif;=
+ color: rgb(51, 51, 51)">=20
+              <tbody>
+               <tr>=20
+                <td class=3D"inner" style=3D"max-width:300px;padding: 0">=
+=20
+                 <table width=3D"100%" border=3D"0" cellspacing=3D"0" cellp=
+adding=3D"0" style=3D"border-spacing: 0; font-family: ember, arial, sans-se=
+rif; color: rgb(51, 51, 51)">=20
+                  <tbody>
+                   <tr>=20
+                    <td style=3D"text-align:center;font-size:0;padding: 0">=
+=20
+                     <!--[if (gte mso 9)|(IE)]><table width=3D"100%"><tr><t=
+d width=3D"160" valign=3D"top"><![endif]-->=20
+                     <div style=3D"width:100%;max-width:160px;display:inlin=
+e-block;vertical-align:top;">=20
+                      <table width=3D"100%" border=3D"0" cellspacing=3D"0" =
+cellpadding=3D"8" style=3D"border-spacing: 0; font-family: ember, arial, sa=
+ns-serif; color: rgb(51, 51, 51)">=20
+                       <tbody>
+                        <tr>=20
+                         <td class=3D"inner" style=3D"max-width:140px;paddi=
+ng: 0">=20
+                          <table width=3D"100%" cellspacing=3D"0" cellpaddi=
+ng=3D"0" border=3D"0" style=3D"vertical-align:top;padding:8px;border-spacin=
+g: 0; font-family: ember, arial, sans-serif; color: rgb(51, 51, 51)">=20
+                           <tbody>=20
+                            <tr>=20
+                             <td style=3D"display:inline-block;padding: 0">=
+=20
+                              <table width=3D"100%" cellspacing=3D"0" cellp=
+adding=3D"0" border=3D"0" bgcolor=3D"#ffffff" style=3D"border-spacing: 0; f=
+ont-family: ember, arial, sans-serif; color: rgb(51, 51, 51)">=20
+                               <tbody>=20
+                                <tr>=20
+                                 <td valign=3D"bottom" align=3D"center" sty=
+le=3D"vertical-align: middle; padding:8px 8px 8px 8px;padding: 0"> <a href=
+=3D"https://www.amazon.in/gp/r.html?C=3DTF14L55J41OW&K=3DWMU548AAJTKH&M=3Du=
+rn:rtn:msg:202205021236182226a6cf6ca0403cb01f3c172ee0p0eu&R=3D2DI8WPWN6WO4V=
+&T=3DC&U=3Dhttps%3A%2F%2Fwww.amazon.in%2Fdeal%2F1771c8db%3FshowVariations%3=
+Dtrue%26moreDeals%3Da01ed4e2%2C047feb53%2C6eabf139%2Cd663266f%2Cc262944b%2C=
+7a24faef%26ref%3Dgrep_pep_np2_img%26ref_%3Dpe_33574051_684185261&H=3D4TRGB6=
+QN7WI1XL1LHUDRBSFIECQA&ref_=3Dpe_33574051_684185261" target=3D"_blank"> <im=
+g class=3D"oma_deal_image" src=3D"https://m.media-amazon.com/images/I/31ukK=
+T69EwL._AC_SS300_.jpg" alt=3D"Best of Pressure Washers, Tyre Inflators &amp=
+; Vehicle tools" width=3D"140" border=3D"0" style=3D"border: 0" /> </a> </t=
+d>=20
+                                </tr>=20
+                               </tbody>
+                              </table> </td>=20
+                            </tr>=20
+                            <tr height=3D"10">=20
+                             <td width=3D"100%" style=3D"padding: 0">
+                              <div width=3D"100%" style=3D"font-size:10px; =
+line-height:10px">
+                               &nbsp;
+                              </div></td>=20
+                            </tr>=20
+                            <tr>=20
+                             <td width=3D"100%" bgcolor=3D"#ffffff" align=
+=3D"center" class=3D"hero-deal-col" valign=3D"top" style=3D"padding: 0">=20
+                              <table width=3D"100%" cellspacing=3D"0" cellp=
+adding=3D"0" border=3D"0" align=3D"left" style=3D"border-spacing: 0; font-f=
+amily: ember, arial, sans-serif; color: rgb(51, 51, 51)">=20
+                               <tbody>=20
+                                <tr height=3D"5">=20
+                                 <td width=3D"100%" style=3D"padding: 0">
+                                  <div width=3D"100%" style=3D"font-size:5p=
+x; line-height:5px">
+                                   &nbsp;
+                                  </div></td>=20
+                                </tr>=20
+                                <tr>=20
+                                 <td valign=3D"middle" align=3D"left" style=
+=3D"padding: 0"> <span style=3D"font-family:Arial,Helvetica,Sans-Serif;font=
+-size:14px;font-weight:bold;font-style:normal;text-decoration:none;color:#3=
+69;text-align:left;"> <a class=3D"oma_deal_title" style=3D"font-family:Aria=
+l,Helvetica,Sans-Serif;font-size:14px;font-weight:bold;font-style:normal;co=
+lor:#369;text-align:left;line-height:25px;text-decoration:none;font-family:=
+ Ember,Helvetica,Arial,sans-serif;font-size: 14px;line-height: 18px;font-we=
+ight: 500;color: #232F3E;" href=3D"https://www.amazon.in/gp/r.html?C=3DTF14=
+L55J41OW&K=3DWMU548AAJTKH&M=3Durn:rtn:msg:202205021236182226a6cf6ca0403cb01=
+f3c172ee0p0eu&R=3D2OLKFG20X2167&T=3DC&U=3Dhttps%3A%2F%2Fwww.amazon.in%2Fdea=
+l%2F1771c8db%3FshowVariations%3Dtrue%26moreDeals%3Da01ed4e2%2C047feb53%2C6e=
+abf139%2Cd663266f%2Cc262944b%2C7a24faef%26ref%3Dgrep_pep_np2_t%26ref_%3Dpe_=
+33574051_684185261&H=3DJJDKPXOBIIEKMDN6CGAFNQPEYAIA&ref_=3Dpe_33574051_6841=
+85261" target=3D"_blank"> Best of Pressure Washers, Tyre...</a> </span> </t=
+d>=20
+                                </tr>=20
+                                <tr height=3D"10">=20
+                                 <td width=3D"100%" style=3D"padding: 0">
+                                  <div width=3D"100%" style=3D"font-size:10=
+px; line-height:10px">
+                                   &nbsp;
+                                  </div></td>=20
+                                </tr>=20
+                                <tr>=20
+                                 <td valign=3D"middle" style=3D"text-align:=
+left;padding: 0"> <font size=3D"2" face=3D"arial,Helvetica,sans-serif"> <sp=
+an class=3D"oma_deal_dprice" style=3D"font-size:18px;line-height:24px;color=
+:#990000;font-weight:bold;text-decoration:none;font-family: Ember,Helvetica=
+,Arial,sans-serif;font-size:14px;line-height: 30px;font-weight: 600;color: =
+#CC0000;"> <span style=3D"white-space:nowrap;">Rs. 331.00</span> - <span st=
+yle=3D"white-space:nowrap;">Rs. 26,949.00</span> </span> </font></td>=20
+                                </tr>=20
+                                <tr>=20
+                                 <td style=3D"padding: 0">=20
+                                  <table align=3D"left" cellspacing=3D"0" c=
+ellpadding=3D"0" border=3D"0" style=3D"border-spacing: 0; font-family: embe=
+r, arial, sans-serif; color: rgb(51, 51, 51)">=20
+                                   <tbody>
+                                    <tr>
+                                     <td valign=3D"middle" style=3D"backgro=
+und-color:#ffffff; line-height: 15px; font-family:ember,arial,sans-serif;fo=
+nt-size: 11px;color: #444;text-align:left; padding:0px 6px 0px 6px;padding:=
+ 0"> </td>=20
+                                    </tr>
+                                   </tbody>
+                                  </table> </td>=20
+                                </tr>=20
+                                <tr class=3D"spacer">=20
+                                 <td height=3D"10" style=3D"padding: 0">=20
+                                  <div width=3D"1" class=3D"spacer" style=
+=3D"font-size:8px;line-height:8px;">
+                                   &nbsp;
+                                  </div> </td>=20
+                                </tr>=20
+                               </tbody>=20
+                              </table> </td>=20
+                            </tr>=20
+                           </tbody>=20
+                          </table> </td>=20
+                        </tr>=20
+                       </tbody>
+                      </table>=20
+                     </div>=20
+                     <!--[if (gte mso 9)|(IE)]></td><td width=3D"160" valig=
+n=3D"top"><![endif]-->=20
+                     <div style=3D"width:100%;max-width:160px;display:inlin=
+e-block;vertical-align:top;">=20
+                      <table width=3D"100%" border=3D"0" cellspacing=3D"0" =
+cellpadding=3D"8" style=3D"border-spacing: 0; font-family: ember, arial, sa=
+ns-serif; color: rgb(51, 51, 51)">=20
+                       <tbody>
+                        <tr>=20
+                         <td class=3D"inner" style=3D"max-width:140px;paddi=
+ng: 0">=20
+                          <table width=3D"100%" cellspacing=3D"0" cellpaddi=
+ng=3D"0" border=3D"0" style=3D"vertical-align:top;padding:8px;border-spacin=
+g: 0; font-family: ember, arial, sans-serif; color: rgb(51, 51, 51)">=20
+                           <tbody>=20
+                            <tr>=20
+                             <td style=3D"display:inline-block;padding: 0">=
+=20
+                              <table width=3D"100%" cellspacing=3D"0" cellp=
+adding=3D"0" border=3D"0" bgcolor=3D"#ffffff" style=3D"border-spacing: 0; f=
+ont-family: ember, arial, sans-serif; color: rgb(51, 51, 51)">=20
+                               <tbody>=20
+                                <tr>=20
+                                 <td valign=3D"bottom" align=3D"center" sty=
+le=3D"vertical-align: middle; padding:8px 8px 8px 8px;padding: 0"> <a href=
+=3D"https://www.amazon.in/gp/f.html?C=3DTF14L55J41OW&K=3DWMU548AAJTKH&M=3Du=
+rn:rtn:msg:202205021236182226a6cf6ca0403cb01f3c172ee0p0eu&R=3D1TPDTHJR8WS70=
+&T=3DC&U=3Dhttps%3A%2F%2Fwww.amazon.in%2Fs%2Fbrowse%2F%3Fie%3DUTF8%26node%3=
+D27411206031%26ref%3Dgrep_pep_np2_img%26ref_%3Dpe_33574051_684185261&H=3DJR=
+L4QNPAIBEGLSCC6XKE8O6BBX0A&ref_=3Dpe_33574051_684185261" target=3D"_blank">=
+ <img class=3D"oma_deal_image" src=3D"https://m.media-amazon.com/images/I/3=
+1bIpX1OKVL._AC_SS300_.jpg" alt=3D"Starting INR 6,990 / Up to 25% off on Sin=
+gle Door Refrigerators / Up to 18 months No Cost EMI / Exchange Offers Avai=
+lable" width=3D"140" border=3D"0" style=3D"border: 0" /> </a> </td>=20
+                                </tr>=20
+                               </tbody>
+                              </table> </td>=20
+                            </tr>=20
+                            <tr height=3D"10">=20
+                             <td width=3D"100%" style=3D"padding: 0">
+                              <div width=3D"100%" style=3D"font-size:10px; =
+line-height:10px">
+                               &nbsp;
+                              </div></td>=20
+                            </tr>=20
+                            <tr>=20
+                             <td width=3D"100%" bgcolor=3D"#ffffff" align=
+=3D"center" class=3D"hero-deal-col" valign=3D"top" style=3D"padding: 0">=20
+                              <table width=3D"100%" cellspacing=3D"0" cellp=
+adding=3D"0" border=3D"0" align=3D"left" style=3D"border-spacing: 0; font-f=
+amily: ember, arial, sans-serif; color: rgb(51, 51, 51)">=20
+                               <tbody>=20
+                                <tr height=3D"5">=20
+                                 <td width=3D"100%" style=3D"padding: 0">
+                                  <div width=3D"100%" style=3D"font-size:5p=
+x; line-height:5px">
+                                   &nbsp;
+                                  </div></td>=20
+                                </tr>=20
+                                <tr>=20
+                                 <td valign=3D"middle" align=3D"left" style=
+=3D"padding: 0"> <span style=3D"font-family:Arial,Helvetica,Sans-Serif;font=
+-size:14px;font-weight:bold;font-style:normal;text-decoration:none;color:#3=
+69;text-align:left;"> <a class=3D"oma_deal_title" style=3D"font-family:Aria=
+l,Helvetica,Sans-Serif;font-size:14px;font-weight:bold;font-style:normal;co=
+lor:#369;text-align:left;line-height:25px;text-decoration:none;font-family:=
+ Ember,Helvetica,Arial,sans-serif;font-size: 14px;line-height: 18px;font-we=
+ight: 500;color: #232F3E;" href=3D"https://www.amazon.in/gp/f.html?C=3DTF14=
+L55J41OW&K=3DWMU548AAJTKH&M=3Durn:rtn:msg:202205021236182226a6cf6ca0403cb01=
+f3c172ee0p0eu&R=3D25YJEDPZKSTR9&T=3DC&U=3Dhttps%3A%2F%2Fwww.amazon.in%2Fs%2=
+Fbrowse%2F%3Fie%3DUTF8%26node%3D27411206031%26ref%3Dgrep_pep_np2_t%26ref_%3=
+Dpe_33574051_684185261&H=3DDSZGRMG0SE4A9UGFC2RA9AK572WA&ref_=3Dpe_33574051_=
+684185261" target=3D"_blank"> Starting INR 6,990 / Up to 25%...</a> </span>=
+ </td>=20
+                                </tr>=20
+                                <tr height=3D"10">=20
+                                 <td width=3D"100%" style=3D"padding: 0">
+                                  <div width=3D"100%" style=3D"font-size:10=
+px; line-height:10px">
+                                   &nbsp;
+                                  </div></td>=20
+                                </tr>=20
+                                <tr>=20
+                                 <td valign=3D"middle" style=3D"text-align:=
+left;padding: 0"> <font size=3D"2" face=3D"arial,Helvetica,sans-serif"> <sp=
+an class=3D"oma_deal_dprice" style=3D"font-size:18px;line-height:24px;color=
+:#990000;font-weight:bold;text-decoration:none;font-family: Ember,Helvetica=
+,Arial,sans-serif;font-size:14px;line-height: 30px;font-weight: 600;color: =
+#CC0000;"> <span style=3D"white-space:nowrap;">Rs. 17,390.00</span> - <span=
+ style=3D"white-space:nowrap;">Rs. 20,390.00</span> </span> </font></td>=20
+                                </tr>=20
+                                <tr>=20
+                                 <td style=3D"padding: 0">=20
+                                  <table align=3D"left" cellspacing=3D"0" c=
+ellpadding=3D"0" border=3D"0" style=3D"border-spacing: 0; font-family: embe=
+r, arial, sans-serif; color: rgb(51, 51, 51)">=20
+                                   <tbody>
+                                    <tr>
+                                     <td valign=3D"middle" style=3D"backgro=
+und-color:#ffffff; line-height: 15px; font-family:ember,arial,sans-serif;fo=
+nt-size: 11px;color: #444;text-align:left; padding:0px 6px 0px 6px;padding:=
+ 0"> </td>=20
+                                    </tr>
+                                   </tbody>
+                                  </table> </td>=20
+                                </tr>=20
+                                <tr class=3D"spacer">=20
+                                 <td height=3D"10" style=3D"padding: 0">=20
+                                  <div width=3D"1" class=3D"spacer" style=
+=3D"font-size:8px;line-height:8px;">
+                                   &nbsp;
+                                  </div> </td>=20
+                                </tr>=20
+                               </tbody>=20
+                              </table> </td>=20
+                            </tr>=20
+                           </tbody>=20
+                          </table> </td>=20
+                        </tr>=20
+                       </tbody>
+                      </table>=20
+                     </div>=20
+                     <!--[if (gte mso 9)|(IE)]></td></tr></table><![endif]-=
+-> </td>=20
+                   </tr>=20
+                  </tbody>
+                 </table> </td>=20
+               </tr>=20
+              </tbody>
+             </table>=20
+            </div>=20
+            <!--[if (gte mso 9)|(IE)]></td></tr></table><![endif]--> </td>=
+=20
+          </tr>=20
+         </tbody>
+        </table>=20
+        <table width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D=
+"20" style=3D"border-spacing: 0; font-family: ember, arial, sans-serif; col=
+or: rgb(51, 51, 51)">=20
+         <tbody>
+          <tr>=20
+           <td style=3D"padding: 0">=20
+            <table width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" borde=
+r=3D"0" align=3D"center" class=3D"seperator" style=3D"border-spacing: 0; fo=
+nt-family: ember, arial, sans-serif; color: rgb(51, 51, 51)">=20
+             <tbody>=20
+              <tr height=3D"20">=20
+               <td width=3D"100%" height=3D"20" style=3D"padding: 0">=20
+                <div width=3D"100%" class=3D"spacer" style=3D"font-size:20p=
+x;line-height:20px;">
+                 &nbsp;
+                </div> </td>=20
+              </tr>=20
+             </tbody>=20
+            </table>=20
+            <table width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" borde=
+r=3D"0" align=3D"center" class=3D"seperator" style=3D"border-spacing: 0; fo=
+nt-family: ember, arial, sans-serif; color: rgb(51, 51, 51)">=20
+             <tbody>=20
+              <tr height=3D"20">=20
+               <td width=3D"100%" height=3D"20" style=3D"padding: 0">=20
+                <div width=3D"100%" class=3D"spacer" style=3D"font-size:20p=
+x;line-height:20px;">
+                 &nbsp;
+                </div> </td>=20
+              </tr>=20
+             </tbody>=20
+            </table>=20
+            <table width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" borde=
+r=3D"0" align=3D"center" class=3D"seperator" style=3D"border-spacing: 0; fo=
+nt-family: ember, arial, sans-serif; color: rgb(51, 51, 51)">=20
+             <tbody>=20
+              <tr height=3D"20">=20
+               <td width=3D"100%" height=3D"20" style=3D"padding: 0">=20
+                <div width=3D"100%" class=3D"spacer" style=3D"font-size:20p=
+x;line-height:20px;">
+                 &nbsp;
+                </div> </td>=20
+              </tr>=20
+             </tbody>=20
+            </table> </td>=20
+          </tr>=20
+          <tr>=20
+           <td align=3D"center" valign=3D"middle" style=3D"padding: 0"> <a =
+href=3D"https://www.amazon.in/gp/r.html?C=3DTF14L55J41OW&K=3DWMU548AAJTKH&M=
+=3Durn:rtn:msg:202205021236182226a6cf6ca0403cb01f3c172ee0p0eu&R=3D2JI1WORBL=
+FPD6&T=3DC&U=3Dhttps%3A%2F%2Fwww.amazon.in%2Fref%3Dpe_33574051_684185261_se=
+f_logo&H=3DI2LDCCWFM1LKEANMOZA3IZY40K4A&ref_=3Dpe_33574051_684185261_sef_lo=
+go" target=3D"_blank" style=3D"display:block;color:#FFFFFF; text-decoration=
+:none;"> <img src=3D"https://m.media-amazon.com/images/G/01/RED-CS/Email/Gr=
+eenlandOB2019/smilemark_3x._CB438391037_._AC_SR50,12_.png" alt=3D"Amazon.in=
+" border=3D"0" style=3D"padding:6px;border: 0" class=3D"amazonLogo" /> </a>=
+ </td>=20
+          </tr>=20
+         </tbody>
+        </table>=20
+        <table width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" border=3D=
+"0" align=3D"center" class=3D"seperator" style=3D"border-spacing: 0; font-f=
+amily: ember, arial, sans-serif; color: rgb(51, 51, 51)">=20
+         <tbody>=20
+          <tr height=3D"20">=20
+           <td width=3D"100%" height=3D"20" style=3D"padding: 0">=20
+            <div width=3D"100%" class=3D"spacer" style=3D"font-size:20px;li=
+ne-height:20px;">
+             &nbsp;
+            </div> </td>=20
+          </tr>=20
+         </tbody>=20
+        </table> </td>=20
+      </tr>=20
+     </tbody>
+    </table>    =20
+    <table align=3D"center" width=3D"98%" border=3D"0" cellpadding=3D"2" ce=
+llspacing=3D"0" class=3D"legal-footer" style=3D"background-color:#fffff;
+    font-family: Ember, Arial, Sans-Serif;
+    font-size: 10px;
+    color: #666;border-spacing: 0; font-family: ember, arial, sans-serif; c=
+olor: rgb(51, 51, 51)">=20
+     <tbody>
+      <tr height=3D"30">=20
+       <td width=3D"100%" style=3D"padding: 0">
+        <div width=3D"100%" style=3D"font-size:30px; line-height:30px">
+         &nbsp;
+        </div></td>=20
+      </tr>=20
+      <tr>=20
+       <td align=3D"left" class=3D"legal-text" style=3D"padding: 0">Please =
+note that product prices and availability are subject to change. Prices and=
+ availability were accurate at the time this email was sent; however, they =
+may differ from those you see when you visit Amazon.in. <br /><br /> &copy;=
+ 2022 Amazon.com, Inc. or its affiliates. All rights reserved. Amazon, Amaz=
+on.com, the Amazon.com logo and 1-Click are registered trademarks of Amazon=
+.com, Inc. or its affiliates. Amazon.com, 410 Terry Avenue N., Seattle, WA =
+98109-5210. Ref: 684185261 <br /><br /> <a href=3D"https://www.amazon.in/gp=
+/f.html?C=3DTF14L55J41OW&K=3DWMU548AAJTKH&M=3Durn:rtn:msg:20220502123618222=
+6a6cf6ca0403cb01f3c172ee0p0eu&R=3D6SU47N59YG5N&T=3DX&U=3Dhttps%3A%2F%2Fwww.=
+amazon.in%2F%2Fgp%2Fgss%2Fo%2F1ZmKKnuF50r3qB58MSiv9hfQAh37H2G6TKBvWXQhHaTVV=
+biTKQeeRMigZIeeMIPW3&H=3DMQQKBF1GXVOELBITHITZICZCGXMA" class=3D"legal-text-=
+c1">Unsubscribe</a> | <a href=3D"https://www.amazon.in/gp/f.html?C=3DTF14L5=
+5J41OW&K=3DWMU548AAJTKH&M=3Durn:rtn:msg:202205021236182226a6cf6ca0403cb01f3=
+c172ee0p0eu&R=3D1CXTXTN1U1230&T=3DC&U=3Dhttps%3A%2F%2Fwww.amazon.in%2Fgp%2F=
+cpc%2Fhomepage%3Fref_%3Dpe_33574051_684185261&H=3DLFTC26BI90G5HZZ49N2S8WVPH=
+AWA&ref_=3Dpe_33574051_684185261" class=3D"legal-text-c1">Update Preference=
+s</a> | <a href=3D"https://www.amazon.in/gp/r.html?C=3DTF14L55J41OW&K=3DWMU=
+548AAJTKH&M=3Durn:rtn:msg:202205021236182226a6cf6ca0403cb01f3c172ee0p0eu&R=
+=3DPPZ5426DD1WD&T=3DC&U=3Dhttps%3A%2F%2Fwww.amazon.in%2Fgp%2Fhelp%2Fcustome=
+r%2Fdisplay.html%3FnodeId%3D202115020%26ref_%3Dpe_33574051_684185261&H=3DS1=
+VBIERHC8HCABOLY6DUWN9OQXKA&ref_=3Dpe_33574051_684185261" class=3D"legal-tex=
+t-c1">Privacy Policy</a> <br /> <br /></td>=20
+      </tr>=20
+     </tbody>
+    </table>   =20
+    <!--[if (gte mso 9)|(IE)]></td></tr></table><![endif]-->=20
+   </div>=20
+  </center> =20
+ <img width=3D"1" height=3D"1" src=3D"https://www.amazon.in/gp/r.html?C=3DT=
+F14L55J41OW&K=3DWMU548AAJTKH&M=3Durn:rtn:msg:202205021236182226a6cf6ca0403c=
+b01f3c172ee0p0eu&R=3DD0SXNNZ3B4DZ&T=3DE&U=3Dhttps%3A%2F%2Fimages-eu.ssl-ima=
+ges-amazon.com%2Fimages%2FG%2F01%2Fnav%2Ftransp.gif&H=3DDDXN78MPI8HYDXGSLV5=
+EB3VEXASA&ref_=3Dpe_33574051_684185261_open" /></body>
+</html>
+
+
+
+------=_Part_7718742_359743642.1651494979056--
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>color</key>
+	<string>000000</string>
+	<key>conversation-id</key>
+	<integer>10007</integer>
+	<key>date-last-viewed</key>
+	<integer>0</integer>
+	<key>date-received</key>
+	<integer>1651494979</integer>
+	<key>flags</key>
+	<integer>25770065024</integer>
+	<key>gmail-label-ids</key>
+	<array>
+		<integer>2</integer>
+	</array>
+	<key>remote-id</key>
+	<string>10858</string>
+</dict>
+</plist>
